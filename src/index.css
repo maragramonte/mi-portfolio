@@ -399,3 +399,46 @@ footer {
   padding: 3rem 0;
   font-size: 0.9rem;
 }
+
+/* ---------- Responsive (móvil y tablet pequeña) ---------- */
+@media (max-width: 640px) {
+  /* La navbar pasa a dos filas: marca + botón arriba, enlaces centrados debajo */
+  .navbar__inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.6rem 0;
+    gap: 0.5rem;
+  }
+
+  .navbar__links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar__links a {
+    font-size: 0.85rem;
+  }
+
+  /* La barra es más alta al hacer wrap, así que aumentamos el desfase de anclas */
+  .section,
+  #top {
+    scroll-margin-top: 120px;
+  }
+
+  /* Algo menos de aire vertical en pantallas pequeñas */
+  .hero {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  /* El "sol/luna" difuminado se reduce para no dominar el hero estrecho */
+  .hero::before {
+    width: 150px;
+    height: 150px;
+  }
+}
