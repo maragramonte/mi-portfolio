@@ -1,0 +1,401 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Sombra del título del hero (se ajusta por tema) */
+  --hero-title: #fff;
+  --hero-title-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  --hero-subtitle: #fdeede;
+}
+
+/* 🌅 ATARDECER: fondo violeta crepuscular + acentos coral/naranja */
+[data-theme="atardecer"] {
+  --bg: #1b1426;
+  --bg-card: #261a36;
+  --text: #f6ece6;
+  --text-dim: #c2a7bd;
+  --accent: #ff8c5a;
+  --accent-2: #ff5e8a;
+  --border: #3a2b48;
+  --navbar-bg: rgba(27, 20, 38, 0.8);
+  --sunset: linear-gradient(160deg, #2a1a3e 0%, #6e3b6e 42%, #c75c5c 74%, #f5a35c 100%);
+}
+
+/* 🌄 AMANECER: fondo malva tenue + acentos melocotón/ámbar */
+[data-theme="amanecer"] {
+  --bg: #2a1e2e;
+  --bg-card: #382838;
+  --text: #fff6ee;
+  --text-dim: #d8b9a8;
+  --accent: #ff9e7d;
+  --accent-2: #ffd07a;
+  --border: #4a3548;
+  --navbar-bg: rgba(42, 30, 46, 0.8);
+  --sunset: linear-gradient(160deg, #3a2a52 0%, #b56b8e 45%, #f3a26d 75%, #ffd9a0 100%);
+}
+
+/* ☀️ DÍA CLARO: fondo blanco cálido + degradado coral→ámbar */
+[data-theme="dia"] {
+  --bg: #fafafa;
+  --bg-card: #ffffff;
+  --text: #2c2c2c;
+  --text-dim: #5d5d5d;
+  --accent: #ff7043;
+  --accent-2: #ffa726;
+  --border: #f0f0f0;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --sunset: linear-gradient(135deg, #fff3e0, #ffeaa7);
+  --hero-title: transparent;            /* el título usa degradado en texto */
+  --hero-title-shadow: none;
+  --hero-subtitle: #5d5d5d;
+}
+
+/* 🌙 NOCHE: cielo nocturno profundo + acentos azul luna/lavanda */
+[data-theme="noche"] {
+  --bg: #0a0e1f;
+  --bg-card: #141a33;
+  --text: #e8ecff;
+  --text-dim: #8b93b8;
+  --accent: #7aa2ff;      /* azul luz de luna */
+  --accent-2: #b89cff;    /* lavanda */
+  --border: #232a45;
+  --navbar-bg: rgba(10, 14, 31, 0.8);
+  --sunset: linear-gradient(160deg, #060814 0%, #131a3a 45%, #2a2350 78%, #46365e 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar__brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--accent);
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Desfase para que la barra fija no tape el inicio de cada sección */
+.section,
+#top {
+  scroll-margin-top: 70px;
+}
+
+/* ---------- Header / Hero ---------- */
+.hero {
+  padding: 6rem 0 5rem;
+  text-align: center;
+  background: var(--sunset);
+  position: relative;
+}
+
+/* Sol difuminado sobre el horizonte */
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 232, 180, 0.55) 0%, rgba(255, 232, 180, 0) 70%);
+  pointer-events: none;
+}
+
+/* 🌙 En el tema noche, el "sol" pasa a ser una luna fría y plateada */
+[data-theme="noche"] .hero::before {
+  bottom: auto;
+  top: 18%;
+  left: auto;
+  right: 18%;
+  transform: none;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 38%, #fdfcf4 0%, #d7def0 55%, #aab6d8 100%);
+  box-shadow: 0 0 50px 12px rgba(210, 225, 255, 0.45);
+}
+
+/* 🌙 Estrellas dispersas en el cielo nocturno */
+[data-theme="noche"] .hero {
+  background:
+    radial-gradient(1.5px 1.5px at 15% 22%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 32% 12%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 55% 28%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 78% 15%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 88% 35%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 8% 45%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 45% 48%, rgba(255, 255, 255, 0.55), transparent),
+    var(--sunset);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin: 0 0 0.5rem;
+  color: var(--hero-title);
+  text-shadow: var(--hero-title-shadow);
+}
+
+/* En el tema claro, el nombre se pinta con degradado coral→ámbar */
+[data-theme="dia"] .hero h1 {
+  background: linear-gradient(135deg, #ff6b6b, #ffa726, #ffcc02);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--hero-subtitle);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 3rem 0;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin: 0 0 2rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+/* ---------- About (prose) ---------- */
+.prose {
+  max-width: 720px;
+}
+
+.prose p {
+  color: var(--text-dim);
+  margin: 0 0 1rem;
+}
+
+/* ---------- Technologies chips ---------- */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-chip {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.tech-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Projects grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #222;
+}
+
+.card__body {
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card__body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.card__body p {
+  margin: 0 0 1rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.card__link {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card__link::after {
+  content: " →";
+}
+
+/* ---------- Contact ---------- */
+.contact-intro {
+  color: var(--text-dim);
+  max-width: 560px;
+  margin: 0 0 1.5rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.contact-list a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.contact-list a:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.contact-value {
+  color: var(--text);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 3rem 0;
+  font-size: 0.9rem;
+}
