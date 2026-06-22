@@ -1,10 +1,4 @@
-// Barra de navegación fija. Los enlaces apuntan a los id de cada sección.
-const enlaces = [
-  { href: "#sobre-mi", texto: "Sobre mí" },
-  { href: "#tecnologias", texto: "Tecnologías" },
-  { href: "#proyectos", texto: "Proyectos" },
-  { href: "#contacto", texto: "Contacto" },
-]
+import { useIdioma } from '../i18n.js'
 
 // Etiqueta (emoji + nombre) que muestra el botón según el tema activo.
 const etiquetaTema = {
@@ -15,6 +9,16 @@ const etiquetaTema = {
 }
 
 export default function Navbar({ tema, onCambiarTema }) {
+  const { t, cambiarIdioma } = useIdioma()
+
+  // Barra de navegación fija. Los enlaces apuntan a los id de cada sección.
+  const enlaces = [
+    { href: "#sobre-mi", texto: t.nav.sobreMi },
+    { href: "#tecnologias", texto: t.nav.tecnologias },
+    { href: "#proyectos", texto: t.nav.proyectos },
+    { href: "#contacto", texto: t.nav.contacto },
+  ]
+
   return (
     <nav className="navbar">
       <div className="container navbar__inner">
@@ -26,14 +30,24 @@ export default function Navbar({ tema, onCambiarTema }) {
             </li>
           ))}
         </ul>
-        <button
-          className="theme-toggle"
-          onClick={onCambiarTema}
-          title="Cambiar tema"
-          aria-label="Cambiar tema de color"
-        >
-          {etiquetaTema[tema]}
-        </button>
+        <div className="navbar__actions">
+          <button
+            className="theme-toggle"
+            onClick={cambiarIdioma}
+            title="Cambiar idioma / Switch language"
+            aria-label="Cambiar idioma / Switch language"
+          >
+            {t.botonIdioma}
+          </button>
+          <button
+            className="theme-toggle"
+            onClick={onCambiarTema}
+            title="Cambiar tema"
+            aria-label="Cambiar tema de color"
+          >
+            {etiquetaTema[tema]}
+          </button>
+        </div>
       </div>
     </nav>
   )

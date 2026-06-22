@@ -1,3 +1,5 @@
+import { useIdioma } from '../i18n.js'
+
 // Lista de tecnologías. Edita este array para añadir o quitar.
 const tecnologias = [
   "Java",
@@ -15,10 +17,12 @@ const tecnologias = [
 ]
 
 export default function Technologies() {
+  const { t } = useIdioma()
+
   return (
     <section id="tecnologias" className="section">
       <div className="container">
-        <h2>Tecnologías</h2>
+        <h2>{t.tech.titulo}</h2>
         <div className="tech-list">
           {tecnologias.map((tech) => (
             <span key={tech} className="tech-chip">{tech}</span>
