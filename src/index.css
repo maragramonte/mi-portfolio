@@ -128,7 +128,14 @@ a {
   color: var(--accent);
 }
 
-/* Botón de cambio de tema */
+/* Contenedor de los botones de idioma y tema */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botones de cambio de idioma y de tema */
 .theme-toggle {
   display: inline-flex;
   align-items: center;

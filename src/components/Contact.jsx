@@ -1,3 +1,5 @@
+import { useIdioma } from '../i18n.js'
+
 // Sección de contacto. Edita los enlaces con los tuyos.
 const contactos = [
   {
@@ -38,19 +40,18 @@ const contactos = [
 ]
 
 export default function Contact() {
+  const { t } = useIdioma()
+
   return (
     <section id="contacto" className="section">
       <div className="container">
-        <h2>Contacto</h2>
-        <p className="contact-intro">
-          ¿Tienes un proyecto en mente o quieres saber más sobre mi trabajo?
-          Estaré encantada de hablar contigo.
-        </p>
+        <h2>{t.contact.titulo}</h2>
+        <p className="contact-intro">{t.contact.intro}</p>
         <ul className="contact-list">
           {contactos.map((c) => (
             <li key={c.etiqueta}>
               <a href={c.href} target="_blank" rel="noreferrer">
-                <span className="contact-label">{c.etiqueta}</span>
+                <span className="contact-label">{t.contact.etiquetas[c.etiqueta] ?? c.etiqueta}</span>
                 <span className="contact-value">{c.valor}</span>
               </a>
             </li>

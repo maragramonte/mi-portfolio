@@ -4,7 +4,7 @@ export default function ProjectCard({
   titulo,
   descripcion,
   enlace,
-  enlaceTexto = "Ver proyecto",
+  enlaceTexto,
   imagen,
   tecnologias,
 }) {
