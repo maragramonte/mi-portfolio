@@ -18,6 +18,8 @@ export default function Projects() {
               descripcion={proyecto.descripcion[idioma]}
               enlace={proyecto.enlace}
               enlaceTexto={proyecto.enlaceTexto?.[idioma] ?? t.projects.verProyecto}
+              repo={proyecto.repo}
+              repoTexto={t.projects.verCodigo}
               imagen={proyecto.imagen}
               tecnologias={proyecto.tecnologias[idioma]}
             />
