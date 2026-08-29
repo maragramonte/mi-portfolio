@@ -1,5 +1,7 @@
 :root {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --accent-strong: #a8380c;
+  --on-accent: #ffffff;
   /* Sombra del título del hero (se ajusta por tema) */
   --hero-title: #fff;
   --hero-title-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
@@ -8,6 +10,8 @@
 
 /* 🌅 ATARDECER: fondo violeta crepuscular + acentos coral/naranja */
 [data-theme="atardecer"] {
+  --accent-strong: #ff8c5a;   /* acento con contraste AA para texto pequeño */
+  --on-accent: #1b1426;
   --bg: #1b1426;
   --bg-card: #261a36;
   --text: #f6ece6;
@@ -21,6 +25,8 @@
 
 /* 🌄 AMANECER: fondo malva tenue + acentos melocotón/ámbar */
 [data-theme="amanecer"] {
+  --accent-strong: #ff9e7d;   /* acento con contraste AA para texto pequeño */
+  --on-accent: #2a1e2e;
   --bg: #2a1e2e;
   --bg-card: #382838;
   --text: #fff6ee;
@@ -34,6 +40,8 @@
 
 /* ☀️ DÍA CLARO: fondo blanco cálido + degradado coral→ámbar */
 [data-theme="dia"] {
+  --accent-strong: #a8380c;   /* acento con contraste AA para texto pequeño */
+  --on-accent: #ffffff;
   --bg: #fafafa;
   --bg-card: #ffffff;
   --text: #2c2c2c;
@@ -50,6 +58,8 @@
 
 /* 🌙 NOCHE: cielo nocturno profundo + acentos azul luna/lavanda */
 [data-theme="noche"] {
+  --accent-strong: #7aa2ff;   /* acento con contraste AA para texto pequeño */
+  --on-accent: #0a0e1f;
   --bg: #0a0e1f;
   --bg-card: #141a33;
   --text: #e8ecff;
@@ -237,6 +247,67 @@ a {
   margin: 0;
 }
 
+/* Rol: la primera línea que se lee después del nombre */
+.hero .hero__rol {
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: var(--hero-title);
+  text-shadow: var(--hero-title-shadow);
+  margin-bottom: 0.4rem;
+}
+
+/* En el tema claro el degradado del título no aplica aquí: color sólido legible */
+[data-theme="dia"] .hero .hero__rol {
+  color: #3d3d3d;
+}
+
+.hero .hero__stack {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-strong);
+  margin-bottom: 0.35rem;
+}
+
+.hero .hero__disponibilidad {
+  font-size: 0.95rem;
+  color: var(--hero-subtitle);
+}
+
+/* Llamadas a la acción del hero */
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--accent-strong);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--accent-strong);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.btn--primario {
+  background: var(--accent-strong);
+  color: var(--on-accent);
+}
+
 /* ---------- Sections ---------- */
 .section {
   padding: 3rem 0;
@@ -278,7 +349,7 @@ a {
 
 .tech-chip:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 /* ---------- Projects grid ---------- */
@@ -338,7 +409,7 @@ a {
 
 .tag {
   font-size: 0.75rem;
-  color: var(--accent);
+  color: var(--accent-strong);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
@@ -348,7 +419,7 @@ a {
   align-self: flex-start;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .card__link::after {
@@ -391,7 +462,7 @@ a {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .contact-value {
@@ -443,9 +514,99 @@ footer {
     padding: 2rem 0;
   }
 
-  /* El "sol/luna" difuminado se reduce para no dominar el hero estrecho */
+  /* Botones del hero a ancho completo en móvil, más fáciles de pulsar */
+  .hero__acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  /* El "sol" difuminado se reduce para no dominar el hero estrecho */
   .hero::before {
     width: 150px;
     height: 150px;
+  }
+
+  /* La luna, en cambio, se hace más pequeña y se aparta a la esquina:
+     con el hero estrecho llegaba a solaparse con el texto. */
+  [data-theme="noche"] .hero::before {
+    width: 70px;
+    height: 70px;
+    top: 5%;
+    right: 7%;
+    box-shadow: 0 0 30px 8px rgba(210, 225, 255, 0.35);
+  }
+}
+
+/* ---------- Grupos de tecnologías ---------- */
+.tech-group + .tech-group {
+  margin-top: 1.5rem;
+}
+
+.tech-group__titulo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin: 0 0 0.7rem;
+}
+
+/* ---------- Portada de tarjeta sin captura ---------- */
+.card__cover {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  background: var(--sunset);
+  border-bottom: 1px solid var(--border);
+}
+
+.card__cover span {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  opacity: 0.55;
+}
+
+/* ---------- Enlaces de la tarjeta (demo + código) ---------- */
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card__link {
+  align-self: auto;
+}
+
+.card__link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Accesibilidad ---------- */
+/* Sin esto, quien navegue con el teclado no ve dónde está el foco. */
+:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respeta a quien tenga desactivadas las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
