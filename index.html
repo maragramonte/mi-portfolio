@@ -2,12 +2,62 @@
 <html lang="es" data-theme="dia">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mar Agramonte | Desarrolladora Full Stack</title>
+    <meta
+      name="description"
+      content="Portfolio de Mar Agramonte, desarrolladora Full Stack graduada en DAM. Java, Python, SQL y Docker. Palma de Mallorca, disponible para incorporación inmediata."
+    />
+    <meta name="author" content="Mar Agramonte" />
+    <link rel="canonical" href="https://maragramonte.github.io/mi-portfolio/" />
+
+    <!-- Iconos: SVG para navegadores modernos, PNG como alternativa -->
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+
+    <!-- Tarjeta de previsualización al compartir el enlace (LinkedIn, WhatsApp...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Mar Agramonte" />
+    <meta property="og:title" content="Mar Agramonte | Desarrolladora Full Stack" />
+    <meta
+      property="og:description"
+      content="Graduada en DAM. Proyectos de desarrollo, APIs, bases de datos y Docker."
+    />
+    <meta property="og:url" content="https://maragramonte.github.io/mi-portfolio/" />
+    <meta property="og:image" content="https://maragramonte.github.io/mi-portfolio/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mar Agramonte, desarrolladora Full Stack graduada en DAM" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#ff7043" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>Mar Agramonte | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Aplica el tema y el idioma guardados ANTES de pintar la página.
+      Sin esto, quien tenga elegido el tema "noche" ve un fogonazo blanco en cada visita.
+    -->
+    <script>
+      (function () {
+        try {
+          var tema = localStorage.getItem('tema')
+          if (tema === 'dia' || tema === 'noche') document.documentElement.dataset.theme = tema
+          var idioma = localStorage.getItem('idioma')
+          if (idioma === 'es' || idioma === 'en') document.documentElement.lang = idioma
+        } catch (e) {
+          /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
