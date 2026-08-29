@@ -15,7 +15,12 @@ export const traducciones = {
     },
     botonIdioma: '🇬🇧 EN', // muestra el idioma al que se cambiará
     hero: {
-      subtitulo: 'Técnica Administrativa | Desarrolladora Full Stack en formación',
+      rol: 'Desarrolladora Full Stack · Graduada en DAM',
+      stack: 'Java · Python · SQL · Docker',
+      disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (presencial o remoto)',
+      verProyectos: 'Ver proyectos',
+      contactar: 'Contactar',
+      descargarCV: 'Descargar CV',
     },
     about: {
       titulo: 'Sobre mí',
@@ -31,6 +36,7 @@ export const traducciones = {
     projects: {
       titulo: 'Proyectos',
       verProyecto: 'Ver proyecto',
+      verCodigo: 'Ver código',
     },
     contact: {
       titulo: 'Contacto',
@@ -40,9 +46,7 @@ export const traducciones = {
         Teléfono: 'Teléfono',
         LinkedIn: 'LinkedIn',
         GitHub: 'GitHub',
-        Indeed: 'Indeed',
-        Instagram: 'Instagram',
-        Discord: 'Discord',
+        CV: 'CV',
       },
     },
     footer: {
@@ -58,7 +62,12 @@ export const traducciones = {
     },
     botonIdioma: '🇪🇸 ES',
     hero: {
-      subtitulo: 'Administrative Technician | Full Stack Developer in training',
+      rol: 'Full Stack Developer · Software Development graduate (DAM)',
+      stack: 'Java · Python · SQL · Docker',
+      disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (on-site or remote)',
+      verProyectos: 'View projects',
+      contactar: 'Get in touch',
+      descargarCV: 'Download CV',
     },
     about: {
       titulo: 'About me',
@@ -74,6 +83,7 @@ export const traducciones = {
     projects: {
       titulo: 'Projects',
       verProyecto: 'View project',
+      verCodigo: 'View code',
     },
     contact: {
       titulo: 'Contact',
@@ -83,9 +93,7 @@ export const traducciones = {
         Teléfono: 'Phone',
         LinkedIn: 'LinkedIn',
         GitHub: 'GitHub',
-        Indeed: 'Indeed',
-        Instagram: 'Instagram',
-        Discord: 'Discord',
+        CV: 'CV',
       },
     },
     footer: {
