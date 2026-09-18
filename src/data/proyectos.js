@@ -24,6 +24,7 @@ export const proyectos = [
     // desactivado para no llevar a nadie a una página de error.
     // Cuando el despliegue vuelva a funcionar, descomenta esta línea:
     // enlace: "https://www.dragramonte.com/",
+    repo: "https://github.com/maragramonte/dr-agramonte",
     tecnologias: {
       es: ["Web", "Multiidioma", "Reserva de citas"],
       en: ["Web", "Multilingual", "Appointment booking"],
