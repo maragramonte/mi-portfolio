@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mar Agramonte | PORTFOLIO</title>
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #ff6b6b, #ffa726, #ffcc02);
+            --gradient-secondary: linear-gradient(135deg, #ff8a65, #ffab40);
+            --gradient-accent: linear-gradient(135deg, #ff7043, #ff5722);
+            --gradient-subtle: linear-gradient(135deg, #fff3e0, #ffeaa7);
+            --text-primary: #2c2c2c;
+            --text-secondary: #5d5d5d;
+            --text-muted: #8e8e8e;
+            --bg-white: #ffffff;
+            --bg-warm: #fafafa;
+            --border-light: #f0f0f0;
+            --shadow-soft: 0 4px 20px rgba(255, 107, 107, 0.1);
+            --shadow-hover: 0 8px 30px rgba(255, 107, 107, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(16px, 4vw, 32px);
+        }
+        
+        /* Header con degradado sutil */
+        header {
+            background: var(--gradient-subtle);
+            padding: clamp(40px, 8vh, 80px) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.05) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(180deg); }
+        }
+        
+        .header-content {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(12px, 3vw, 20px);
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: clamp(30px, 6vw, 50px);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-header {
+            display: flex;
+            justify-content: center;
+            gap: clamp(12px, 3vw, 24px);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: clamp(10px, 2vw, 14px) clamp(16px, 4vw, 28px);
+            background: var(--bg-white);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            white-space: nowrap;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-secondary);
+            color: white;
+        }
+        
+        /* Secciones principales */
+        main {
+            padding: clamp(40px, 8vh, 80px) 0;
+        }
+        
+        section {
+            margin-bottom: clamp(50px, 10vh, 100px);
+        }
+        
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 600;
+            margin-bottom: clamp(24px, 5vw, 40px);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
+        /* Sección Sobre Mí */
+        .about-content {
+            background: var(--bg-white);
+            padding: clamp(24px, 5vw, 48px);
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .about-content p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: var(--text-secondary);
+            margin-bottom: clamp(20px, 4vw, 32px);
+            line-height: 1.6;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-list li {
+            padding: clamp(8px, 2vw, 14px) 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        
+        .info-list span {
+            color: var(--text-secondary);
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+        
+        /* Habilidades con degradados */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 20vw, 140px), 1fr));
+            gap: clamp(12px, 3vw, 20px);
+            margin-top: clamp(20px, 4vw, 32px);
+        }
+        
+        .skill-item {
+            background: var(--bg-white);
+            padding: clamp(16px, 4vw, 24px) clamp(12px, 3vw, 20px);
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+        
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-secondary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .skill-item:hover::before {
+            opacity: 1;
+        }
+        
+        .skill-item:hover {
+            color: white;
+        }
+        
+        .skill-item span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Proyectos con diseño elegante */
+        .project {
+            background: var(--bg-white);
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 48px);
+            margin-bottom: clamp(20px, 4vw, 32px);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-accent);
+        }
+        
+        .project:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .project h3 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: clamp(12px, 3vw, 18px);
+        }
+        
+        .project p {
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: clamp(16px, 4vw, 28px);
+            line-height: 1.6;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: clamp(6px, 1.5vw, 10px);
+            margin-bottom: clamp(16px, 4vw, 28px);
+        }
+        
+        .project-tag {
+            padding: clamp(4px, 1vw, 8px) clamp(10px, 2.5vw, 16px);
+            background: var(--gradient-subtle);
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 28px);
+            background: var(--gradient-secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+        
+        .project-link:hover {
+            transform: translateX(4px);
+            background: var(--gradient-accent);
+        }
+        
+        /* Sección de contacto social */
+        .social-section {
+            background: var(--bg-white);
+            padding: clamp(30px, 6vw, 60px) clamp(24px, 5vw, 48px);
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-subtle);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .social-section > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .social-section p {
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            margin-bottom: 0;
+        }
+        
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(12px, 3vw, 24px);
+            margin-top: clamp(20px, 4vw, 36px);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: clamp(12px, 3vw, 18px) clamp(20px, 4vw, 32px);
+            background: var(--bg-white);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-primary);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer minimalista */
+        footer {
+            text-align: center;
+            padding: clamp(30px, 6vh, 50px) 0;
+            color: var(--text-muted);
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            border-top: 1px solid var(--border-light);
+            margin-top: clamp(40px, 8vh, 80px);
+        }
+        
+        /* Mejoras específicas para móviles */
+        @media (max-width: 768px) {
+            .info-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+            
+            .contact-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .contact-link {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .project-tags {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .contact-link {
+                padding: 12px 20px;
+            }
+            
+            .project-link {
+                width: 100%;
+                justify-content: center;
+                max-width: 200px;
+                margin: 0 auto;
+                display: flex;
+            }
+        }
+        
+        /* Optimizaciones para pantallas muy grandes */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+        }
+        
+        /* Mejoras para accesibilidad y touch targets */
+        @media (hover: none) and (pointer: coarse) {
+            .contact-link,
+            .social-link,
+            .project-link {
+                min-height: 44px;
+            }
+            
+            .skill-item {
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        /* Optimización para landscape en móviles */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            header {
+                min-height: 80vh;
+                padding: 20px 0;
+            }
+            
+            .subtitle {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23ff6b6b'/><stop offset='100%' stop-color='%23ffa726'/></linearGradient></defs><rect width='100' height='100' fill='url(%23g)'/><path fill='white' d='M30 30 L70 30 L70 50 C70 65 50 75 50 75 C50 75 30 65 30 50 Z'/></svg>">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Mar Agramonte Campos</h1>
+                <p class="subtitle">Técnica Administrativa | Desarrolladora Full Stack en formación</p>
+                
+                <div class="contact-header">
+                    <a href="mailto:agramontecampos01@gmail.com" class="contact-link">
+                        <span>✉️</span>
+                        agramontecampos01@gmail.com | agramontemar@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2>Sobre Mí</h2>
+                <div class="about-content">
+                    <p>Profesional con experiencia en administración y atención al cliente, actualmente en transición hacia el desarrollo de software. Combino habilidades organizativas con pasión por la tecnología para crear soluciones eficientes.</p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <strong>Ubicación:</strong>
+                            <span>Palma de Mallorca, España</span>
+                        </li>
+                        <li>
+                            <strong>Formación:</strong>
+                            <span>Técnica en Gestión Administrativa | Autodidacta en programación</span>
+                        </li>
+                        <li>
+                            <strong>Aprendiendo actualmente:</strong>
+                            <span>Java, JavaScript, XML y Docker</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="skills">
+                <h2>Habilidades Técnicas</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-item"><span>Java</span></div>
+                    <div class="skill-item"><span>JavaScript</span></div>
+                    <div class="skill-item"><span>HTML5</span></div>
+                    <div class="skill-item"><span>CSS3</span></div>
+                    <div class="skill-item"><span>MySQL</span></div>
+                    <div class="skill-item"><span>Git</span></div>
+                    <div class="skill-item"><span>GitHub</span></div>
+                    <div class="skill-item"><span>VS Code</span></div>
+                </div>
+            </section>
+            
+            <section id="projects">
+                <h2>Proyectos</h2>
+                
+                <div class="project">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción breve del proyecto y su propósito principal. Una aplicación desarrollada con enfoque en la experiencia del usuario y la funcionalidad robusta.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">HTML</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        Ver en GitHub →
+                    </a>
+                </div>
+                
+                <div class="project">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción breve del proyecto y su propósito principal. Solución web moderna que demuestra habilidades en desarrollo frontend y diseño responsivo.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">CSS</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        Ver en GitHub →
+                    </a>
+                </div>
+            </section>
+            
+            <section id="social">
+                <div class="social-section">
+                    <h2>Conectemos</h2>
+                    <p style="color: var(--text-secondary);">¿Te gustaría colaborar? · </p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mar-agramonte-9b9644367/" class="social-link">
+                            <span>💼</span>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/maragramonte" class="social-link">
+                            <span>🔗</span>
+                            GitHub
+                        </a>
+                        <a href="https://www.instagram.com/m.agramonte_" class="social-link">
+                            <span>📸</span>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Gracias por visitar mi página 😊</p>
+            <p>© 2024 Mar Agramonte | Con 💙 y mucho café </p>
+        </div>
+    </footer>
+</body>
+</html>
