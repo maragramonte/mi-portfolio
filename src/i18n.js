@@ -15,7 +15,7 @@ export const traducciones = {
     },
     botonIdioma: '🇬🇧 EN', // muestra el idioma al que se cambiará
     hero: {
-      rol: 'Desarrolladora Full Stack · Graduada en DAM',
+      rol: 'Desarrolladora Backend Junior · Graduada en DAM',
       stack: 'Java · Python · SQL · Docker',
       disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (presencial o remoto)',
       verProyectos: 'Ver proyectos',
@@ -62,7 +62,7 @@ export const traducciones = {
     },
     botonIdioma: '🇪🇸 ES',
     hero: {
-      rol: 'Full Stack Developer · Software Development graduate (DAM)',
+      rol: 'Junior Backend Developer · Software Development graduate (DAM)',
       stack: 'Java · Python · SQL · Docker',
       disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (on-site or remote)',
       verProyectos: 'View projects',
