@@ -19,6 +19,7 @@ export default function ProjectCard({
   repo,
   repoTexto,
   imagen,
+  estado,
   tecnologias,
 }) {
   return (
@@ -42,7 +43,10 @@ export default function ProjectCard({
       )}
 
       <div className="card__body">
-        <h3>{titulo}</h3>
+        <div className="card__titulo">
+          <h3>{titulo}</h3>
+          {estado && <span className="card__estado">{estado}</span>}
+        </div>
         <p>{descripcion}</p>
 
         {tecnologias?.length > 0 && (

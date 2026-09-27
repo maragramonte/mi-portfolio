@@ -8,15 +8,19 @@ export const IDIOMAS = ['es', 'en']
 export const traducciones = {
   es: {
     nav: {
+      principal: 'Navegación principal',
+      progreso: 'Progreso de lectura',
+      abrirMenu: 'Abrir menú',
+      cerrarMenu: 'Cerrar menú',
       sobreMi: 'Sobre mí',
+      experiencia: 'Experiencia',
       tecnologias: 'Tecnologías',
       proyectos: 'Proyectos',
       contacto: 'Contacto',
     },
-    botonIdioma: '🇬🇧 EN', // muestra el idioma al que se cambiará
     hero: {
       rol: 'Desarrolladora Backend Junior · Graduada en DAM',
-      stack: 'Java · Python · SQL · Docker',
+      stack: 'Java · Spring Boot · PostgreSQL · Docker',
       disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (presencial o remoto)',
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
@@ -25,10 +29,14 @@ export const traducciones = {
     about: {
       titulo: 'Sobre mí',
       parrafos: [
-        'Graduada en DAM y con experiencia práctica en testing de APIs, validaciones E2E, bases de datos y desarrollo de software.',
-        'Tras varios años de experiencia profesional en administración, turismo y recursos humanos, decidí reorientar mi carrera hacia el sector tecnológico. Hoy combino esa experiencia con conocimientos en Java, Python, SQL, MongoDB, Docker y metodologías ágiles.',
-        'En este portfolio comparto los proyectos que reflejan mi evolución como desarrolladora y mi interés por crear software útil, mantenible y de calidad.',
+        'Graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para un internista real en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas en Flyway.',
+        'El detalle que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco, resuelto con bloqueo pesimista en base de datos y validado con un test de concurrencia real. Antes de eso, 400 horas de prácticas en Marlink Group haciendo testing de APIs, validaciones E2E y automatización con Python en un entorno SAFe.',
+        'Vengo de administración, turismo y recursos humanos, y esa base me dio pensamiento estructurado y atención al detalle. En este portfolio comparto los proyectos que reflejan mi evolución como desarrolladora y mi interés por crear software útil, mantenible y de calidad.',
       ],
+    },
+    experience: {
+      titulo: 'Experiencia',
+      intro: 'Prácticas y primeros pasos profesionales en desarrollo y QA.',
     },
     tech: {
       titulo: 'Tecnologías',
@@ -55,15 +63,19 @@ export const traducciones = {
   },
   en: {
     nav: {
+      principal: 'Main navigation',
+      progreso: 'Reading progress',
+      abrirMenu: 'Open menu',
+      cerrarMenu: 'Close menu',
       sobreMi: 'About me',
+      experiencia: 'Experience',
       tecnologias: 'Technologies',
       proyectos: 'Projects',
       contacto: 'Contact',
     },
-    botonIdioma: '🇪🇸 ES',
     hero: {
       rol: 'Junior Backend Developer · Software Development graduate (DAM)',
-      stack: 'Java · Python · SQL · Docker',
+      stack: 'Java · Spring Boot · PostgreSQL · Docker',
       disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (on-site or remote)',
       verProyectos: 'View projects',
       contactar: 'Get in touch',
@@ -72,10 +84,14 @@ export const traducciones = {
     about: {
       titulo: 'About me',
       parrafos: [
-        'DAM graduate with hands-on experience in API testing, E2E validation, databases and software development.',
-        'After several years of professional experience in administration, tourism and human resources, I decided to redirect my career towards the tech sector. Today I combine that experience with knowledge of Java, Python, SQL, MongoDB, Docker and agile methodologies.',
-        'In this portfolio I share the projects that reflect my growth as a developer and my interest in building useful, maintainable and quality software.',
+        "DAM graduate. My final-year project didn't stay in the classroom: it's an appointment management app for a real internist in Palma, with a backend in Java 21 and Spring Boot 3.5 on PostgreSQL, JWT authentication and versioned Flyway migrations.",
+        'The detail that taught me the most was preventing two patients from booking the same slot, solved with pessimistic database locking and validated with a real concurrency test. Before that, 400 hours interning at Marlink Group doing API testing, E2E validation and Python automation in a SAFe environment.',
+        'I come from administration, tourism and HR, and that background gave me structured thinking and attention to detail. In this portfolio I share the projects that reflect my growth as a developer and my interest in building useful, maintainable and quality software.',
       ],
+    },
+    experience: {
+      titulo: 'Experience',
+      intro: 'Internships and first professional steps in development and QA.',
     },
     tech: {
       titulo: 'Technologies',

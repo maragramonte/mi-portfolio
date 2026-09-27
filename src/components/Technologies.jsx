@@ -1,11 +1,16 @@
 import { useIdioma } from '../i18n.js'
 
 // Lista de tecnologías, agrupadas por bloque. Edita estos arrays para añadir o quitar.
+// El orden de los grupos es deliberado: primero lo que se busca en una oferta
+// de backend junior, y las herramientas de apoyo al final.
 const grupos = [
-  { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Python", "JavaScript", "SQL"] },
-  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite"] },
-  { titulo: { es: "Datos y herramientas", en: "Data & tools" }, items: ["MongoDB", "Docker", "Git", "GitHub", "Postman"] },
-  { titulo: { es: "Metodología", en: "Methodology" }, items: ["Scrum", "Jira", "Confluence"] },
+  { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Python", "SQL", "JavaScript"] },
+  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "API REST", "JWT", "Flyway"] },
+  { titulo: { es: "Bases de datos", en: "Databases" }, items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"] },
+  { titulo: { es: "Testing", en: "Testing" }, items: ["JUnit 5", "Testcontainers", "Postman", "E2E"] },
+  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "WSL"] },
+  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite", "XML"] },
+  { titulo: { es: "Metodología y herramientas", en: "Methodology & tools" }, items: ["SAFe", "Scrum", "Jira", "Confluence", "DBeaver"] },
 ]
 
 export default function Technologies() {
