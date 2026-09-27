@@ -23,9 +23,11 @@ export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
     descripcion: {
-      es: "Proyecto de fin de ciclo: aplicación de gestión de citas para un internista real en Palma. Backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, con autenticación JWT y migraciones versionadas en Flyway. Para que dos pacientes no pudieran reservar el mismo hueco apliqué bloqueo pesimista en base de datos, validado con un test de concurrencia real. CI/CD con GitHub Actions, despliegue con Docker Compose y Caddy (HTTPS automático) y avisos a pacientes vía Twilio y Telegram.",
-      en: "Final-year project: appointment management app for a real internist in Palma. Backend in Java 21 and Spring Boot 3.5 on PostgreSQL, with JWT authentication and versioned Flyway migrations. To stop two patients booking the same slot I applied pessimistic database locking, validated with a real concurrency test. CI/CD with GitHub Actions, deployment with Docker Compose and Caddy (automatic HTTPS) and patient notifications via Twilio and Telegram.",
+      es: "Proyecto de fin de ciclo: aplicación de gestión de citas para un internista real en Palma. Backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, con autenticación JWT y migraciones versionadas en Flyway. Para que dos pacientes no pudieran reservar el mismo hueco apliqué bloqueo pesimista en base de datos, validado con un test de concurrencia real. CI/CD con GitHub Actions, despliegue con Docker Compose y Caddy (HTTPS automático) y avisos a pacientes vía Twilio y Telegram. La demo funciona solo en el navegador, con datos ficticios: el backend completo está en el repositorio.",
+      en: "Final-year project: appointment management app for a real internist in Palma. Backend in Java 21 and Spring Boot 3.5 on PostgreSQL, with JWT authentication and versioned Flyway migrations. To stop two patients booking the same slot I applied pessimistic database locking, validated with a real concurrency test. CI/CD with GitHub Actions, deployment with Docker Compose and Caddy (automatic HTTPS) and patient notifications via Twilio and Telegram. The demo runs in the browser only, with fictional data: the full backend lives in the repository.",
     },
+    imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.png`,
+    enlaceTexto: { es: "Ver demo", en: "View demo" },
     // La demo apunta a GitHub Pages, no al dominio propio: www.dragramonte.com
     // sigue devolviendo un 404 del servidor (comprobado el 2026-09-27) y no tiene
     // sentido mandar a nadie a una página de error. Cuando el dominio vuelva,
@@ -44,6 +46,8 @@ export const proyectos = [
       en: "Website for the family pharmacy in Plaça de la Llana (El Born, Barcelona). A static HTML and CSS site with no framework or build step, with a product catalog generated in Python from a JSON file and a script that imports the data from the pharmacy's management software (Farmatic/Unycop CSV). Built to comply with Spanish parapharmacy regulations: no medications in the catalog and no prices shown publicly. Deploys automatically via GitHub Pages.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
+    imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
+    enlaceTexto: { es: "Ver web", en: "View site" },
     enlace: "https://maragramonte.github.io/Farmacia-Agramonte/",
     repo: "https://github.com/maragramonte/Farmacia-Agramonte",
     tecnologias: {
