@@ -98,74 +98,6 @@ a {
   padding: 0 1.5rem;
 }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--navbar-bg);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-
-.navbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-
-.navbar__brand {
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-
-.navbar__links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar__links a {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  transition: color 0.15s ease;
-}
-
-.navbar__links a:hover {
-  color: var(--accent);
-}
-
-/* Contenedor de los botones de idioma y tema */
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Botones de cambio de idioma y de tema */
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.35rem 0.8rem;
-  font-size: 0.9rem;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-
 /* Desfase para que la barra fija no tape el inicio de cada sección */
 .section,
 #top {
@@ -438,7 +370,7 @@ a {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
@@ -480,31 +412,6 @@ footer {
 
 /* ---------- Responsive (móvil y tablet pequeña) ---------- */
 @media (max-width: 640px) {
-  /* La navbar pasa a dos filas: marca + botón arriba, enlaces centrados debajo */
-  .navbar__inner {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 0.6rem 0;
-    gap: 0.5rem;
-  }
-
-  .navbar__links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .navbar__links a {
-    font-size: 0.85rem;
-  }
-
-  /* La barra es más alta al hacer wrap, así que aumentamos el desfase de anclas */
-  .section,
-  #top {
-    scroll-margin-top: 120px;
-  }
-
   /* Algo menos de aire vertical en pantallas pequeñas */
   .hero {
     padding: 4rem 0 3.5rem;
@@ -609,4 +516,97 @@ footer {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ---------- Intro de sección ---------- */
+.section-intro {
+  color: var(--text-dim);
+  max-width: 720px;
+  margin: 0 0 1.8rem;
+}
+
+/* ---------- Experiencia (timeline) ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timeline__item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  /* Filo de color a la izquierda, para que se lea como una línea temporal */
+  border-left: 3px solid var(--accent);
+}
+
+.timeline__puesto {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.timeline__empresa {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.timeline__meta {
+  margin: 0.15rem 0 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.timeline__logros {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--text-dim);
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* En pantallas estrechas el recuadro respira menos por los lados */
+@media (max-width: 480px) {
+  .timeline__item {
+    padding: 1.1rem 1.1rem;
+  }
+
+  .timeline__logros {
+    padding-left: 1rem;
+  }
+}
+
+
+/* Scroll suave al saltar entre secciones, salvo para quien haya pedido menos
+   animación en su sistema. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- Título de tarjeta con distintivo de estado ---------- */
+.card__titulo {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* "En desarrollo": se lee como una nota al margen, no compite con el título */
+.card__estado {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-strong);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  white-space: nowrap;
 }

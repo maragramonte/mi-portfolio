@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  CV en español. Fuente de la maqueta del PDF que se descarga desde la web.
+
+  Para regenerar el PDF (desde la raíz del repo):
+    "C:/Program Files/Google/Chrome/Application/chrome.exe" --headless=new \
+      --disable-gpu --no-pdf-header-footer \
+      --print-to-pdf=public/cv-mar-agramonte-es.pdf \
+      scripts/cv/cv-es.html
+
+  El teléfono no aparece a propósito: este PDF se descarga desde una web pública.
+  Quien lo necesite lo pide por email o por LinkedIn.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Mar Agramonte Campos — CV</title>
+  <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+
+<header>
+  <h1>Mar Agramonte Campos</h1>
+  <p class="rol">Desarrolladora Backend Junior · Graduada en DAM</p>
+  <p class="stack">Java · Spring Boot · PostgreSQL · Docker | QA y automatización con Python</p>
+  <ul class="contacto">
+    <li>Palma de Mallorca · Presencial, híbrido o remoto</li>
+    <li><a href="mailto:agramontecampos01@gmail.com">agramontecampos01@gmail.com</a></li>
+    <li><a href="https://www.linkedin.com/in/maragramonte/">linkedin.com/in/maragramonte</a></li>
+    <li><a href="https://github.com/maragramonte">github.com/maragramonte</a></li>
+    <li><a href="https://maragramonte.github.io/mi-portfolio/">maragramonte.github.io/mi-portfolio</a></li>
+  </ul>
+</header>
+
+<section class="perfil">
+  <h2>Perfil</h2>
+  <p>Graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para un internista real en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas en Flyway. El detalle que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco, resuelto con bloqueo pesimista en base de datos y validado con un test de concurrencia real.</p>
+  <p>Antes de eso, 400 horas de prácticas en Marlink Group: testing de APIs, validaciones end-to-end y automatización con Python en un entorno SAFe. Vengo de administración, turismo y recursos humanos, y esa base me dio pensamiento estructurado y atención al detalle. Disponible para incorporación inmediata.</p>
+</section>
+
+<section>
+  <h2>Experiencia</h2>
+
+  <div class="puesto">
+    <div class="puesto__cabecera">
+      <p class="puesto__titulo">Prácticas IT — Desarrollo y QA Testing</p>
+      <span class="puesto__fecha">Enero 2026 – Marzo 2026 · 400 h</span>
+    </div>
+    <p class="puesto__empresa">Marlink Group (OmniAccess) <span class="puesto__lugar">· Palma de Mallorca (Parc Bit)</span></p>
+    <ul>
+      <li>Pruebas funcionales sobre la API de Ucopia: diseño de casos, reproducción de fallos y reportes técnicos en Jira.</li>
+      <li>Validaciones end-to-end en entornos simulados y de producción.</li>
+      <li>Scripts en Python para automatizar consultas a bases de datos SQL y MongoDB desde contenedores Docker sobre WSL.</li>
+      <li>Participación en Daily, Sprint Planning y PI Planning, con documentación técnica en Confluence.</li>
+    </ul>
+  </div>
+
+  <div class="puesto">
+    <div class="puesto__cabecera">
+      <p class="puesto__titulo">Prácticas — Consultoría Tecnológica</p>
+      <span class="puesto__fecha">Febrero 2025 · 100 h</span>
+    </div>
+    <p class="puesto__empresa">GladToLink <span class="puesto__lugar">· Palma de Mallorca</span></p>
+    <ul>
+      <li>Creación de formularios y maquetación en XML dentro de procesos de digitalización de clientes.</li>
+      <li>Java aplicado a la creación de botones e interacciones, y herramientas Adobe para la gestión documental.</li>
+    </ul>
+  </div>
+
+  <div class="puesto">
+    <div class="puesto__cabecera">
+      <p class="puesto__titulo">Cajero del servicio de atención al cliente</p>
+      <span class="puesto__fecha">Junio 2025 – Septiembre 2025</span>
+    </div>
+    <p class="puesto__empresa">El Corte Inglés <span class="puesto__lugar">· Palma de Mallorca</span></p>
+    <ul>
+      <li>Punto de venta de alto volumen, cuadre diario de caja y resolución de incidencias en el último punto de contacto con el cliente.</li>
+    </ul>
+  </div>
+
+  <div class="puesto">
+    <div class="puesto__cabecera">
+      <p class="puesto__titulo">Recepcionista</p>
+      <span class="puesto__fecha">Junio 2024 – Septiembre 2024</span>
+    </div>
+    <p class="puesto__empresa">UTE Salas VIP AENA <span class="puesto__lugar">· Aeropuerto de Palma</span></p>
+    <ul>
+      <li>Atención diaria a pasajeros internacionales en inglés y español, control de acceso y resolución de incidencias en el momento.</li>
+    </ul>
+  </div>
+
+  <div class="puesto">
+    <div class="puesto__cabecera">
+      <p class="puesto__titulo">Servicios de limpieza</p>
+      <span class="puesto__fecha">Marzo 2023 – Marzo 2024</span>
+    </div>
+    <p class="puesto__empresa">The Ardilaun Hotel <span class="puesto__lugar">· Galway, Irlanda</span></p>
+    <ul>
+      <li>Un año viviendo y trabajando en Irlanda, en un entorno íntegramente en inglés.</li>
+    </ul>
+  </div>
+
+  <div class="breve"><span><strong>Prácticas en Administración y RRHH</strong> · Urbia Servicios Integrales · 400 h</span><span class="breve__fecha">Oct – Dic 2021</span></div>
+  <div class="breve"><span><strong>Vendedor en tienda</strong> · Natural World Eco</span><span class="breve__fecha">Jun – Sep 2021</span></div>
+  <div class="breve"><span><strong>Ayudante</strong> · Organización Zaqueo (comedor social)</span><span class="breve__fecha">Jun – Sep 2017</span></div>
+</section>
+
+<section class="no-partir">
+  <h2>Formación</h2>
+  <div class="breve"><span><strong>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> · Cesur</span><span class="breve__fecha">Sept 2024 – Jun 2026</span></div>
+  <div class="breve"><span><strong>CFGM Gestión Administrativa</strong> · Aula Balear</span><span class="breve__fecha">Sept 2019 – Jun 2021</span></div>
+  <div class="breve"><span><strong>ESO</strong> · La Salle</span><span class="breve__fecha">2015 – 2019</span></div>
+</section>
+
+<section class="no-partir">
+  <h2>Habilidades técnicas</h2>
+  <dl class="skills">
+    <dt>Lenguajes</dt><dd>Java, Python, SQL, JavaScript</dd>
+    <dt>Backend</dt><dd>Spring Boot, Spring Security, API REST, JWT, Flyway, Odoo</dd>
+    <dt>Bases de datos</dt><dd>PostgreSQL, MySQL, MongoDB, SQLite</dd>
+    <dt>Testing</dt><dd>JUnit 5, Testcontainers, Postman, validaciones end-to-end</dd>
+    <dt>DevOps</dt><dd>Docker, Git, GitHub, GitHub Actions, WSL</dd>
+    <dt>Web</dt><dd>HTML, CSS, React, Vite, XML</dd>
+    <dt>Metodología</dt><dd>SAFe, Scrum, Jira, Confluence, DBeaver</dd>
+  </dl>
+</section>
+
+<section class="no-partir">
+  <h2>Proyectos destacados</h2>
+
+  <div class="proyecto">
+    <p class="proyecto__titulo">Web Dr. Agramonte — <a href="https://maragramonte.github.io/dr-agramonte/">ver demo</a> · <a href="https://github.com/maragramonte/dr-agramonte">código</a></p>
+    <p>Gestión de citas para un internista en Palma. Java 21, Spring Boot 3.5, PostgreSQL, JWT y Flyway. Bloqueo pesimista y pruebas de concurrencia contra la doble reserva. CI/CD con GitHub Actions, Docker Compose y Caddy, avisos vía Twilio y Telegram.</p>
+  </div>
+
+  <div class="proyecto">
+    <p class="proyecto__titulo">Farmàcia Agramonte — <a href="https://maragramonte.github.io/Farmacia-Agramonte/">ver web</a> · <a href="https://github.com/maragramonte/Farmacia-Agramonte">código</a> <em>(en desarrollo)</em></p>
+    <p>Web de la farmacia familiar (El Born, Barcelona). HTML y CSS sin framework, catálogo generado en Python desde JSON e importación desde el programa de gestión (CSV de Farmatic/Unycop). Cumple la normativa de parafarmacia. Despliegue con GitHub Pages.</p>
+  </div>
+
+  <div class="proyecto">
+    <p class="proyecto__titulo">Un paseo por Asia — <a href="https://www.overleaf.com/read/hyqnjmbrhknh#831915">documento en LaTeX</a></p>
+    <p>Secciones, índice, tablas, fórmulas, referencias cruzadas y bibliografía.</p>
+  </div>
+</section>
+
+<section class="no-partir">
+  <h2>Idiomas</h2>
+  <ul class="idiomas">
+    <li>Catalán — <span>nativo</span></li>
+    <li>Español — <span>nativo</span></li>
+    <li>Inglés — <span>competencia básica profesional (un año trabajando en Irlanda)</span></li>
+  </ul>
+</section>
+
+</body>
+</html>

@@ -21,6 +21,7 @@ export default function Projects() {
               repo={proyecto.repo}
               repoTexto={t.projects.verCodigo}
               imagen={proyecto.imagen}
+              estado={proyecto.estado?.[idioma]}
               tecnologias={proyecto.tecnologias[idioma]}
             />
           ))}

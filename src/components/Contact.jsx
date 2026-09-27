@@ -1,35 +1,19 @@
 import { useIdioma } from '../i18n.js'
-import { CV_URL } from '../config.js'
+import { cvUrl } from '../config.js'
+import { contactos } from '../data/contacto.js'
 
-// Sección de contacto. Edita los enlaces con los tuyos.
-//
-// Se muestran solo los canales profesionales: es lo que busca quien viene a
-// contratarte. Instagram, Discord e Indeed se retiraron de aquí (Indeed apuntaba
-// a la home genérica y el enlace de Discord no era una invitación válida).
-const contactos = [
-  {
-    etiqueta: "Email",
-    valor: "agramontemar@gmail.com",
-    href: "mailto:agramontemar@gmail.com",
-  },
-  {
-    etiqueta: "LinkedIn",
-    valor: "in/mar-agramonte",
-    href: "https://www.linkedin.com/in/mar-agramonte-9b9644367/",
-  },
-  {
-    etiqueta: "GitHub",
-    valor: "github.com/maragramonte",
-    href: "https://github.com/maragramonte",
-  },
-]
+// Sección de contacto. Los canales salen de src/data/contacto.js, que es la
+// misma lista que usa la columna lateral: así no hay dos sitios que tocar.
 
 export default function Contact() {
-  const { t } = useIdioma()
+  const { idioma, t } = useIdioma()
+
+  // El CV se ofrece en el idioma en el que se esté leyendo la web.
+  const cv = cvUrl(idioma)
 
   // El CV solo aparece si hay un PDF configurado en config.js
-  const enlaces = CV_URL
-    ? [...contactos, { etiqueta: "CV", valor: "PDF", href: CV_URL, descarga: true }]
+  const enlaces = cv
+    ? [...contactos, { etiqueta: "CV", valor: idioma === "es" ? "PDF (español)" : "PDF (English)", href: cv, descarga: true }]
     : contactos
 
   return (

@@ -1,0 +1,407 @@
+/* ===========================================================================
+   Armazón de la página: columna lateral fija, barra de móvil, menú desplegable
+   y barra de progreso.
+
+   Va aparte de index.css a propósito: index.css tiene los colores y el aspecto
+   de cada sección; aquí está solo cómo se coloca todo. Si algún día cambia la
+   estructura, se toca este archivo y ninguno más.
+
+   Mobile first: lo de abajo es la versión estrecha, y en ≥960px entra la
+   columna lateral y desaparece la barra de móvil.
+   =========================================================================== */
+
+/* ---------- Barra de progreso de lectura ---------- */
+.progreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  /* Se anima con transform en vez de width: así el navegador no rehace el
+     layout en cada scroll, solo compone. */
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* ---------- Estructura general ---------- */
+.contenido {
+  min-width: 0; /* deja que el contenido se encoja dentro de la rejilla */
+}
+
+/* ---------- Menú: lista y enlaces (compartidos por escritorio y móvil) ---------- */
+.nav-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.nav-enlace {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.45rem 0;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+/* Rayita a la izquierda que crece cuando la sección está activa. Es el aviso
+   de "estás aquí" sin necesidad de leer nada. */
+.nav-enlace__marca {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.45;
+  transition: width 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+}
+
+.nav-enlace:hover {
+  color: var(--text);
+}
+
+.nav-enlace:hover .nav-enlace__marca {
+  width: 28px;
+  opacity: 0.8;
+}
+
+.nav-enlace--activo {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.nav-enlace--activo .nav-enlace__marca {
+  width: 40px;
+  opacity: 1;
+  background: var(--accent-strong);
+}
+
+/* ---------- Botones redondos de tema e idioma ---------- */
+.boton-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.boton-icono:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ---------- Columna lateral (solo escritorio) ---------- */
+.rail {
+  display: none;
+}
+
+.rail__nombre {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.rail__rol {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.rail__stack {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.rail__disponibilidad {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.rail__pie {
+  display: grid;
+  gap: 1rem;
+}
+
+.rail__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rail__redes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rail__redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.rail__redes a:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.rail__ajustes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn--bloque {
+  justify-content: center;
+  width: 100%;
+}
+
+/* ---------- Barra fija de móvil ---------- */
+.barra-movil {
+  position: sticky;
+  top: 0;
+  z-index: 150; /* por encima del panel: la aspa de cerrar tiene que seguir siendo pulsable */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.barra-movil__marca {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.barra-movil__acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icono de menú de tres rayas que se convierte en aspa al abrirse */
+.hamburguesa {
+  display: grid;
+  gap: 4px;
+  width: 18px;
+}
+
+.hamburguesa span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburguesa--abierta span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburguesa--abierta span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguesa--abierta span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Panel desplegable de móvil ---------- */
+.menu-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 130;
+}
+
+.menu-movil {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 140;
+  width: min(300px, 82vw);
+  height: 100dvh;
+  padding: 5rem 1.7rem 2rem;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border);
+  display: grid;
+  align-content: start;
+  gap: 1.5rem;
+  /* Fuera de pantalla mientras está cerrado, sin dejar de existir: así la
+     animación tiene de dónde salir y el foco no se cuela dentro. */
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.28s ease, visibility 0.28s;
+}
+
+.menu-movil--abierto {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.menu-movil .nav-lista {
+  gap: 0.4rem;
+}
+
+.menu-movil .nav-enlace {
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+}
+
+.menu-movil .rail__redes {
+  justify-content: center;
+}
+
+/* ===========================================================================
+   Escritorio: la identidad se va a la columna izquierda y el contenido pasa
+   a la derecha. Es el cambio de forma de toda la página.
+   =========================================================================== */
+@media (min-width: 960px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 330px minmax(0, 1fr);
+  }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 2rem 2.2rem;
+    background: var(--sunset);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+  }
+
+  /* El sol difuminado del antiguo hero se queda, ahora detrás de la columna */
+  .rail::before {
+    content: "";
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(255, 232, 180, 0.5) 0%, rgba(255, 232, 180, 0) 70%);
+    pointer-events: none;
+  }
+
+  /* 🌙 En tema noche vuelve la luna, arriba a la derecha de la columna */
+  [data-theme="noche"] .rail::before {
+    /* En el hueco entre el menú y el botón de CV: arriba se comía el nombre */
+    bottom: 24%;
+    top: auto;
+    left: auto;
+    right: 15%;
+    transform: none;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 38%, #fdfcf4 0%, #d7def0 55%, #aab6d8 100%);
+    box-shadow: 0 0 44px 10px rgba(210, 225, 255, 0.45);
+  }
+
+  /* 🌙 Y las estrellas del cielo nocturno */
+  [data-theme="noche"] .rail {
+    background:
+      radial-gradient(1.5px 1.5px at 22% 14%, rgba(255, 255, 255, 0.9), transparent),
+      radial-gradient(1px 1px at 62% 9%, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(1.5px 1.5px at 78% 26%, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 14% 38%, rgba(255, 255, 255, 0.65), transparent),
+      radial-gradient(1.5px 1.5px at 48% 33%, rgba(255, 255, 255, 0.55), transparent),
+      var(--sunset);
+  }
+
+  .rail > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* La cabecera grande y la barra de móvil solo existen en pantallas estrechas */
+  .hero,
+  .barra-movil,
+  .menu-movil,
+  .menu-fondo {
+    display: none;
+  }
+
+  /* El contenido ya no se centra en la ventana: se centra en su propia columna */
+  .contenido .container {
+    max-width: 780px;
+    margin: 0;
+    padding: 0 3.5rem;
+  }
+
+  .contenido main {
+    padding-top: 3.5rem;
+  }
+
+  .contenido footer {
+    text-align: left;
+  }
+
+  /* Sin barra fija arriba, las anclas no necesitan tanto desfase */
+  .section,
+  #top {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+/* Pantallas muy anchas: un poco más de columna y de aire */
+@media (min-width: 1400px) {
+  .layout {
+    grid-template-columns: 380px minmax(0, 1fr);
+  }
+
+  .contenido .container {
+    max-width: 860px;
+    padding: 0 5rem;
+  }
+}
+
+/* Quien tenga las animaciones desactivadas en su sistema no ve ni el panel
+   deslizándose ni la barra de progreso animándose. */
+@media (prefers-reduced-motion: reduce) {
+  .menu-movil,
+  .progreso,
+  .nav-enlace__marca,
+  .hamburguesa span {
+    transition: none;
+  }
+}
