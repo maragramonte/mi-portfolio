@@ -193,7 +193,7 @@ a {
   font-size: 1.2rem;
   margin: 0;
   /* Reparte las líneas en vez de llenar la primera y dejar una palabra suelta
-     debajo. En móvil "DAM", "Docker" y "remoto)" caían solas en su línea. */
+     debajo. En móvil "DAM" y "Docker" caían solas en su línea. */
   text-wrap: balance;
 }
 
