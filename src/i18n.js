@@ -7,6 +7,14 @@ export const IDIOMAS = ['es', 'en']
 // Para añadir un idioma nuevo, copia el bloque "es" y traduce los valores.
 export const traducciones = {
   es: {
+    // Título de la pestaña y descripción para buscadores. Duplican los valores
+    // que index.html trae de serie (el idioma por defecto) porque esos son
+    // estáticos: App.jsx los reescribe al cambiar de idioma.
+    meta: {
+      titulo: 'Mar Agramonte | Desarrolladora Backend · Java, Python y SQL',
+      descripcion:
+        'Portfolio de Mar Agramonte, desarrolladora Backend graduada en DAM. Java, Python, SQL y Docker. Palma de Mallorca, disponible para incorporación inmediata.',
+    },
     nav: {
       principal: 'Navegación principal',
       progreso: 'Progreso de lectura',
@@ -62,6 +70,11 @@ export const traducciones = {
     },
   },
   en: {
+    meta: {
+      titulo: 'Mar Agramonte | Backend Developer · Java, Python & SQL',
+      descripcion:
+        'Portfolio of Mar Agramonte, Backend Developer and Software Development graduate (DAM). Java, Python, SQL and Docker. Palma de Mallorca, Spain, available to start immediately.',
+    },
     nav: {
       principal: 'Main navigation',
       progreso: 'Reading progress',
