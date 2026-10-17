@@ -23,8 +23,8 @@ export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
     descripcion: {
-      es: "Proyecto de fin de ciclo: aplicación de gestión de citas para un internista real en Palma. Backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, con autenticación JWT y migraciones versionadas en Flyway. Para que dos pacientes no pudieran reservar el mismo hueco apliqué bloqueo pesimista en base de datos, validado con un test de concurrencia real. CI/CD con GitHub Actions, despliegue con Docker Compose y Caddy (HTTPS automático) y avisos a pacientes vía Twilio y Telegram. La demo funciona solo en el navegador, con datos ficticios: el backend completo está en el repositorio.",
-      en: "Final-year project: appointment management app for a real internist in Palma. Backend in Java 21 and Spring Boot 3.5 on PostgreSQL, with JWT authentication and versioned Flyway migrations. To stop two patients booking the same slot I applied pessimistic database locking, validated with a real concurrency test. CI/CD with GitHub Actions, deployment with Docker Compose and Caddy (automatic HTTPS) and patient notifications via Twilio and Telegram. The demo runs in the browser only, with fictional data: the full backend lives in the repository.",
+      es: "Gestión de citas para un internista real en Palma. El reto fue impedir que dos pacientes reservaran el mismo hueco: bloqueo pesimista en base de datos, validado con un test de concurrencia real. La demo va con datos ficticios.",
+      en: "Appointment management for a real internist in Palma. The challenge was stopping two patients from booking the same slot: pessimistic database locking, validated with a real concurrency test. The demo runs on fictional data.",
     },
     imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.png`,
     enlaceTexto: { es: "Ver demo", en: "View demo" },
@@ -42,8 +42,8 @@ export const proyectos = [
   {
     titulo: "Farmàcia Agramonte",
     descripcion: {
-      es: "Web de la farmacia familiar, en la Plaça de la Llana (El Born, Barcelona). Sitio estático en HTML y CSS, sin frameworks ni paso de compilación, con un catálogo de producto generado en Python a partir de un JSON y un script que importa los datos desde el programa de gestión de la farmacia (CSV de Farmatic/Unycop). Cumple la normativa española de parafarmacia: sin medicamentos en el catálogo y sin precios expuestos al público. Se despliega solo con GitHub Pages.",
-      en: "Website for the family pharmacy in Plaça de la Llana (El Born, Barcelona). A static HTML and CSS site with no framework or build step, with a product catalog generated in Python from a JSON file and a script that imports the data from the pharmacy's management software (Farmatic/Unycop CSV). Built to comply with Spanish parapharmacy regulations: no medications in the catalog and no prices shown publicly. Deploys automatically via GitHub Pages.",
+      es: "Web de la farmacia familiar en El Born (Barcelona). El catálogo se genera en Python desde el CSV del programa de gestión de la farmacia, cumpliendo la normativa: sin medicamentos ni precios públicos.",
+      en: "Website for the family pharmacy in El Born, Barcelona. The catalog is generated in Python from the pharmacy's own management-software CSV, within the rules: no medications, no public prices.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
@@ -58,8 +58,8 @@ export const proyectos = [
   {
     titulo: "Un paseo por Asia (LaTeX)",
     descripcion: {
-      es: "Mi primer documento serio en LaTeX: un recorrido por las culturas hindú, coreana, japonesa, china y tailandesa. Practiqué secciones, índice, tablas, fórmulas matemáticas, referencias cruzadas, inclusión condicional de imágenes (\\IfFileExists) y una bibliografía básica.",
-      en: "My first serious LaTeX document: a journey through Hindu, Korean, Japanese, Chinese and Thai cultures. I practised sections, table of contents, tables, math formulas, cross-references, conditional image inclusion (\\IfFileExists) and a basic bibliography.",
+      es: "Mi primer documento serio en LaTeX: un recorrido por cinco culturas asiáticas, con índice, tablas, fórmulas, referencias cruzadas y bibliografía.",
+      en: "My first serious LaTeX document: a tour of five Asian cultures, with table of contents, tables, formulas, cross-references and a bibliography.",
     },
     enlace: "https://www.overleaf.com/read/hyqnjmbrhknh#831915",
     enlaceTexto: { es: "Ver documento", en: "View document" },
