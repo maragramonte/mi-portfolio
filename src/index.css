@@ -177,6 +177,9 @@ a {
   color: var(--hero-subtitle);
   font-size: 1.2rem;
   margin: 0;
+  /* Reparte las líneas en vez de llenar la primera y dejar una palabra suelta
+     debajo. En móvil "DAM", "Docker" y "remoto)" caían solas en su línea. */
+  text-wrap: balance;
 }
 
 /* Rol: la primera línea que se lee después del nombre */
@@ -289,6 +292,16 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
+}
+
+/* A partir de 876px caben tres columnas de ~270px, demasiado estrechas para
+   tarjetas con descripción larga: salían columnas de veinte líneas a cuatro
+   palabras por línea. Se fuerzan dos hasta los 960px, que es donde entra la
+   columna lateral y el contenido vuelve a estrecharse solo. */
+@media (min-width: 876px) and (max-width: 959px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .card {
