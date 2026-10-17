@@ -8,34 +8,44 @@
   --hero-subtitle: #fdeede;
 }
 
-/* 🌅 ATARDECER: fondo violeta crepuscular + acentos coral/naranja */
+/* Nota sobre los degradados de los temas oscuros (--sunset):
+   el texto del hero ocupa del 33% al 70% de su altura, así que los stops
+   mantienen el degradado oscuro hasta el 72-78% y dejan la franja clara para
+   el último tramo. Antes el naranja claro subía hasta el centro y el texto
+   pequeño se quedaba sin contraste justo ahí: medido, 1.02 sobre el naranja
+   del amanecer, es decir letra y fondo del mismo color. Ese último tramo cae
+   bajo los botones, que llevan fondo propio y no dependen del degradado. */
+
+/* 🌇 ATARDECER: ciruela profunda que arde en rojo y naranja quemado */
 [data-theme="atardecer"] {
-  --accent-strong: #ff8c5a;   /* acento con contraste AA para texto pequeño */
-  --on-accent: #1b1426;
-  --bg: #1b1426;
-  --bg-card: #261a36;
-  --text: #f6ece6;
-  --text-dim: #c2a7bd;
-  --accent: #ff8c5a;
-  --accent-2: #ff5e8a;
-  --border: #3a2b48;
-  --navbar-bg: rgba(27, 20, 38, 0.8);
-  --sunset: linear-gradient(160deg, #2a1a3e 0%, #6e3b6e 42%, #c75c5c 74%, #f5a35c 100%);
+  --accent-strong: #ffa07a;   /* 6.00 sobre el tramo más claro que le toca */
+  --on-accent: #1a1020;
+  --bg: #19101f;
+  --bg-card: #241628;
+  --text: #f8ece9;
+  --text-dim: #c6a3aa;
+  --accent: #ff7a5c;
+  --accent-2: #ffb03a;
+  --border: #3a2336;
+  --navbar-bg: rgba(25, 16, 31, 0.82);
+  --sunset: linear-gradient(160deg, #130b1c 0%, #2e1530 40%, #5a2440 72%, #9e3b46 88%, #d4663a 100%);
 }
 
-/* 🌄 AMANECER: fondo malva tenue + acentos melocotón/ámbar */
+/* 🌄 AMANECER: azul frío de antes del alba que rompe en rosa y crema.
+   Deliberadamente más frío y más claro que el atardecer: antes los dos eran
+   violeta tirando a naranja y no se distinguían el uno del otro. */
 [data-theme="amanecer"] {
-  --accent-strong: #ff9e7d;   /* acento con contraste AA para texto pequeño */
-  --on-accent: #2a1e2e;
-  --bg: #2a1e2e;
-  --bg-card: #382838;
-  --text: #fff6ee;
-  --text-dim: #d8b9a8;
-  --accent: #ff9e7d;
-  --accent-2: #ffd07a;
-  --border: #4a3548;
-  --navbar-bg: rgba(42, 30, 46, 0.8);
-  --sunset: linear-gradient(160deg, #3a2a52 0%, #b56b8e 45%, #f3a26d 75%, #ffd9a0 100%);
+  --accent-strong: #ffc49a;   /* 5.91 sobre el tramo más claro que le toca */
+  --on-accent: #1a2136;
+  --bg: #1b2236;
+  --bg-card: #242c44;
+  --text: #eff2fa;
+  --text-dim: #a9b3cd;
+  --accent: #ffb38a;
+  --accent-2: #8fc7ff;
+  --border: #333c58;
+  --navbar-bg: rgba(27, 34, 54, 0.82);
+  --sunset: linear-gradient(160deg, #16203c 0%, #2a3159 40%, #4a4270 72%, #b0708f 88%, #ffd3ad 100%);
 }
 
 /* ☀️ DÍA CLARO: fondo blanco cálido + degradado coral→ámbar */
@@ -68,7 +78,8 @@
   --accent-2: #b89cff;    /* lavanda */
   --border: #232a45;
   --navbar-bg: rgba(10, 14, 31, 0.8);
-  --sunset: linear-gradient(160deg, #060814 0%, #131a3a 45%, #2a2350 78%, #46365e 100%);
+  /* El final era #46365e y dejaba el stack en 4.33, justo por debajo de AA. */
+  --sunset: linear-gradient(160deg, #060814 0%, #131a3a 45%, #221c45 78%, #3a2c50 100%);
 }
 
 * {

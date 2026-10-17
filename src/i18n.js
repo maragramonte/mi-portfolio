@@ -26,6 +26,13 @@ export const traducciones = {
       proyectos: 'Proyectos',
       contacto: 'Contacto',
     },
+    tema: {
+      etiqueta: 'Tema',
+      dia: 'Día',
+      noche: 'Noche',
+      amanecer: 'Amanecer',
+      atardecer: 'Atardecer',
+    },
     hero: {
       rol: 'Desarrolladora Backend · Graduada en DAM',
       stack: 'Java · Spring Boot · PostgreSQL · Docker',
@@ -85,6 +92,13 @@ export const traducciones = {
       tecnologias: 'Technologies',
       proyectos: 'Projects',
       contacto: 'Contact',
+    },
+    tema: {
+      etiqueta: 'Theme',
+      dia: 'Day',
+      noche: 'Night',
+      amanecer: 'Sunrise',
+      atardecer: 'Sunset',
     },
     hero: {
       rol: 'Backend Developer · Software Development graduate (DAM)',
