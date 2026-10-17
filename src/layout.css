@@ -361,10 +361,13 @@
     display: none;
   }
 
-  /* El contenido ya no se centra en la ventana: se centra en su propia columna */
+  /* El contenido ya no se centra en la ventana: se centra en su propia columna.
+     El "auto" importa: con margin 0 la columna quedaba pegada al lateral y todo
+     el espacio sobrante se amontonaba a la derecha (680px en un monitor de
+     1920). Centrada, ese aire se reparte a los dos lados. */
   .contenido .container {
     max-width: 780px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0 3.5rem;
   }
 
