@@ -4,6 +4,7 @@ import { cvUrl } from '../config.js'
 import { contactos } from '../data/contacto.js'
 import { useSeccionActiva } from '../hooks/useNavegacion.js'
 import Icono from './Icono.jsx'
+import SelectorTema from './SelectorTema.jsx'
 
 // Secciones del menú, en el mismo orden en que aparecen en la página.
 // `clave` es el nombre del texto dentro de t.nav (ver i18n.js).
@@ -15,11 +16,9 @@ const SECCIONES = [
   { id: 'contacto', clave: 'contacto' },
 ]
 
-const etiquetaTema = { dia: '☀️', noche: '🌙' }
-
 // Columna izquierda en escritorio y cabecera + menú desplegable en móvil.
 // Las dos versiones comparten los mismos datos; solo cambia cómo se colocan.
-export default function Sidebar({ tema, onCambiarTema }) {
+export default function Sidebar({ temas, tema, onElegirTema }) {
   const { idioma, t, cambiarIdioma } = useIdioma()
   const [menuAbierto, setMenuAbierto] = useState(false)
   const botonMenu = useRef(null)
@@ -99,14 +98,7 @@ export default function Sidebar({ tema, onCambiarTema }) {
       >
         {idioma === 'es' ? 'EN' : 'ES'}
       </button>
-      <button
-        className="boton-icono"
-        onClick={onCambiarTema}
-        title="Cambiar tema"
-        aria-label="Cambiar tema de color"
-      >
-        {etiquetaTema[tema]}
-      </button>
+      <SelectorTema temas={temas} tema={tema} onElegir={onElegirTema} />
     </div>
   )
 

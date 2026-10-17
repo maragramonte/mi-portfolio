@@ -9,9 +9,9 @@ import { IDIOMAS, IdiomaContext, traducciones } from './i18n.js'
 import { cvUrl } from './config.js'
 import { useProgresoLectura } from './hooks/useNavegacion.js'
 
-// Temas disponibles, en el orden en que rota el botón.
-// (Las paletas "amanecer" y "atardecer" siguen en index.css por si se quieren reactivar.)
-const TEMAS = ['dia', 'noche']
+// Temas disponibles, en el orden en que aparecen en el desplegable.
+// El orden va del más claro al más oscuro, que es como se lee de un vistazo.
+const TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
 
 export default function App() {
   const [tema, setTema] = useState(() => {
@@ -46,11 +46,6 @@ export default function App() {
       ?.setAttribute('content', t.meta.descripcion)
   }, [idioma, t])
 
-  function cambiarTema() {
-    const siguiente = TEMAS[(TEMAS.indexOf(tema) + 1) % TEMAS.length]
-    setTema(siguiente)
-  }
-
   function cambiarIdioma() {
     const siguiente = IDIOMAS[(IDIOMAS.indexOf(idioma) + 1) % IDIOMAS.length]
     setIdioma(siguiente)
@@ -75,7 +70,7 @@ export default function App() {
       />
 
       <div className="layout">
-        <Sidebar tema={tema} onCambiarTema={cambiarTema} />
+        <Sidebar temas={TEMAS} tema={tema} onElegirTema={setTema} />
 
         <div className="contenido">
           {/* Portada: en escritorio la identidad vive en la columna izquierda,
