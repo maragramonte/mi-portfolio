@@ -36,7 +36,9 @@ export const traducciones = {
     hero: {
       rol: 'Desarrolladora Backend · Graduada en DAM',
       stack: 'Java · Spring Boot · PostgreSQL · Docker',
-      disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (presencial o remoto)',
+      // Misma fórmula que en LinkedIn, a propósito: si un recruiter compara el
+      // perfil con el portfolio, no debe encontrar dos disponibilidades.
+      disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (remoto o híbrido, abierta a reubicación)',
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
       descargarCV: 'Descargar CV',
@@ -103,7 +105,7 @@ export const traducciones = {
     hero: {
       rol: 'Backend Developer · Software Development graduate (DAM)',
       stack: 'Java · Spring Boot · PostgreSQL · Docker',
-      disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (on-site or remote)',
+      disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (remote or hybrid, open to relocation)',
       verProyectos: 'View projects',
       contactar: 'Get in touch',
       descargarCV: 'Download CV',
