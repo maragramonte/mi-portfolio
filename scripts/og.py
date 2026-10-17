@@ -1,7 +1,8 @@
 """Regenera public/og.png, la tarjeta de previsualizacion al compartir el enlace.
 
 Reproduce el diseno original (cielo nocturno, luna arriba a la derecha) cambiando
-solo el rol: "Full Stack" -> "Backend Junior".
+solo el rol: "Full Stack" -> "Backend". El nivel no se declara a proposito; el
+stack de la linea de abajo dice mas que una etiqueta.
 """
 import random
 from PIL import Image, ImageDraw, ImageFont
@@ -62,7 +63,7 @@ url = ImageFont.truetype(NORMAL, 25)
 
 X = 90
 d.text((X, 228), "Mar Agramonte", font=nombre, fill=BLANCO)
-d.text((X, 328), "Desarrolladora Backend Junior · Graduada en DAM",
+d.text((X, 328), "Desarrolladora Backend · Graduada en DAM",
        font=rol, fill=SUBTITULO)
 d.rectangle([X, 386, X + 103, 390], fill=(61, 111, 212))
 
