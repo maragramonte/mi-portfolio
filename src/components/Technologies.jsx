@@ -2,7 +2,7 @@ import { useIdioma } from '../i18n.js'
 
 // Lista de tecnologías, agrupadas por bloque. Edita estos arrays para añadir o quitar.
 // El orden de los grupos es deliberado: primero lo que se busca en una oferta
-// de backend junior, y las herramientas de apoyo al final.
+// de backend, y las herramientas de apoyo al final.
 const grupos = [
   { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Python", "SQL", "JavaScript"] },
   { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "API REST", "JWT", "Flyway"] },
