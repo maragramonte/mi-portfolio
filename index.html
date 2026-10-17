@@ -12,6 +12,16 @@
     <meta name="author" content="Mar Agramonte" />
     <link rel="canonical" href="https://maragramonte.github.io/mi-portfolio/" />
 
+    <!--
+      Versión en inglés: en/index.html. Existe porque los bots que generan la
+      previsualización al compartir el enlace (LinkedIn, WhatsApp) no ejecutan
+      JavaScript, así que leen estas etiquetas tal cual y el botón de idioma no
+      les cambia nada. Para compartir el portfolio en inglés se usa /en/.
+    -->
+    <link rel="alternate" hreflang="es" href="https://maragramonte.github.io/mi-portfolio/" />
+    <link rel="alternate" hreflang="en" href="https://maragramonte.github.io/mi-portfolio/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://maragramonte.github.io/mi-portfolio/" />
+
     <!-- Iconos: SVG para navegadores modernos, PNG como alternativa -->
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon.png" />
@@ -48,11 +58,18 @@
     -->
     <script>
       (function () {
+        /* Esta lista debe ir a la par con TEMAS en src/App.jsx. */
+        var TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
         try {
           var tema = localStorage.getItem('tema')
-          if (tema === 'dia' || tema === 'noche') document.documentElement.dataset.theme = tema
-          var idioma = localStorage.getItem('idioma')
-          if (idioma === 'es' || idioma === 'en') document.documentElement.lang = idioma
+          if (TEMAS.indexOf(tema) !== -1) document.documentElement.dataset.theme = tema
+          /* En las páginas que fijan idioma (en/index.html) manda el de la
+             página, no el guardado: quien abre el enlace en inglés espera
+             inglés aunque su última visita fuera en español. */
+          if (!document.documentElement.dataset.idiomaFijo) {
+            var idioma = localStorage.getItem('idioma')
+            if (idioma === 'es' || idioma === 'en') document.documentElement.lang = idioma
+          }
         } catch (e) {
           /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
         }

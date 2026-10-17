@@ -20,6 +20,12 @@ export default function App() {
   })
 
   const [idioma, setIdioma] = useState(() => {
+    // La página puede fijar el idioma: en/index.html trae data-idioma-fijo="en".
+    // Manda sobre lo guardado, porque quien abre el enlace en inglés espera
+    // inglés aunque su última visita fuera en español.
+    const fijado = document.documentElement.dataset.idiomaFijo
+    if (IDIOMAS.includes(fijado)) return fijado
+
     const guardado = localStorage.getItem('idioma')
     return IDIOMAS.includes(guardado) ? guardado : 'es'
   })

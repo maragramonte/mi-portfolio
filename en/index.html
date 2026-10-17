@@ -1,0 +1,85 @@
+<!doctype html>
+<!--
+  Versión en inglés del portfolio. Carga exactamente la misma aplicación que
+  index.html; lo único que cambia son las etiquetas de esta cabecera.
+
+  Por qué existe este fichero: los bots que generan la previsualización al
+  compartir un enlace (LinkedIn, WhatsApp, Twitter) y los buscadores no
+  ejecutan JavaScript. Leen el HTML tal cual, así que el botón de idioma de la
+  web no les cambia nada y el enlace salía siempre con el título en español.
+  Para compartir el portfolio en inglés se usa esta dirección: /mi-portfolio/en/
+
+  Al tocar las etiquetas de index.html hay que mirar si procede tocarlas aquí.
+  data-idioma-fijo es lo que hace que la app arranque en inglés pase lo que pase
+  (ver el useState de idioma en src/App.jsx).
+-->
+<html lang="en" data-theme="dia" data-idioma-fijo="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mar Agramonte | Backend Developer · Java, Python &amp; SQL</title>
+    <meta
+      name="description"
+      content="Portfolio of Mar Agramonte, Backend Developer and Software Development graduate (DAM). Java, Python, SQL and Docker. Palma de Mallorca, Spain, available to start immediately."
+    />
+    <meta name="author" content="Mar Agramonte" />
+    <link rel="canonical" href="https://maragramonte.github.io/mi-portfolio/en/" />
+
+    <link rel="alternate" hreflang="es" href="https://maragramonte.github.io/mi-portfolio/" />
+    <link rel="alternate" hreflang="en" href="https://maragramonte.github.io/mi-portfolio/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://maragramonte.github.io/mi-portfolio/" />
+
+    <!-- Iconos: SVG para navegadores modernos, PNG como alternativa -->
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+
+    <!-- Tarjeta de previsualización al compartir el enlace (LinkedIn, WhatsApp...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Mar Agramonte" />
+    <meta property="og:title" content="Mar Agramonte | Backend Developer · Java, Python &amp; SQL" />
+    <meta
+      property="og:description"
+      content="Software Development graduate (DAM). Projects in backend development, APIs, databases and Docker."
+    />
+    <meta property="og:url" content="https://maragramonte.github.io/mi-portfolio/en/" />
+    <meta property="og:image" content="https://maragramonte.github.io/mi-portfolio/og-en.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mar Agramonte, Backend Developer and Software Development graduate" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#ff7043" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Aplica el tema guardado ANTES de pintar la página.
+      Sin esto, quien tenga elegido el tema "noche" ve un fogonazo blanco en cada visita.
+      Aquí no se toca el idioma: esta página lo fija en inglés.
+    -->
+    <script>
+      (function () {
+        /* Esta lista debe ir a la par con TEMAS en src/App.jsx. */
+        var TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
+        try {
+          var tema = localStorage.getItem('tema')
+          if (TEMAS.indexOf(tema) !== -1) document.documentElement.dataset.theme = tema
+        } catch (e) {
+          /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
