@@ -24,6 +24,9 @@ export default function App() {
     return IDIOMAS.includes(guardado) ? guardado : 'es'
   })
 
+  // Textos del idioma activo, disponibles para toda la app vía contexto.
+  const t = traducciones[idioma]
+
   // Aplica el tema al <html> y lo guarda para la próxima visita.
   useEffect(() => {
     document.documentElement.dataset.theme = tema
@@ -31,10 +34,17 @@ export default function App() {
   }, [tema])
 
   // Guarda el idioma y actualiza el atributo lang del documento.
+  // El <title> y la descripción viven en index.html, fuera de React, así que
+  // hay que reescribirlos aquí para que acompañen al cambio de idioma.
   useEffect(() => {
     document.documentElement.lang = idioma
     localStorage.setItem('idioma', idioma)
-  }, [idioma])
+
+    document.title = t.meta.titulo
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', t.meta.descripcion)
+  }, [idioma, t])
 
   function cambiarTema() {
     const siguiente = TEMAS[(TEMAS.indexOf(tema) + 1) % TEMAS.length]
@@ -45,9 +55,6 @@ export default function App() {
     const siguiente = IDIOMAS[(IDIOMAS.indexOf(idioma) + 1) % IDIOMAS.length]
     setIdioma(siguiente)
   }
-
-  // Textos del idioma activo, disponibles para toda la app vía contexto.
-  const t = traducciones[idioma]
 
   // CV del idioma activo: si ese idioma no tiene PDF, el botón no se pinta.
   const cv = cvUrl(idioma)
