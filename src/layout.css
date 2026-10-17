@@ -439,6 +439,18 @@
   }
 }
 
+/* Entre 960 y 1110px la columna de contenido todavía no ha llegado a sus
+   780px, así que los 3.5rem por lado se comían el espacio útil: a 960px
+   quedaban 518px y dos tarjetas de 260 más el hueco piden 544, de modo que la
+   rejilla de proyectos caía a una sola columna. Con 2rem quedan 566 y entran
+   las dos. A partir de 1110 el contenedor ya alcanza su ancho máximo y sobra
+   sitio, así que vuelve la respiración completa. */
+@media (min-width: 960px) and (max-width: 1109px) {
+  .contenido .container {
+    padding: 0 2rem;
+  }
+}
+
 /* Pantallas muy anchas: un poco más de columna y de aire */
 @media (min-width: 1400px) {
   .layout {
