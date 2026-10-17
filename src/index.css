@@ -376,6 +376,9 @@ a {
   color: var(--text-dim);
   max-width: 560px;
   margin: 0 0 1.5rem;
+  /* Reparte las dos líneas en vez de llenar la primera: en inglés la frase
+     cortaba dejando el "I" solo al final ("...about my work? I"). */
+  text-wrap: balance;
 }
 
 .contact-list {
