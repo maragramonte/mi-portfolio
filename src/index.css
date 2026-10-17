@@ -125,15 +125,19 @@ a {
   pointer-events: none;
 }
 
-/* 🌙 En el tema noche, el "sol" pasa a ser una luna fría y plateada */
+/* 🌙 En el tema noche, el "sol" pasa a ser una luna fría y plateada.
+   Va en el hueco que deja el padding superior del hero (6rem), medida en px:
+   con "top: 18%" el porcentaje se calculaba sobre la altura del hero, que
+   crece con la longitud del texto, y la luna acababa encima del nombre en
+   todo el tramo de 641 a 959px. */
 [data-theme="noche"] .hero::before {
   bottom: auto;
-  top: 18%;
+  top: 1rem;
   left: auto;
-  right: 18%;
+  right: 2rem;
   transform: none;
-  width: 120px;
-  height: 120px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background:
     radial-gradient(circle at 38% 38%, #fdfcf4 0%, #d7def0 55%, #aab6d8 100%);
@@ -453,14 +457,17 @@ footer {
     height: 150px;
   }
 
-  /* La luna, en cambio, se hace más pequeña y se aparta a la esquina:
-     con el hero estrecho llegaba a solaparse con el texto. */
+  /* La luna se encoge y se mete entera en el hueco que deja el padding
+     superior del hero (4rem). En píxeles y no en %, porque el % se calcula
+     sobre la altura del hero y esa cambia con la longitud del texto: a 360px
+     la luna bajaba hasta y=99 y el nombre empezaba en y=70, así que se comía
+     la última letra. */
   [data-theme="noche"] .hero::before {
-    width: 70px;
-    height: 70px;
-    top: 5%;
-    right: 7%;
-    box-shadow: 0 0 30px 8px rgba(210, 225, 255, 0.35);
+    width: 48px;
+    height: 48px;
+    top: 0.5rem;
+    right: 1.1rem;
+    box-shadow: 0 0 26px 7px rgba(210, 225, 255, 0.35);
   }
 }
 
