@@ -1,4 +1,6 @@
-"""Regenera public/og.png, la tarjeta de previsualizacion al compartir el enlace.
+"""Regenera las tarjetas de previsualizacion al compartir el enlace.
+
+Produce public/og.png (espanol) y public/og-en.png (ingles, para en/index.html).
 
 Reproduce el diseno original (cielo nocturno, luna arriba a la derecha) cambiando
 solo el rol: "Full Stack" -> "Backend". El nivel no se declara a proposito; el
@@ -62,15 +64,34 @@ stack = ImageFont.truetype(NEGRITA, 27)
 url = ImageFont.truetype(NORMAL, 25)
 
 X = 90
-d.text((X, 228), "Mar Agramonte", font=nombre, fill=BLANCO)
-d.text((X, 328), "Desarrolladora Backend · Graduada en DAM",
-       font=rol, fill=SUBTITULO)
-d.rectangle([X, 386, X + 103, 390], fill=(61, 111, 212))
 
-# El separador lleva espacios anchos a cada lado, como en el original.
-d.text((X, 420), "JAVA  ·  PYTHON  ·  SQL  ·  DOCKER", font=stack, fill=AZUL)
-d.text((X, 558), "maragramonte.github.io/mi-portfolio", font=url, fill=APAGADO)
+# Una tarjeta por idioma. El fondo es el mismo y solo cambia la linea del rol.
+# La inglesa la usa en/index.html, que existe porque los bots que generan la
+# previsualizacion al compartir el enlace no ejecutan JavaScript y leen el HTML
+# tal cual: sin una pagina propia, el enlace salia siempre en espanol.
+TARJETAS = [
+    ("public/og.png", "Desarrolladora Backend · Graduada en DAM"),
+    ("public/og-en.png", "Backend Developer · Software Development graduate"),
+]
 
-salida = "public/og.png"
-img.save(salida, "PNG", optimize=True)
-print("guardado:", salida, img.size)
+for salida, texto_rol in TARJETAS:
+    tarjeta = img.copy()
+    d = ImageDraw.Draw(tarjeta)
+
+    d.text((X, 228), "Mar Agramonte", font=nombre, fill=BLANCO)
+    d.text((X, 328), texto_rol, font=rol, fill=SUBTITULO)
+    d.rectangle([X, 386, X + 103, 390], fill=(61, 111, 212))
+
+    # El separador lleva espacios anchos a cada lado, como en el original.
+    d.text((X, 420), "JAVA  ·  PYTHON  ·  SQL  ·  DOCKER", font=stack, fill=AZUL)
+    d.text((X, 558), "maragramonte.github.io/mi-portfolio", font=url, fill=APAGADO)
+
+    # El rol en ingles es mas largo: conviene saber si se sale del lienzo.
+    ancho_rol = d.textlength(texto_rol, font=rol)
+    margen = W - X - ancho_rol
+    if margen < 0:
+        raise SystemExit(f"el rol se sale {abs(margen):.0f}px en {salida}")
+
+    tarjeta.save(salida, "PNG", optimize=True)
+    print(f"guardado: {salida} {tarjeta.size} (rol {ancho_rol:.0f}px, "
+          f"margen derecho {margen:.0f}px)")
