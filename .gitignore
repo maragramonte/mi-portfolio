@@ -13,3 +13,7 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
+
+# Herramientas locales
+.claude/
+.gstack/
