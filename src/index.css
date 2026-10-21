@@ -453,7 +453,9 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.55rem;
-  margin-bottom: 1rem;
+  /* Más aire aquí abajo que dentro: así el control se agrupa con sus
+     etiquetas y no se lee como una tercera línea pegada a los enlaces. */
+  margin-bottom: 1.5rem;
 }
 
 .card__tags {
