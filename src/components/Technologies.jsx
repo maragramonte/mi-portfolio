@@ -5,12 +5,12 @@ import { useIdioma } from '../i18n.js'
 // de backend, y las herramientas de apoyo al final.
 const grupos = [
   { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Python", "SQL", "JavaScript"] },
-  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "API REST", "JWT", "Flyway"] },
+  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "API REST", "JWT", "Flyway", "Twilio"] },
   { titulo: { es: "Bases de datos", en: "Databases" }, items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"] },
   { titulo: { es: "Testing", en: "Testing" }, items: ["JUnit 5", "Testcontainers", "Postman", "E2E"] },
-  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "WSL"] },
-  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite", "XML"] },
-  { titulo: { es: "Metodología y herramientas", en: "Methodology & tools" }, items: ["SAFe", "Scrum", "Jira", "Confluence", "DBeaver"] },
+  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "GitHub Pages", "Caddy", "WSL"] },
+  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite", "XML", "JSON-LD", "PWA"] },
+  { titulo: { es: "Metodología y herramientas", en: "Methodology & tools" }, items: ["SAFe", "Scrum", "Jira", "Confluence", "DBeaver", "Pillow"] },
 ]
 
 export default function Technologies() {
