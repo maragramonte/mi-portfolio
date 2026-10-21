@@ -1,7 +1,13 @@
+import { useState } from 'react'
 import { chipDe } from '../data/tecnologias.js'
+import { useIdioma } from '../i18n.js'
 
 // Una tarjeta de proyecto. Recibe los datos por "props" y los pinta.
 // Ambos enlaces son opcionales: si falta uno, ese botón no se muestra.
+
+// A partir de aquí las etiquetas se pliegan. Seis caben en dos filas y dejan
+// que la descripción siga siendo lo que más pesa en la tarjeta.
+const VISIBLES = 6
 
 // Iniciales del proyecto, para la portada de color cuando todavía no hay captura.
 function iniciales(titulo) {
@@ -25,6 +31,23 @@ export default function ProjectCard({
   tecnologias,
   destacar,
 }) {
+  const { t } = useIdioma()
+  const [desplegado, setDesplegado] = useState(false)
+
+  const total = tecnologias?.length ?? 0
+  const sobran = total - VISIBLES
+
+  // Si el filtro activo señala una etiqueta que quedaría plegada, se despliega
+  // sola: esconder justo la que explica por qué la tarjeta sigue aquí sería
+  // peor que no plegar nada.
+  const posicionCoincidencia = destacar
+    ? (tecnologias ?? []).findIndex((tech) => chipDe(tech) === destacar)
+    : -1
+  const forzado = posicionCoincidencia >= VISIBLES
+  const abierto = desplegado || forzado
+
+  const visibles = abierto ? tecnologias : tecnologias?.slice(0, VISIBLES)
+
   return (
     <article className="card">
       {imagen ? (
@@ -54,7 +77,7 @@ export default function ProjectCard({
 
         {tecnologias?.length > 0 && (
           <div className="card__tags">
-            {tecnologias.map((tech) => {
+            {visibles.map((tech) => {
               // Con un filtro activo se marca la etiqueta que lo ha provocado,
               // para que se vea por qué esta tarjeta sigue en pantalla.
               const coincide = destacar && chipDe(tech) === destacar
@@ -64,6 +87,17 @@ export default function ProjectCard({
                 </span>
               )
             })}
+
+            {sobran > 0 && !forzado && (
+              <button
+                type="button"
+                className="tag tag--desplegar"
+                aria-expanded={abierto}
+                onClick={() => setDesplegado(!desplegado)}
+              >
+                {abierto ? t.projects.verMenos : t.projects.masEtiquetas.replace('{n}', sobran)}
+              </button>
+            )}
           </div>
         )}
 
