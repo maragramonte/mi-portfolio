@@ -76,22 +76,24 @@ export default function ProjectCard({
         <p>{descripcion}</p>
 
         {tecnologias?.length > 0 && (
-          <div className="card__tags">
-            {visibles.map((tech) => {
-              // Con un filtro activo se marca la etiqueta que lo ha provocado,
-              // para que se vea por qué esta tarjeta sigue en pantalla.
-              const coincide = destacar && chipDe(tech) === destacar
-              return (
-                <span key={tech} className={`tag${coincide ? ' tag--coincide' : ''}`}>
-                  {tech}
-                </span>
-              )
-            })}
+          <div className="card__tecnologias">
+            <div className="card__tags">
+              {visibles.map((tech) => {
+                // Con un filtro activo se marca la etiqueta que lo ha provocado,
+                // para que se vea por qué esta tarjeta sigue en pantalla.
+                const coincide = destacar && chipDe(tech) === destacar
+                return (
+                  <span key={tech} className={`tag${coincide ? ' tag--coincide' : ''}`}>
+                    {tech}
+                  </span>
+                )
+              })}
+            </div>
 
             {sobran > 0 && !forzado && (
               <button
                 type="button"
-                className="tag tag--desplegar"
+                className="card__desplegar"
                 aria-expanded={abierto}
                 onClick={() => setDesplegado(!desplegado)}
               >
