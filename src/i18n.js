@@ -57,11 +57,14 @@ export const traducciones = {
     },
     tech: {
       titulo: 'Tecnologías',
+      pista: 'Las marcadas tienen un proyecto detrás. Pulsa una para verlo.',
     },
     projects: {
       titulo: 'Proyectos',
       verProyecto: 'Ver proyecto',
       verCodigo: 'Ver código',
+      filtradoPor: 'Proyectos con',
+      quitarFiltro: 'Ver todos',
     },
     contact: {
       titulo: 'Contacto',
@@ -124,11 +127,14 @@ export const traducciones = {
     },
     tech: {
       titulo: 'Technologies',
+      pista: 'The marked ones have a project behind them. Tap one to see it.',
     },
     projects: {
       titulo: 'Projects',
       verProyecto: 'View project',
       verCodigo: 'View code',
+      filtradoPor: 'Projects using',
+      quitarFiltro: 'Show all',
     },
     contact: {
       titulo: 'Contact',

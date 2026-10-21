@@ -1,3 +1,5 @@
+import { chipDe } from '../data/tecnologias.js'
+
 // Una tarjeta de proyecto. Recibe los datos por "props" y los pinta.
 // Ambos enlaces son opcionales: si falta uno, ese botón no se muestra.
 
@@ -21,6 +23,7 @@ export default function ProjectCard({
   imagen,
   estado,
   tecnologias,
+  destacar,
 }) {
   return (
     <article className="card">
@@ -51,9 +54,16 @@ export default function ProjectCard({
 
         {tecnologias?.length > 0 && (
           <div className="card__tags">
-            {tecnologias.map((tech) => (
-              <span key={tech} className="tag">{tech}</span>
-            ))}
+            {tecnologias.map((tech) => {
+              // Con un filtro activo se marca la etiqueta que lo ha provocado,
+              // para que se vea por qué esta tarjeta sigue en pantalla.
+              const coincide = destacar && chipDe(tech) === destacar
+              return (
+                <span key={tech} className={`tag${coincide ? ' tag--coincide' : ''}`}>
+                  {tech}
+                </span>
+              )
+            })}
           </div>
         )}
 

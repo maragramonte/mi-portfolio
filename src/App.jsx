@@ -19,6 +19,10 @@ export default function App() {
     return TEMAS.includes(guardado) ? guardado : 'dia'
   })
 
+  // Tecnología elegida en la sección de arriba; filtra la de proyectos.
+  // Vive aquí porque es lo único que comparten las dos secciones.
+  const [tecnologiaActiva, setTecnologiaActiva] = useState(null)
+
   const [idioma, setIdioma] = useState(() => {
     // La página puede fijar el idioma: en/index.html trae data-idioma-fijo="en".
     // Manda sobre lo guardado, porque quien abre el enlace en inglés espera
@@ -29,6 +33,14 @@ export default function App() {
     const guardado = localStorage.getItem('idioma')
     return IDIOMAS.includes(guardado) ? guardado : 'es'
   })
+
+  // Al elegir una tecnología se baja a los proyectos: la lista de chips es
+  // larga y, desde los primeros grupos, la rejilla queda fuera de pantalla.
+  // Sin esto el filtro se aplicaría donde no se ve.
+  function elegirTecnologia(tech) {
+    setTecnologiaActiva(tech)
+    if (tech) document.getElementById('proyectos')?.scrollIntoView({ block: 'start' })
+  }
 
   // Textos del idioma activo, disponibles para toda la app vía contexto.
   const t = traducciones[idioma]
@@ -108,8 +120,14 @@ export default function App() {
           <main>
             <About />
             <Experience />
-            <Technologies />
-            <Projects />
+            <Technologies
+              tecnologiaActiva={tecnologiaActiva}
+              onElegirTecnologia={elegirTecnologia}
+            />
+            <Projects
+              tecnologiaActiva={tecnologiaActiva}
+              onQuitarFiltro={() => setTecnologiaActiva(null)}
+            />
             <Contact />
           </main>
 
