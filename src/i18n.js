@@ -65,7 +65,7 @@ export const traducciones = {
       verCodigo: 'Ver código',
       filtradoPor: 'Proyectos con',
       quitarFiltro: 'Ver todos',
-      masEtiquetas: '+{n} más',
+      masEtiquetas: 'Ver {n} más',
       verMenos: 'Ver menos',
     },
     contact: {
@@ -137,7 +137,7 @@ export const traducciones = {
       verCodigo: 'View code',
       filtradoPor: 'Projects using',
       quitarFiltro: 'Show all',
-      masEtiquetas: '+{n} more',
+      masEtiquetas: 'Show {n} more',
       verMenos: 'Show less',
     },
     contact: {

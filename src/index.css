@@ -445,11 +445,42 @@ a {
   flex: 1;
 }
 
+/* Etiquetas y su control de plegado. El control va en su propia línea y no
+   dentro del grupo: entre píldoras del mismo tamaño no se lee como un botón,
+   y moverlo de sitio al pulsarlo desorientaría. */
+.card__tecnologias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
 .card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 1rem;
+}
+
+.card__desplegar {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.card__desplegar:hover,
+.card__desplegar:focus-visible {
+  color: var(--accent-strong);
+  text-decoration-color: var(--accent);
 }
 
 .tag {
@@ -465,22 +496,6 @@ a {
   font-weight: 600;
 }
 
-/* El desplegable de etiquetas. Borde discontinuo para que se lea como un
-   control y no como una tecnología más de la lista. */
-.tag--desplegar {
-  font-family: inherit;
-  color: var(--text-dim);
-  background: none;
-  border-style: dashed;
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.tag--desplegar:hover,
-.tag--desplegar:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent-strong);
-}
 
 .card__link {
   align-self: flex-start;
