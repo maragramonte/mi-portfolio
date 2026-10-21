@@ -26,6 +26,8 @@ export default function ProjectCard({
   enlaceTexto,
   repo,
   repoTexto,
+  decisiones,
+  decisionesTexto,
   imagen,
   estado,
   tecnologias,
@@ -103,7 +105,7 @@ export default function ProjectCard({
           </div>
         )}
 
-        {(enlace || repo) && (
+        {(enlace || repo || decisiones) && (
           <div className="card__links">
             {enlace && (
               <a className="card__link" href={enlace} target="_blank" rel="noreferrer">
@@ -113,6 +115,19 @@ export default function ProjectCard({
             {repo && (
               <a className="card__link card__link--repo" href={repo} target="_blank" rel="noreferrer">
                 {repoTexto}
+              </a>
+            )}
+            {/* El tercero va al documento donde está razonada cada decisión.
+                Último de la fila porque es el que menos gente pulsa y el que
+                más dice de quien sí lo pulsa. */}
+            {decisiones && (
+              <a
+                className="card__link card__link--decisiones"
+                href={decisiones}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {decisionesTexto}
               </a>
             )}
           </div>

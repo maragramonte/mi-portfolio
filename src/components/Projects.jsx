@@ -3,6 +3,13 @@ import { usaTecnologia } from '../data/tecnologias.js'
 import ProjectCard from './ProjectCard.jsx'
 import { useIdioma } from '../i18n.js'
 
+// El título de un proyecto es una cadena cuando no hay nada que traducir (los
+// nombres propios: "Farmàcia Agramonte" se llama igual en inglés) y { es, en }
+// cuando sí. El español hace de clave de React, porque existe siempre y no
+// cambia al cambiar de idioma: así el botón de idioma no rehace las tarjetas.
+const tituloDe = (proyecto, idioma) =>
+  typeof proyecto.titulo === 'string' ? proyecto.titulo : proyecto.titulo[idioma]
+
 // Sección de proyectos: recorre la lista y crea una tarjeta por cada uno.
 // Si hay una tecnología elegida en la sección de arriba, solo muestra los
 // proyectos que la usan y lo dice en un aviso, para que nadie piense que han
@@ -33,13 +40,15 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
         <div className="projects-grid">
           {visibles.map((proyecto) => (
             <ProjectCard
-              key={proyecto.titulo}
-              titulo={proyecto.titulo}
+              key={tituloDe(proyecto, 'es')}
+              titulo={tituloDe(proyecto, idioma)}
               descripcion={proyecto.descripcion[idioma]}
               enlace={proyecto.enlace}
               enlaceTexto={proyecto.enlaceTexto?.[idioma] ?? t.projects.verProyecto}
               repo={proyecto.repo}
               repoTexto={t.projects.verCodigo}
+              decisiones={proyecto.decisiones}
+              decisionesTexto={proyecto.decisionesTexto?.[idioma] ?? t.projects.verDecisiones}
               imagen={proyecto.imagen}
               estado={proyecto.estado?.[idioma]}
               tecnologias={proyecto.tecnologias[idioma]}
