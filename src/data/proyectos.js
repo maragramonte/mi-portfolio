@@ -35,8 +35,8 @@ export const proyectos = [
     enlace: "https://maragramonte.github.io/dr-agramonte/",
     repo: "https://github.com/maragramonte/dr-agramonte",
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "PostgreSQL", "JWT", "Flyway", "Docker", "GitHub Actions"],
-      en: ["Java 21", "Spring Boot", "PostgreSQL", "JWT", "Flyway", "Docker", "GitHub Actions"],
+      es: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions"],
+      en: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions"],
     },
   },
   {
@@ -51,8 +51,8 @@ export const proyectos = [
     enlace: "https://maragramonte.github.io/Farmacia-Agramonte/",
     repo: "https://github.com/maragramonte/Farmacia-Agramonte",
     tecnologias: {
-      es: ["HTML", "CSS", "Python", "GitHub Pages"],
-      en: ["HTML", "CSS", "Python", "GitHub Pages"],
+      es: ["HTML", "CSS", "JavaScript", "Python", "Pillow", "JSON-LD", "GitHub Pages"],
+      en: ["HTML", "CSS", "JavaScript", "Python", "Pillow", "JSON-LD", "GitHub Pages"],
     },
   },
 ]
