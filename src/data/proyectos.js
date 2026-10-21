@@ -35,8 +35,8 @@ export const proyectos = [
     enlace: "https://maragramonte.github.io/dr-agramonte/",
     repo: "https://github.com/maragramonte/dr-agramonte",
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions"],
-      en: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions"],
+      es: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions", "Twilio", "PWA"],
+      en: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MySQL", "Flyway", "JUnit 5", "Testcontainers", "Docker", "Caddy", "GitHub Actions", "Twilio", "PWA"],
     },
   },
   {
