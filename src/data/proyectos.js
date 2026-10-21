@@ -55,17 +55,4 @@ export const proyectos = [
       en: ["HTML", "CSS", "Python", "GitHub Pages"],
     },
   },
-  {
-    titulo: "Un paseo por Asia (LaTeX)",
-    descripcion: {
-      es: "Mi primer documento serio en LaTeX: un recorrido por cinco culturas asiáticas, con índice, tablas, fórmulas, referencias cruzadas y bibliografía.",
-      en: "My first serious LaTeX document: a tour of five Asian cultures, with table of contents, tables, formulas, cross-references and a bibliography.",
-    },
-    enlace: "https://www.overleaf.com/read/hyqnjmbrhknh#831915",
-    enlaceTexto: { es: "Ver documento", en: "View document" },
-    tecnologias: {
-      es: ["LaTeX", "Overleaf", "Documentación"],
-      en: ["LaTeX", "Overleaf", "Documentation"],
-    },
-  },
 ]
