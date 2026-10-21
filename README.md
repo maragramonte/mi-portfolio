@@ -41,8 +41,16 @@ idioma no tiene CV, pon su entrada a `''` en `src/config.js` y ahí no se muestr
 El botón aparece en el hero y en la sección de Contacto.
 
 **Añadir un proyecto:** copia un bloque de `src/data/proyectos.js`. Los campos
-`enlace` (demo), `repo` (código) e `imagen` son opcionales; si no hay imagen, la
-tarjeta muestra una portada con las iniciales del proyecto.
+`enlace` (demo), `repo` (código), `decisiones` e `imagen` son opcionales; si no
+hay imagen, la tarjeta muestra una portada con las iniciales del proyecto. El
+`titulo` puede ser una cadena o `{ es, en }` cuando haya que traducirlo.
+
+**El enlace de decisiones** es el tercero de la tarjeta y apunta al documento
+donde está razonado el proyecto (en Dr. Agramonte, `docs/DECISIONES-TECNICAS.md`;
+en la farmacia, el apartado del README). Es el que contesta por adelantado a
+«¿esto lo has hecho tú?»: el código enseña qué hace la aplicación y ese
+documento enseña qué alternativas descartaste y por qué. Si el documento se
+llama de otra forma, cambia el nombre del enlace con `decisionesTexto`.
 
 **Añadir una captura:** guárdala en `public/img/` y en `proyectos.js` rellena
 el campo `imagen` con una plantilla de cadena:
