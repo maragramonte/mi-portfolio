@@ -465,6 +465,23 @@ a {
   font-weight: 600;
 }
 
+/* El desplegable de etiquetas. Borde discontinuo para que se lea como un
+   control y no como una tecnología más de la lista. */
+.tag--desplegar {
+  font-family: inherit;
+  color: var(--text-dim);
+  background: none;
+  border-style: dashed;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.tag--desplegar:hover,
+.tag--desplegar:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
 .card__link {
   align-self: flex-start;
   font-size: 0.9rem;
