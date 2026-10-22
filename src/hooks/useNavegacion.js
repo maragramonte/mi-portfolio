@@ -14,7 +14,9 @@ export function useSeccionActiva(ids, desfaseSuperior = 0) {
   const clave = ids.join(',')
 
   useEffect(() => {
-    const secciones = ids
+    const secciones = clave
+      .split(',')
+      .filter(Boolean)
       .map((id) => document.getElementById(id))
       .filter(Boolean)
 
@@ -37,9 +39,9 @@ export function useSeccionActiva(ids, desfaseSuperior = 0) {
 
     secciones.forEach((seccion) => observador.observe(seccion))
     return () => observador.disconnect()
-    // `clave` es la lista de ids serializada: evita reconectar el observador en
-    // cada render solo porque el array llega con otra identidad.
-  }, [clave, desfaseSuperior]) // eslint-disable-line react-hooks/exhaustive-deps
+    // `clave` es la lista serializada de ids; así el efecto no depende de la
+    // identidad del array y no necesita silenciar la regla de dependencias.
+  }, [clave, desfaseSuperior])
 
   return activa
 }

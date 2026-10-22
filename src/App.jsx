@@ -8,6 +8,7 @@ import Contact from './components/Contact.jsx'
 import { IDIOMAS, IdiomaContext, traducciones } from './i18n.js'
 import { cvUrl } from './config.js'
 import { useProgresoLectura } from './hooks/useNavegacion.js'
+import { leerPreferencia, guardarPreferencia } from './utils/storage.js'
 
 // Temas disponibles, en el orden en que aparecen en el desplegable.
 // El orden va del más claro al más oscuro, que es como se lee de un vistazo.
@@ -15,7 +16,7 @@ const TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
 
 export default function App() {
   const [tema, setTema] = useState(() => {
-    const guardado = localStorage.getItem('tema')
+    const guardado = leerPreferencia('tema')
     return TEMAS.includes(guardado) ? guardado : 'dia'
   })
 
@@ -30,7 +31,7 @@ export default function App() {
     const fijado = document.documentElement.dataset.idiomaFijo
     if (IDIOMAS.includes(fijado)) return fijado
 
-    const guardado = localStorage.getItem('idioma')
+    const guardado = leerPreferencia('idioma')
     return IDIOMAS.includes(guardado) ? guardado : 'es'
   })
 
@@ -48,7 +49,7 @@ export default function App() {
   // Aplica el tema al <html> y lo guarda para la próxima visita.
   useEffect(() => {
     document.documentElement.dataset.theme = tema
-    localStorage.setItem('tema', tema)
+    guardarPreferencia('tema', tema)
   }, [tema])
 
   // Guarda el idioma y actualiza el atributo lang del documento.
@@ -56,7 +57,7 @@ export default function App() {
   // hay que reescribirlos aquí para que acompañen al cambio de idioma.
   useEffect(() => {
     document.documentElement.lang = idioma
-    localStorage.setItem('idioma', idioma)
+    guardarPreferencia('idioma', idioma)
 
     document.title = t.meta.titulo
     document
