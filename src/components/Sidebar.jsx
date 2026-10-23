@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useIdioma } from '../i18n.js'
-import { cvUrl } from '../config.js'
+import { cvUrls } from '../config.js'
 import { contactos } from '../data/contacto.js'
 import { useSeccionActiva } from '../hooks/useNavegacion.js'
 import Icono from './Icono.jsx'
@@ -22,7 +22,7 @@ export default function Sidebar({ temas, tema, onElegirTema }) {
   const { idioma, t, cambiarIdioma } = useIdioma()
   const [menuAbierto, setMenuAbierto] = useState(false)
   const botonMenu = useRef(null)
-  const cv = cvUrl(idioma)
+  const cv = cvUrls(idioma)
 
   // 64px es lo que ocupa la barra fija en móvil: sin ese desfase, la sección
   // activa cambiaría un poco antes de que el título llegue a verse.
@@ -118,10 +118,13 @@ export default function Sidebar({ temas, tema, onElegirTema }) {
         </nav>
 
         <div className="rail__pie">
-          {cv && (
-            <a className="btn btn--primario btn--bloque" href={cv} download>
+          {cv.visual && (
+            <>
+            <a className="btn btn--primario btn--bloque" href={cv.visual} download>
               {t.hero.descargarCV}
             </a>
+            <a className="cv-ats-link cv-ats-link--rail" href={cv.ats} download>{t.hero.descargarCVATS}</a>
+            </>
           )}
           <div className="rail__fila">
             {redes}
@@ -162,10 +165,13 @@ export default function Sidebar({ temas, tema, onElegirTema }) {
         aria-hidden={!menuAbierto}
       >
         {enlacesNav}
-        {cv && (
-          <a className="btn btn--primario btn--bloque" href={cv} download onClick={() => setMenuAbierto(false)}>
+        {cv.visual && (
+          <>
+          <a className="btn btn--primario btn--bloque" href={cv.visual} download onClick={() => setMenuAbierto(false)}>
             {t.hero.descargarCV}
           </a>
+          <a className="cv-ats-link cv-ats-link--mobile" href={cv.ats} download onClick={() => setMenuAbierto(false)}>{t.hero.descargarCVATS}</a>
+          </>
         )}
         {redes}
       </nav>

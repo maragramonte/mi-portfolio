@@ -1,5 +1,5 @@
 import { useIdioma } from '../i18n.js'
-import { cvUrl } from '../config.js'
+import { cvUrls } from '../config.js'
 import { contactos } from '../data/contacto.js'
 
 // Sección de contacto. Los canales salen de src/data/contacto.js, que es la
@@ -9,11 +9,14 @@ export default function Contact() {
   const { idioma, t } = useIdioma()
 
   // El CV se ofrece en el idioma en el que se esté leyendo la web.
-  const cv = cvUrl(idioma)
+  const cv = cvUrls(idioma)
 
-  // El CV solo aparece si hay un PDF configurado en config.js
-  const enlaces = cv
-    ? [...contactos, { etiqueta: "CV", valor: idioma === "es" ? "PDF (español)" : "PDF (English)", href: cv, descarga: true }]
+  // Las dos descargas aparecen si el CV visual está configurado.
+  const enlaces = cv.visual
+    ? [...contactos,
+      { etiqueta: "CV", valor: idioma === "es" ? "PDF visual · Español" : "Visual PDF · English", href: cv.visual, descarga: true },
+      { etiqueta: "CV ATS", valor: idioma === "es" ? "PDF compatible con ATS · Español" : "ATS-friendly PDF · English", href: cv.ats, descarga: true },
+    ]
     : contactos
 
   return (
