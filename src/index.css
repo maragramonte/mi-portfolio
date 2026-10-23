@@ -218,6 +218,30 @@ a {
   color: var(--on-accent);
 }
 
+.cv-ats-link {
+  align-self: center;
+  padding: 0.35rem 0.25rem;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.cv-ats-link--rail,
+.cv-ats-link--mobile {
+  display: block;
+  text-align: center;
+}
+
+.cv-ats-link--rail {
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+}
+
+.cv-ats-link--mobile {
+  margin: 0.1rem 0 0.8rem;
+}
+
 /* ---------- Sections ---------- */
 .section {
   padding: 3rem 0;

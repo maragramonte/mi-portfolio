@@ -40,6 +40,7 @@ export const traducciones = {
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
       descargarCV: 'Descargar CV',
+      descargarCVATS: 'Versión ATS',
     },
     about: {
       titulo: 'Sobre mí',
@@ -85,6 +86,7 @@ export const traducciones = {
         LinkedIn: 'LinkedIn',
         GitHub: 'GitHub',
         CV: 'CV',
+        'CV ATS': 'CV ATS',
       },
     },
     footer: {
@@ -120,6 +122,7 @@ export const traducciones = {
       verProyectos: 'View projects',
       contactar: 'Get in touch',
       descargarCV: 'Download CV',
+      descargarCVATS: 'ATS version',
     },
     about: {
       titulo: 'About me',
@@ -159,6 +162,7 @@ export const traducciones = {
         LinkedIn: 'LinkedIn',
         GitHub: 'GitHub',
         CV: 'CV',
+        'CV ATS': 'CV ATS',
       },
     },
     footer: {

@@ -6,7 +6,7 @@ import Technologies from './components/Technologies.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import { IDIOMAS, IdiomaContext, traducciones } from './i18n.js'
-import { cvUrl } from './config.js'
+import { cvUrls } from './config.js'
 import { useProgresoLectura } from './hooks/useNavegacion.js'
 
 // El tema claro u oscuro se ofrece según la preferencia del sistema.
@@ -84,8 +84,8 @@ export default function App() {
     setIdioma(siguiente)
   }
 
-  // CV del idioma activo: si ese idioma no tiene PDF, el botón no se pinta.
-  const cv = cvUrl(idioma)
+  // Versiones del CV en el idioma activo.
+  const cv = cvUrls(idioma)
 
   const progreso = useProgresoLectura()
 
@@ -122,11 +122,14 @@ export default function App() {
                 <a className="btn" href="#contacto">
                   {t.hero.contactar}
                 </a>
-                {/* El botón de CV solo aparece cuando hay un PDF configurado en config.js */}
-                {cv && (
-                  <a className="btn" href={cv} download>
+                {/* Las descargas aparecen si el CV visual está configurado. */}
+                {cv.visual && (
+                  <>
+                  <a className="btn" href={cv.visual} download>
                     {t.hero.descargarCV}
                   </a>
+                  <a className="cv-ats-link" href={cv.ats} download>{t.hero.descargarCVATS}</a>
+                  </>
                 )}
               </div>
             </div>
