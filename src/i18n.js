@@ -30,8 +30,6 @@ export const traducciones = {
       etiqueta: 'Tema',
       dia: 'Día',
       noche: 'Noche',
-      amanecer: 'Amanecer',
-      atardecer: 'Atardecer',
     },
     hero: {
       rol: 'Desarrolladora Backend · Graduada en DAM',
@@ -66,6 +64,8 @@ export const traducciones = {
     },
     projects: {
       titulo: 'Proyectos',
+      intro: 'Aplicaciones reales, automatización y decisiones técnicas documentadas. Cada proyecto incluye una demo o su código, y explica el reto que resolvió.',
+      focoTecnico: 'Reto técnico',
       verProyecto: 'Ver proyecto',
       verCodigo: 'Ver código',
       // Nombre por defecto del tercer enlace de la tarjeta. Un proyecto puede
@@ -112,8 +112,6 @@ export const traducciones = {
       etiqueta: 'Theme',
       dia: 'Day',
       noche: 'Night',
-      amanecer: 'Sunrise',
-      atardecer: 'Sunset',
     },
     hero: {
       rol: 'Backend Developer · Software Development graduate (DAM)',
@@ -142,6 +140,8 @@ export const traducciones = {
     },
     projects: {
       titulo: 'Projects',
+      intro: 'Real world applications, automation and documented technical decisions. Each project links to a demo or its source code and explains the problem it solves.',
+      focoTecnico: 'Technical highlight',
       verProyecto: 'View project',
       verCodigo: 'View code',
       verDecisiones: 'Technical decisions',

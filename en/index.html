@@ -13,7 +13,7 @@
   data-idioma-fijo es lo que hace que la app arranque en inglés pase lo que pase
   (ver el useState de idioma en src/App.jsx).
 -->
-<html lang="en" data-theme="dia" data-idioma-fijo="en">
+<html lang="en" data-theme="noche" data-idioma-fijo="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +53,7 @@
     <meta property="og:image:alt" content="Mar Agramonte, Backend Developer and Software Development graduate" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="theme-color" content="#ff7043" />
+    <meta name="theme-color" content="#0a0e1f" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,13 +70,22 @@
     <script>
       (function () {
         /* Esta lista debe ir a la par con TEMAS en src/App.jsx. */
-        var TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
+        var TEMAS = ['dia', 'noche']
+        var tema = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'dia'
+          : 'noche'
+        document.documentElement.dataset.theme = tema
         try {
-          var tema = localStorage.getItem('tema')
-          if (TEMAS.indexOf(tema) !== -1) document.documentElement.dataset.theme = tema
+          var guardado = localStorage.getItem('tema')
+          if (TEMAS.indexOf(guardado) !== -1) tema = guardado
+          document.documentElement.dataset.theme = tema
         } catch (e) {
           /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
         }
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+          'content',
+          tema === 'dia' ? '#fafafa' : '#0a0e1f'
+        )
       })()
     </script>
   </head>

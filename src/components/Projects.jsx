@@ -26,6 +26,8 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
       <div className="container">
         <h2>{t.projects.titulo}</h2>
 
+        <p className="section-intro">{t.projects.intro}</p>
+
         {tecnologiaActiva && (
           <div className="filtro" role="status">
             <span>
@@ -43,6 +45,7 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
               key={tituloDe(proyecto, 'es')}
               titulo={tituloDe(proyecto, idioma)}
               descripcion={proyecto.descripcion[idioma]}
+              focoTecnico={proyecto.focoTecnico[idioma]}
               enlace={proyecto.enlace}
               enlaceTexto={proyecto.enlaceTexto?.[idioma] ?? t.projects.verProyecto}
               repo={proyecto.repo}

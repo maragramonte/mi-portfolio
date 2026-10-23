@@ -34,8 +34,12 @@ export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
     descripcion: {
-      es: "Gestión de citas para un internista real en Palma: agenda repartida por centro, reserva sin registro previo y avisos automáticos de confirmación, cancelación y recordatorio por correo, Telegram y SMS. El reto fue impedir que dos pacientes reservaran el mismo hueco: bloqueo pesimista en base de datos, validado con un test de concurrencia real sobre PostgreSQL. 115 pruebas en el backend; la demo va con datos ficticios.",
-      en: "Appointment management for a real internist in Palma: scheduling split by clinic, booking without signing up, and automatic confirmation, cancellation and reminder notices by email, Telegram and SMS. The challenge was stopping two patients from booking the same slot: pessimistic database locking, validated with a real concurrency test against PostgreSQL. 115 backend tests; the demo runs on fictional data.",
+      es: "Aplicación de citas para un internista en Palma, con agendas por centro, reservas sin registro y avisos por correo, Telegram y SMS. La demo usa datos ficticios.",
+      en: "Appointment app for an internist in Palma, with schedules by clinic, booking without an account, and email, Telegram and SMS notifications. The demo uses fictional data.",
+    },
+    focoTecnico: {
+      es: "Reservas simultáneas resueltas con bloqueo pesimista en PostgreSQL y un test de concurrencia real. Backend cubierto por 115 pruebas.",
+      en: "Concurrent bookings handled with pessimistic locking in PostgreSQL and a real concurrency test. Backend covered by 115 tests.",
     },
     imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.png`,
     enlaceTexto: { es: "Ver demo", en: "View demo" },
@@ -61,8 +65,12 @@ export const proyectos = [
   {
     titulo: "Farmàcia Agramonte",
     descripcion: {
-      es: "Web de la farmacia familiar en El Born (Barcelona): estática, sin dependencias y en tres idiomas (castellano, catalán e inglés). Un script de Python genera las 179 páginas del catálogo desde el CSV del programa de gestión de la farmacia, cumpliendo la normativa: sin medicamentos ni precios públicos. La cesta se guarda en el navegador y el encargo se manda por WhatsApp; aquí no se cobra nada.",
-      en: "Website for the family pharmacy in El Born, Barcelona: static, dependency-free and in three languages (Spanish, Catalan and English). A Python script generates the catalog's 179 pages from the pharmacy's own management-software CSV, within the rules: no medications, no public prices. The basket lives in the browser and the order goes out over WhatsApp; nothing is charged here.",
+      es: "Web multilingüe para una farmacia familiar de Barcelona. El catálogo se genera desde el CSV del programa de gestión y los encargos se envían por WhatsApp; no se cobra en la web.",
+      en: "Multilingual website for a family pharmacy in Barcelona. The catalog is generated from the management software's CSV, and orders are sent over WhatsApp; the site does not take payment.",
+    },
+    focoTecnico: {
+      es: "Un script de Python genera 179 páginas estáticas en tres idiomas, sin publicar medicamentos ni precios.",
+      en: "A Python script generates 179 static pages in three languages, without publishing medicines or prices.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
@@ -88,8 +96,12 @@ export const proyectos = [
     // el mismo momento en que se lee la tarjeta.
     titulo: { es: "Este portfolio", en: "This portfolio" },
     descripcion: {
-      es: "La web que estás viendo. React y Vite sin librerías de interfaz: los dos idiomas salen de un único fichero de textos, los cuatro temas son variables CSS y la sección activa se detecta con IntersectionObserver en vez de escuchando el scroll. Hay un HTML de entrada por idioma porque los bots que generan la previsualización al compartir el enlace no ejecutan JavaScript, y esas tarjetas las dibuja un script de Python. Cada push a main la publica.",
-      en: "The site you are looking at. React and Vite with no UI library: both languages come from a single file of texts, the four themes are CSS variables, and the active section is detected with IntersectionObserver instead of by listening to scroll. There is one entry HTML per language because the bots that build link previews do not run JavaScript, and those preview cards are drawn by a Python script. Every push to main publishes it.",
+      es: "Este portfolio, construido con React y Vite sin librerías de interfaz. Centraliza los textos de ambos idiomas y usa variables CSS para los temas de día y noche.",
+      en: "This portfolio, built with React and Vite without a UI library. Text for both languages lives in one file, and CSS variables power its day and night themes.",
+    },
+    focoTecnico: {
+      es: "IntersectionObserver controla la navegación; cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir.",
+      en: "IntersectionObserver drives navigation; each language has its own HTML entry so shared link previews work without JavaScript.",
     },
     // Sin enlace de demo: la demo es esta misma página. Y sin captura a
     // propósito, porque una captura de lo que ya se está mirando no añade nada:
