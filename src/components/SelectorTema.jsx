@@ -2,14 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { useIdioma } from '../i18n.js'
 
 // Emoji de cada tema: es lo único que distingue al botón cuando está cerrado.
-const ICONO = { dia: '☀️', noche: '🌙', amanecer: '🌄', atardecer: '🌇' }
+const ICONO = { dia: '☀️', noche: '🌙' }
 
-// Botón que despliega la lista de temas.
-//
-// Sustituye al botón que rotaba en círculo. Con dos temas rotar era cómodo,
-// pero con cuatro había que pulsar hasta tres veces para llegar al que querías
-// y el icono solo decía dónde estabas, no a dónde ibas. Aquí se ven los cuatro
-// y se va a cualquiera de un toque.
+// Botón que despliega las dos opciones de tema.
 export default function SelectorTema({ temas, tema, onElegir }) {
   const { t } = useIdioma()
   const [abierto, setAbierto] = useState(false)

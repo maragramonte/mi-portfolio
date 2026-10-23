@@ -22,6 +22,7 @@ function iniciales(titulo) {
 export default function ProjectCard({
   titulo,
   descripcion,
+  focoTecnico,
   enlace,
   enlaceTexto,
   repo,
@@ -76,6 +77,13 @@ export default function ProjectCard({
           {estado && <span className="card__estado">{estado}</span>}
         </div>
         <p>{descripcion}</p>
+
+        {focoTecnico && (
+          <p className="card__foco">
+            <strong>{t.projects.focoTecnico}</strong>
+            {focoTecnico}
+          </p>
+        )}
 
         {tecnologias?.length > 0 && (
           <div className="card__tecnologias">

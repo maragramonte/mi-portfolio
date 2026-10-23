@@ -8,46 +8,6 @@
   --hero-subtitle: #fdeede;
 }
 
-/* Nota sobre los degradados de los temas oscuros (--sunset):
-   el texto del hero ocupa del 33% al 70% de su altura, así que los stops
-   mantienen el degradado oscuro hasta el 72-78% y dejan la franja clara para
-   el último tramo. Antes el naranja claro subía hasta el centro y el texto
-   pequeño se quedaba sin contraste justo ahí: medido, 1.02 sobre el naranja
-   del amanecer, es decir letra y fondo del mismo color. Ese último tramo cae
-   bajo los botones, que llevan fondo propio y no dependen del degradado. */
-
-/* 🌇 ATARDECER: ciruela profunda que arde en rojo y naranja quemado */
-[data-theme="atardecer"] {
-  --accent-strong: #ffa07a;   /* 6.00 sobre el tramo más claro que le toca */
-  --on-accent: #1a1020;
-  --bg: #19101f;
-  --bg-card: #241628;
-  --text: #f8ece9;
-  --text-dim: #c6a3aa;
-  --accent: #ff7a5c;
-  --accent-2: #ffb03a;
-  --border: #3a2336;
-  --navbar-bg: rgba(25, 16, 31, 0.82);
-  --sunset: linear-gradient(160deg, #130b1c 0%, #2e1530 40%, #5a2440 72%, #9e3b46 88%, #d4663a 100%);
-}
-
-/* 🌄 AMANECER: azul frío de antes del alba que rompe en rosa y crema.
-   Deliberadamente más frío y más claro que el atardecer: antes los dos eran
-   violeta tirando a naranja y no se distinguían el uno del otro. */
-[data-theme="amanecer"] {
-  --accent-strong: #ffc49a;   /* 5.91 sobre el tramo más claro que le toca */
-  --on-accent: #1a2136;
-  --bg: #1b2236;
-  --bg-card: #242c44;
-  --text: #eff2fa;
-  --text-dim: #a9b3cd;
-  --accent: #ffb38a;
-  --accent-2: #8fc7ff;
-  --border: #333c58;
-  --navbar-bg: rgba(27, 34, 54, 0.82);
-  --sunset: linear-gradient(160deg, #16203c 0%, #2a3159 40%, #4a4270 72%, #b0708f 88%, #ffd3ad 100%);
-}
-
 /* ☀️ DÍA CLARO: fondo blanco cálido + degradado coral→ámbar */
 [data-theme="dia"] {
   --accent-strong: #a8380c;   /* acento con contraste AA para texto pequeño */
@@ -394,11 +354,8 @@ a {
   gap: 1.5rem;
 }
 
-/* A partir de 876px caben tres columnas de ~270px, demasiado estrechas para
-   tarjetas con descripción larga: salían columnas de veinte líneas a cuatro
-   palabras por línea. Se fuerzan dos hasta los 960px, que es donde entra la
-   columna lateral y el contenido vuelve a estrecharse solo. */
-@media (min-width: 876px) and (max-width: 959px) {
+/* Las descripciones y el reto técnico necesitan ancho para leerse de un vistazo. */
+@media (min-width: 876px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -443,6 +400,25 @@ a {
   color: var(--text-dim);
   font-size: 0.95rem;
   flex: 1;
+}
+
+.card__body .card__foco {
+  flex: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border-left: 2px solid var(--accent);
+  padding-left: 0.75rem;
+  margin: 0 0 1.1rem;
+}
+
+.card__foco strong {
+  display: block;
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
 }
 
 /* Etiquetas y su control de plegado. El control va en su propia línea y no

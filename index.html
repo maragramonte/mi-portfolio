@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-theme="dia">
+<html lang="es" data-theme="noche">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,7 @@
     <meta property="og:image:alt" content="Mar Agramonte, desarrolladora Backend graduada en DAM" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="theme-color" content="#ff7043" />
+    <meta name="theme-color" content="#0a0e1f" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,10 +61,15 @@
     <script>
       (function () {
         /* Esta lista debe ir a la par con TEMAS en src/App.jsx. */
-        var TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
+        var TEMAS = ['dia', 'noche']
+        var tema = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+          ? 'dia'
+          : 'noche'
+        document.documentElement.dataset.theme = tema
         try {
-          var tema = localStorage.getItem('tema')
-          if (TEMAS.indexOf(tema) !== -1) document.documentElement.dataset.theme = tema
+          var guardado = localStorage.getItem('tema')
+          if (TEMAS.indexOf(guardado) !== -1) tema = guardado
+          document.documentElement.dataset.theme = tema
           /* En las páginas que fijan idioma (en/index.html) manda el de la
              página, no el guardado: quien abre el enlace en inglés espera
              inglés aunque su última visita fuera en español. */
@@ -75,6 +80,10 @@
         } catch (e) {
           /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
         }
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+          'content',
+          tema === 'dia' ? '#fafafa' : '#0a0e1f'
+        )
       })()
     </script>
   </head>

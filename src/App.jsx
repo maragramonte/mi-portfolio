@@ -9,14 +9,21 @@ import { IDIOMAS, IdiomaContext, traducciones } from './i18n.js'
 import { cvUrl } from './config.js'
 import { useProgresoLectura } from './hooks/useNavegacion.js'
 
-// Temas disponibles, en el orden en que aparecen en el desplegable.
-// El orden va del más claro al más oscuro, que es como se lee de un vistazo.
-const TEMAS = ['dia', 'amanecer', 'atardecer', 'noche']
+// El tema claro u oscuro se ofrece según la preferencia del sistema.
+const TEMAS = ['dia', 'noche']
 
 export default function App() {
   const [tema, setTema] = useState(() => {
-    const guardado = localStorage.getItem('tema')
-    return TEMAS.includes(guardado) ? guardado : 'dia'
+    try {
+      const guardado = localStorage.getItem('tema')
+      if (TEMAS.includes(guardado)) return guardado
+    } catch {
+      // Si el navegador bloquea localStorage, usamos el tema elegido en el HTML.
+    }
+
+    // El HTML ya elige el tema del sistema antes de pintar la página.
+    const inicial = document.documentElement.dataset.theme
+    return TEMAS.includes(inicial) ? inicial : 'noche'
   })
 
   // Tecnología elegida en la sección de arriba; filtra la de proyectos.
@@ -48,7 +55,15 @@ export default function App() {
   // Aplica el tema al <html> y lo guarda para la próxima visita.
   useEffect(() => {
     document.documentElement.dataset.theme = tema
-    localStorage.setItem('tema', tema)
+    try {
+      localStorage.setItem('tema', tema)
+    } catch {
+      // El tema sigue activo aunque el navegador no permita guardarlo.
+    }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      'content',
+      tema === 'dia' ? '#fafafa' : '#0a0e1f',
+    )
   }, [tema])
 
   // Guarda el idioma y actualiza el atributo lang del documento.
