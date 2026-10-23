@@ -33,6 +33,7 @@
 export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
+    estado: { es: "En desarrollo", en: "Work in progress" },
     descripcion: {
       es: "Aplicación de citas para un internista en Palma, con agendas por centro, reservas sin registro y avisos por correo, Telegram y SMS. La demo usa datos ficticios.",
       en: "Appointment app for an internist in Palma, with schedules by clinic, booking without an account, and email, Telegram and SMS notifications. The demo uses fictional data.",
