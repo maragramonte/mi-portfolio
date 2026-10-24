@@ -92,6 +92,56 @@ export const proyectos = [
     },
   },
   {
+    titulo: "Task Manager",
+    descripcion: {
+      es: "Aplicación Android para gestionar tareas por usuario, con registro, inicio de sesión y sesión persistente.",
+      en: "Android task management app with per-user tasks, sign-up, login and persistent sessions.",
+    },
+    focoTecnico: {
+      es: "CRUD privado por usuario sobre SQLite, prioridades y navegación entre pantallas.",
+      en: "Per-user CRUD over SQLite, task priorities and screen navigation.",
+    },
+    imagen: `${import.meta.env.BASE_URL}img/task-manager.png`,
+    repo: "https://github.com/maragramonte/CESUR-github/tree/main/Dispositivos%20Moviles%20-%20TaskManager",
+    tecnologias: {
+      es: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
+      en: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
+    },
+  },
+  {
+    titulo: "The WC Sequence",
+    descripcion: {
+      es: "Simulación visual en Java donde personas ejecutadas en hilos usan baños y pueden viajar entre dos ventanas conectadas.",
+      en: "Java visual simulation where people running in threads use public bathrooms and can travel between two connected windows.",
+    },
+    focoTecnico: {
+      es: "Sincronización con semáforos y envío de objetos serializados entre ventanas mediante sockets.",
+      en: "Semaphore-based synchronization and serialized objects sent between windows over sockets.",
+    },
+    imagen: `${import.meta.env.BASE_URL}img/wc-sequence.png`,
+    repo: "https://github.com/maragramonte/CESUR-github/tree/main/The%20WC%20Sequence",
+    tecnologias: {
+      es: ["Java", "Swing", "Hilos", "Semáforos", "Sockets", "Serialización"],
+      en: ["Java", "Swing", "Threads", "Semaphores", "Sockets", "Serialization"],
+    },
+  },
+  {
+    titulo: { es: "Cena de los Filósofos", en: "Dining Philosophers" },
+    descripcion: {
+      es: "Simulación con interfaz Swing del problema clásico de concurrencia: seis filósofos comparten seis palillos.",
+      en: "Swing simulation of the classic concurrency problem: six philosophers share six chopsticks.",
+    },
+    focoTecnico: {
+      es: "La mesa coordina turnos y recursos con wait/notifyAll y un semáforo para evitar interbloqueos.",
+      en: "The table coordinates turns and resources with wait/notifyAll and a semaphore to prevent deadlocks.",
+    },
+    repo: "https://github.com/maragramonte/CESUR-github/tree/main/hungry-philosophers",
+    tecnologias: {
+      es: ["Java", "Swing", "Hilos", "Semáforos", "Sincronización"],
+      en: ["Java", "Swing", "Threads", "Semaphores", "Synchronization"],
+    },
+  },
+  {
     // La web que el visitante tiene delante. Va última a propósito: pesa menos
     // que las dos de arriba, pero es la única que se puede abrir por dentro en
     // el mismo momento en que se lee la tarjeta.
