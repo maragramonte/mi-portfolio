@@ -101,6 +101,7 @@ export const proyectos = [
       es: "CRUD privado por usuario sobre SQLite, prioridades y navegación entre pantallas.",
       en: "Per-user CRUD over SQLite, task priorities and screen navigation.",
     },
+    // Captura de la lista de tareas; se entiende mejor el CRUD que en Inicio.
     imagen: `${import.meta.env.BASE_URL}img/task-manager.png`,
     repo: "https://github.com/maragramonte/CESUR-github/tree/main/Dispositivos%20Moviles%20-%20TaskManager",
     tecnologias: {
@@ -136,6 +137,12 @@ export const proyectos = [
       en: "The table coordinates turns and resources with wait/notifyAll and a semaphore to prevent deadlocks.",
     },
     repo: "https://github.com/maragramonte/CESUR-github/tree/main/hungry-philosophers",
+    // Ilustración conceptual: el repositorio no incluye una captura de la app.
+    imagen: `${import.meta.env.BASE_URL}img/dining-philosophers.svg`,
+    imagenAlt: {
+      es: "Ilustración de seis filósofos compartiendo seis palillos alrededor de una mesa.",
+      en: "Illustration of six philosophers sharing six chopsticks around a table.",
+    },
     tecnologias: {
       es: ["Java", "Swing", "Hilos", "Semáforos", "Sincronización"],
       en: ["Java", "Swing", "Threads", "Semaphores", "Synchronization"],

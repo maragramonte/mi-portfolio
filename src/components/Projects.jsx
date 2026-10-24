@@ -53,6 +53,7 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
               decisiones={proyecto.decisiones}
               decisionesTexto={proyecto.decisionesTexto?.[idioma] ?? t.projects.verDecisiones}
               imagen={proyecto.imagen}
+              imagenAlt={proyecto.imagenAlt?.[idioma]}
               estado={proyecto.estado?.[idioma]}
               tecnologias={proyecto.tecnologias[idioma]}
               destacar={tecnologiaActiva}

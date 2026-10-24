@@ -30,6 +30,7 @@ export default function ProjectCard({
   decisiones,
   decisionesTexto,
   imagen,
+  imagenAlt,
   estado,
   tecnologias,
   destacar,
@@ -57,7 +58,7 @@ export default function ProjectCard({
         <img
           className="card__img"
           src={imagen}
-          alt={`Captura del proyecto ${titulo}`}
+          alt={imagenAlt ?? `Captura del proyecto ${titulo}`}
           width="400"
           height="300"
           loading="lazy"

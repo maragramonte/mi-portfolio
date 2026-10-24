@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 80 1200 440" role="img" aria-labelledby="title desc">
+  <title id="title">Dining Philosophers — Java concurrency</title>
+  <desc id="desc">Six philosophers seated around a shared table with one chopstick between each pair.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="48%" r="64%">
+      <stop offset="0" stop-color="#202c40"/>
+      <stop offset="1" stop-color="#101722"/>
+    </radialGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#263a4c"/>
+      <stop offset="1" stop-color="#1a2838"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#glow)"/>
+  <g transform="translate(0 81) scale(1 .73)">
+  <g fill="none" stroke="#43546a" stroke-width="2" opacity=".55">
+    <circle cx="600" cy="304" r="210" stroke-dasharray="2 12"/>
+    <circle cx="600" cy="304" r="169"/>
+  </g>
+  <circle cx="600" cy="315" r="153" fill="#050a11" opacity=".48" filter="url(#shadow)"/>
+  <circle cx="600" cy="300" r="151" fill="url(#table)" stroke="#51677e" stroke-width="2"/>
+  <circle cx="600" cy="300" r="129" fill="none" stroke="#34495d" stroke-width="1.5"/>
+  <text x="600" y="275" fill="#e9f0f5" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="3">DINING</text>
+  <text x="600" y="310" fill="#aebdca" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="4">PHILOSOPHERS</text>
+  <text x="600" y="344" fill="#73d6c9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" letter-spacing="2">SHARED RESOURCES · SYNCHRONIZED THREADS</text>
+
+  <!-- Six shared chopsticks, one between every adjacent pair. -->
+  <g stroke-linecap="round" stroke-width="8">
+    <path d="M600 112v57" stroke="#73d6c9"/>
+    <path d="M763 206l-49 28" stroke="#edab62"/>
+    <path d="M763 394l-49-28" stroke="#73d6c9"/>
+    <path d="M600 488v-57" stroke="#edab62"/>
+    <path d="M437 394l49-28" stroke="#73d6c9"/>
+    <path d="M437 206l49 28" stroke="#edab62"/>
+  </g>
+  <g fill="#aebdca" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.5">
+    <text x="600" y="92">FORK 01</text>
+    <text x="804" y="194">FORK 02</text>
+    <text x="804" y="417">FORK 03</text>
+    <text x="600" y="520">FORK 04</text>
+    <text x="396" y="417">FORK 05</text>
+    <text x="396" y="194">FORK 06</text>
+  </g>
+  <g stroke="#c9d5df" stroke-width="2">
+    <g transform="translate(600 79)"><circle r="35" fill="#213e52"/><circle cy="-8" r="10" fill="#73d6c9" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#73d6c9" stroke="none"/><text y="55" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P1</text></g>
+    <g transform="translate(791 189)"><circle r="35" fill="#3c3440"/><circle cy="-8" r="10" fill="#edab62" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#edab62" stroke="none"/><text y="55" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P2</text></g>
+    <g transform="translate(791 411)"><circle r="35" fill="#213e52"/><circle cy="-8" r="10" fill="#73d6c9" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#73d6c9" stroke="none"/><text y="55" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P3</text></g>
+    <g transform="translate(600 521)"><circle r="35" fill="#3c3440"/><circle cy="-8" r="10" fill="#edab62" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#edab62" stroke="none"/><text y="-47" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P4</text></g>
+    <g transform="translate(409 411)"><circle r="35" fill="#213e52"/><circle cy="-8" r="10" fill="#73d6c9" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#73d6c9" stroke="none"/><text y="55" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P5</text></g>
+    <g transform="translate(409 189)"><circle r="35" fill="#3c3440"/><circle cy="-8" r="10" fill="#edab62" stroke="none"/><path d="M-16 17q16-22 32 0v4h-32z" fill="#edab62" stroke="none"/><text y="55" fill="#eaf0f4" stroke="none" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="700">P6</text></g>
+  </g>
+  <text x="600" y="576" fill="#8192a3" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="3">JAVA · THREADS · SEMAPHORES</text>
+  </g>
+</svg>
