@@ -64,6 +64,40 @@ export const proyectos = [
     },
   },
   {
+    // Segunda a propósito: es el otro proyecto de backend en Java, y el único
+    // que se puede probar en vivo contra la API desde la propia demo.
+    titulo: "Photo Palette",
+    estado: { es: "En desarrollo", en: "Work in progress" },
+    descripcion: {
+      es: "API que convierte una foto en una paleta de color lista para una web: HEX, RGB, porcentaje y un bloque :root para copiar. La foto se analiza en memoria y no se guarda.",
+      en: "API that turns a photo into a web-ready color palette: HEX, RGB, share of the image and a copy-ready :root block. Photos are analyzed in memory and never stored.",
+    },
+    focoTecnico: {
+      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 77 pruebas.",
+      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 77 tests.",
+    },
+    imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
+    imagenAlt: {
+      es: "Portada de Photo Palette: titular y zona para subir una foto sobre fondo azul noche.",
+      en: "Photo Palette home page: headline and photo upload area on a dark blue background.",
+    },
+    enlaceTexto: { es: "Ver demo", en: "View demo" },
+    // La API está en el plan gratis de Render y se duerme a los 15 minutos:
+    // la primera subida tarda unos 30 s. La web lo avisa sola y el feed no
+    // depende de la API, así que la demo nunca se ve rota.
+    enlace: "https://maragramonte.github.io/photo-palette/",
+    repo: "https://github.com/maragramonte/photo-palette",
+    // El README abre con la decisión que define el proyecto: la paleta fiel
+    // no es la paleta útil. Por eso existen los dos modos.
+    decisiones: "https://github.com/maragramonte/photo-palette#el-problema",
+    decisionesTexto: { es: "Decisión de producto", en: "Product decision" },
+    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows.
+    tecnologias: {
+      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
+      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
+    },
+  },
+  {
     titulo: "Farmàcia Agramonte",
     descripcion: {
       es: "Web multilingüe para una farmacia familiar de Barcelona. El catálogo se genera desde el CSV del programa de gestión y los encargos se envían por WhatsApp; no se cobra en la web.",

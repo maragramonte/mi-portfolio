@@ -9,10 +9,10 @@ import { proyectos } from './proyectos.js'
 // detrás. Esa relación es dato, no presentación.
 export const grupos = [
   { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Kotlin", "Python", "SQL", "JavaScript"] },
-  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "Spring Data JPA", "API REST", "JWT", "Flyway", "Twilio", "Telegram Bot API"] },
+  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "Spring Data JPA", "API REST", "JWT", "Flyway", "Bucket4j", "Twilio", "Telegram Bot API"] },
   { titulo: { es: "Bases de datos", en: "Databases" }, items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"] },
   { titulo: { es: "Testing", en: "Testing" }, items: ["JUnit 5", "Testcontainers", "Postman", "E2E"] },
-  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "GitHub Pages", "Caddy", "WSL"] },
+  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "GitHub Pages", "Caddy", "Render", "WSL"] },
   { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite", "XML", "JSON-LD", "SEO hreflang", "Chart.js", "PWA"] },
   { titulo: { es: "Aplicaciones", en: "Applications" }, items: ["Android", "Swing", "Navigation Component", "Material Design"] },
   { titulo: { es: "Concurrencia y redes", en: "Concurrency & networking" }, items: ["Hilos", "Semáforos", "Sockets", "Serialización", "Threads", "Semaphores", "Serialization", "Sincronización", "Synchronization"] },
