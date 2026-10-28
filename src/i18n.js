@@ -32,11 +32,11 @@ export const traducciones = {
       noche: 'Noche',
     },
     hero: {
-      rol: 'Desarrolladora Backend · Graduada en DAM',
-      stack: 'Java · Spring Boot · PostgreSQL · Docker',
+      rol: 'Desarrolladora backend junior y QA Automation',
+      stack: 'Construyo servicios con Java y Spring Boot, y automatizo pruebas con Python.',
       // Misma fórmula que en LinkedIn, a propósito: si un recruiter compara el
       // perfil con el portfolio, no debe encontrar dos disponibilidades.
-      disponibilidad: 'Palma de Mallorca · Disponible para incorporación inmediata (remoto o híbrido, abierta a reubicación)',
+      disponibilidad: 'Palma de Mallorca · Remoto, híbrido o reubicación · Incorporación inmediata',
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
       descargarCV: 'Descargar CV',
@@ -116,9 +116,9 @@ export const traducciones = {
       noche: 'Night',
     },
     hero: {
-      rol: 'Backend Developer · Software Development graduate (DAM)',
-      stack: 'Java · Spring Boot · PostgreSQL · Docker',
-      disponibilidad: 'Palma de Mallorca, Spain · Available to start immediately (remote or hybrid, open to relocation)',
+      rol: 'Junior Backend & QA Automation Developer',
+      stack: 'I build services with Java and Spring Boot, and automate tests with Python.',
+      disponibilidad: 'Palma de Mallorca, Spain · Remote, hybrid or relocation · Available now',
       verProyectos: 'View projects',
       contactar: 'Get in touch',
       descargarCV: 'Download CV',
