@@ -34,8 +34,6 @@ export const traducciones = {
     hero: {
       rol: 'Desarrolladora backend junior y QA Automation',
       stack: 'Construyo servicios con Java y Spring Boot, y automatizo pruebas con Python.',
-      // Misma fórmula que en LinkedIn, a propósito: si un recruiter compara el
-      // perfil con el portfolio, no debe encontrar dos disponibilidades.
       disponibilidad: 'Palma de Mallorca · Remoto, híbrido o reubicación · Incorporación inmediata',
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
@@ -47,11 +45,7 @@ export const traducciones = {
       parrafos: [
         'Graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para un internista real en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas en Flyway.',
         'El detalle que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco, resuelto con bloqueo pesimista en base de datos y validado con un test de concurrencia real. Antes de eso, 400 horas de prácticas en Marlink Group haciendo testing de APIs, validaciones E2E y automatización con Python en un entorno SAFe.',
-        'Vengo de administración, turismo y recursos humanos, y esa base me dio pensamiento estructurado y atención al detalle. En este portfolio comparto los proyectos que reflejan mi evolución como desarrolladora y mi interés por crear software útil, mantenible y de calidad.',
-        // Lo dice ella misma antes de que nadie lo pregunte, y con la misma
-        // fórmula que el README de Dr. Agramonte. Decirlo con los documentos
-        // delante —cada decisión escrita, con su alternativa y sus límites—
-        // convierte una sospecha habitual en un punto a favor.
+        'Vengo de administración, turismo y recursos humanos, y de ahí traigo el orden y el trato con la gente. Aquí están los proyectos que he ido haciendo desde que empecé a programar.',
         'Uso la IA como herramienta de trabajo, no como atajo: me ayuda a aprender más rápido y a desatascarme, y lo que me devuelve lo compruebo contra la documentación y las pruebas antes de darlo por bueno. Las decisiones técnicas de mis proyectos están escritas y razonadas una a una, con sus alternativas y sus límites, y las sé defender en una entrevista: cada tarjeta de abajo enlaza las suyas.',
       ],
     },
@@ -129,7 +123,7 @@ export const traducciones = {
       parrafos: [
         "DAM graduate. My final-year project didn't stay in the classroom: it's an appointment management app for a real internist in Palma, with a backend in Java 21 and Spring Boot 3.5 on PostgreSQL, JWT authentication and versioned Flyway migrations.",
         'The detail that taught me the most was preventing two patients from booking the same slot, solved with pessimistic database locking and validated with a real concurrency test. Before that, 400 hours interning at Marlink Group doing API testing, E2E validation and Python automation in a SAFe environment.',
-        'I come from administration, tourism and HR, and that background gave me structured thinking and attention to detail. In this portfolio I share the projects that reflect my growth as a developer and my interest in building useful, maintainable and quality software.',
+        'I come from administration, tourism and HR, which taught me to be organised and to deal with people. These are the projects I have built since I started programming.',
         'I use AI as a working tool, not as a shortcut: it helps me learn faster and get unstuck, and whatever it hands me I check against the documentation and the tests before I trust it. The technical decisions in my projects are written down and reasoned one by one, with their alternatives and their limits, and I can defend them in an interview: every card below links to its own.',
       ],
     },

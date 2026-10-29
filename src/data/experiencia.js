@@ -15,8 +15,8 @@
 export const experiencia = [
   {
     puesto: {
-      es: 'Prácticas IT — Desarrollo y QA Testing',
-      en: 'IT Internship — Development & QA Testing',
+      es: 'Prácticas IT · Desarrollo y QA Testing',
+      en: 'IT Internship · Development & QA Testing',
     },
     empresa: 'Marlink Group (OmniAccess)',
     periodo: {
@@ -45,8 +45,8 @@ export const experiencia = [
   },
   {
     puesto: {
-      es: 'Prácticas — Consultoría Tecnológica',
-      en: 'Internship — Technology Consulting',
+      es: 'Prácticas · Consultoría Tecnológica',
+      en: 'Internship · Technology Consulting',
     },
     empresa: 'GladToLink',
     periodo: {
