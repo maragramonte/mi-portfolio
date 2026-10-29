@@ -1,0 +1,49 @@
+name: Pruebas E2E
+
+# Se ejecutan antes de que el despliegue publique nada: en cada push a main y
+# en cada pull request que toque la web o las propias pruebas.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Si llegan dos pushes seguidos, basta con probar el último.
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # El binario de agent-browser viene en el paquete; el Chrome con el que
+      # conduce, no. --with-deps instala además las librerías del sistema que
+      # Chrome necesita en Ubuntu.
+      - name: Install test browser
+        run: npx agent-browser install --with-deps
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+
+      # Cuando algo falla, la captura del momento explica más que el registro.
+      - name: Upload failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capturas-e2e
+          path: tests/e2e/capturas/
+          if-no-files-found: ignore
+          retention-days: 7

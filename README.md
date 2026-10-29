@@ -16,6 +16,26 @@ npm run build    # generar versión de producción en /dist
 npm run preview  # previsualizar la build de producción
 ```
 
+## Pruebas
+
+```bash
+npm run test:e2e:preparar   # una sola vez: descarga el Chrome de pruebas
+npm run test:e2e            # 54 pruebas de extremo a extremo sobre la build
+```
+
+Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
+cambio de idioma, el tema, la navegación, el filtro por tecnología, las
+descargas del CV, el menú del móvil y la accesibilidad (WCAG 2 A y AA con
+axe-core). Se ejecutan también en GitHub Actions en cada push y pull request.
+
+Con `--base` sirven de comprobación del sitio ya publicado:
+
+```bash
+npm run test:e2e -- --base https://maragramonte.github.io/mi-portfolio/
+```
+
+Los detalles están en [tests/e2e/README.md](tests/e2e/README.md).
+
 ## Estructura
 
 ```
@@ -31,6 +51,7 @@ src/
 ├── data/experiencia.js     # puestos de la sección Experiencia
 ├── data/contacto.js        # canales de contacto (columna lateral + sección)
 └── components/             # Sidebar, About, Experience, Technologies, Projects, Contact...
+tests/e2e/                  # pruebas de extremo a extremo con agent-browser
 ```
 
 ## Cómo actualizar el contenido

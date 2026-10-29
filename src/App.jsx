@@ -105,10 +105,14 @@ export default function App() {
       <div className="layout">
         <Sidebar temas={TEMAS} tema={tema} onElegirTema={setTema} />
 
-        <div className="contenido">
+        {/* El ancla a la que vuelve el nombre de la cabecera va aquí y no en
+            la portada: en escritorio la portada está oculta, y un ancla con
+            display:none no mueve la página. Este contenedor existe a las dos
+            anchuras y es lo primero del documento. */}
+        <div id="top" className="contenido">
           {/* Portada: en escritorio la identidad vive en la columna izquierda,
               así que esta cabecera solo se muestra en pantallas estrechas. */}
-          <header id="top" className="hero">
+          <header className="hero">
             <div className="container">
               <h1>Mar Agramonte</h1>
               <p className="hero__rol">{t.hero.rol}</p>
