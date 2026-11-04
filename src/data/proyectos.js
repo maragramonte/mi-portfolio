@@ -137,7 +137,6 @@ export const proyectos = [
     },
     // Captura de la lista de tareas; se entiende mejor el CRUD que en Inicio.
     imagen: `${import.meta.env.BASE_URL}img/task-manager.png`,
-    repo: "https://github.com/maragramonte/CESUR-github/tree/main/Dispositivos%20Moviles%20-%20TaskManager",
     tecnologias: {
       es: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
       en: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
