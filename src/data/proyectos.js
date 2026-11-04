@@ -137,6 +137,7 @@ export const proyectos = [
     },
     // Captura de la lista de tareas; se entiende mejor el CRUD que en Inicio.
     imagen: `${import.meta.env.BASE_URL}img/task-manager.png`,
+    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/task-manager",
     tecnologias: {
       es: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
       en: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
@@ -153,7 +154,7 @@ export const proyectos = [
       en: "Semaphore-based synchronization and serialized objects sent between windows over sockets.",
     },
     imagen: `${import.meta.env.BASE_URL}img/wc-sequence.png`,
-    repo: "https://github.com/maragramonte/CESUR-github/tree/main/The%20WC%20Sequence",
+    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence",
     tecnologias: {
       es: ["Java", "Swing", "Hilos", "Semáforos", "Sockets", "Serialización"],
       en: ["Java", "Swing", "Threads", "Semaphores", "Sockets", "Serialization"],
@@ -169,7 +170,7 @@ export const proyectos = [
       es: "La mesa coordina turnos y recursos con wait/notifyAll y un semáforo para evitar interbloqueos.",
       en: "The table coordinates turns and resources with wait/notifyAll and a semaphore to prevent deadlocks.",
     },
-    repo: "https://github.com/maragramonte/CESUR-github/tree/main/hungry-philosophers",
+    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/cena-filosofos",
     // Ilustración conceptual: el repositorio no incluye una captura de la app.
     imagen: `${import.meta.env.BASE_URL}img/dining-philosophers.svg`,
     imagenAlt: {
