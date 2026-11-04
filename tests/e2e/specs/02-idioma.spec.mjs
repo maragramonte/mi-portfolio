@@ -30,7 +30,7 @@ export default {
 
       const r = estado()
       esIgual(r.lang, 'es', 'el documento arranca en español')
-      contiene(r.rol, 'Desarrolladora Backend', 'el rol está en español')
+      contiene(r.rol, 'Desarrolladora backend', 'el rol está en español')
       esIgual(r.textoBoton, 'EN', 'el botón ofrece el idioma al que se puede cambiar')
     },
 
@@ -44,7 +44,7 @@ export default {
 
       esIgual(despues.lang, 'en', 'el documento declara inglés')
       esIgual(despues.textoBoton, 'ES', 'el botón ahora ofrece volver al español')
-      contiene(despues.rol, 'Backend Developer', 'el rol se traduce')
+      contiene(despues.rol, 'QA Automation Developer', 'el rol se traduce')
       contiene(despues.descargarCV, 'Download CV', 'el botón de CV se traduce')
       noEsIgual(despues.enlacesNav.join('|'), antes.enlacesNav.join('|'), 'el menú cambia de idioma')
       estaVacia(
@@ -98,7 +98,7 @@ export default {
 
       const r = estado()
       esIgual(r.lang, 'en', '/en/ arranca en inglés pese al español guardado')
-      contiene(r.rol, 'Backend Developer', 'y los textos vienen en inglés')
+      contiene(r.rol, 'QA Automation Developer', 'y los textos vienen en inglés')
     },
 
     '/en/ trae sus propias etiquetas para compartir el enlace'({ url }) {

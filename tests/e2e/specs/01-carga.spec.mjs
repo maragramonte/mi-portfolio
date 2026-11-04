@@ -40,7 +40,7 @@ export default {
         return { rol: txt('.rail__rol'), stack: txt('.rail__stack'), disponibilidad: txt('.rail__disponibilidad') }
       })()`)
 
-      contiene(r.rol, 'Backend', 'el rol menciona el perfil backend')
+      contiene(r.rol, 'backend', 'el rol menciona el perfil backend')
       contiene(r.stack, 'Java', 'el stack empieza por Java')
       contiene(r.disponibilidad, 'Palma de Mallorca', 'la disponibilidad dice dónde está')
     },

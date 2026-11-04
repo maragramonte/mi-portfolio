@@ -20,13 +20,14 @@ npm run preview  # previsualizar la build de producción
 
 ```bash
 npm run test:e2e:preparar   # una sola vez: descarga el Chrome de pruebas
-npm run test:e2e            # 54 pruebas de extremo a extremo sobre la build
+npm run test:e2e            # 55 pruebas de extremo a extremo sobre la build
 ```
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
 cambio de idioma, el tema, la navegación, el filtro por tecnología, las
 descargas del CV, el menú del móvil y la accesibilidad (WCAG 2 A y AA con
-axe-core). Se ejecutan también en GitHub Actions en cada push y pull request.
+axe-core). En GitHub Actions se ejecutan en cada pull request y antes de cada
+despliegue: si fallan, no se publica nada.
 
 Con `--base` sirven de comprobación del sitio ya publicado:
 

@@ -18,7 +18,7 @@ npm run test:e2e
 ```
 
 `npm run test:e2e` compila el proyecto, levanta `vite preview` en el puerto
-4183, pasa las 54 pruebas y apaga el servidor. Tarda poco más de un minuto y
+4183, pasa las 55 pruebas y apaga el servidor. Tarda unos dos minutos y
 devuelve código de salida 1 si algo falla, que es lo que mira la acción de
 GitHub.
 

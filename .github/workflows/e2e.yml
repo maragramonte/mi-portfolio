@@ -1,12 +1,11 @@
 name: Pruebas E2E
 
-# Se ejecutan antes de que el despliegue publique nada: en cada push a main y
-# en cada pull request que toque la web o las propias pruebas.
+# Se ejecutan en cada pull request y, llamadas desde deploy.yml, antes de cada
+# despliegue. No hay disparador de push: con el del despliegue basta.
 on:
-  push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
+  workflow_call:
 
 # Si llegan dos pushes seguidos, basta con probar el último.
 concurrency:
