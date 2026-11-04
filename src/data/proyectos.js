@@ -73,8 +73,8 @@ export const proyectos = [
       en: "API that turns a photo into a web-ready color palette: HEX, RGB, share of the image and a copy-ready :root block. Photos are analyzed in memory and never stored.",
     },
     focoTecnico: {
-      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 77 pruebas.",
-      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 77 tests.",
+      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 98 pruebas.",
+      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 98 tests.",
     },
     imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
     imagenAlt: {
@@ -91,10 +91,11 @@ export const proyectos = [
     // no es la paleta útil. Por eso existen los dos modos.
     decisiones: "https://github.com/maragramonte/photo-palette#el-problema",
     decisionesTexto: { es: "Decisión de producto", en: "Product decision" },
-    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows.
+    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows. Sin Caddy:
+    // solo entra con el VPS, y hoy la API corre en Render sin él.
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
-      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
+      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
+      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
     },
   },
   {
