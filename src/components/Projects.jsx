@@ -1,5 +1,5 @@
 import { proyectos } from '../data/proyectos.js'
-import { usaTecnologia } from '../data/tecnologias.js'
+import { nombreDe, usaTecnologia } from '../data/tecnologias.js'
 import ProjectCard from './ProjectCard.jsx'
 import { useIdioma } from '../i18n.js'
 
@@ -31,7 +31,7 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
         {tecnologiaActiva && (
           <div className="filtro" role="status">
             <span>
-              {t.projects.filtradoPor} <strong>{tecnologiaActiva}</strong>
+              {t.projects.filtradoPor} <strong>{nombreDe(tecnologiaActiva, idioma)}</strong>
             </span>
             <button type="button" className="filtro__quitar" onClick={onQuitarFiltro}>
               {t.projects.quitarFiltro}

@@ -1,5 +1,5 @@
 import { useIdioma } from '../i18n.js'
-import { grupos, proyectosPorTecnologia } from '../data/tecnologias.js'
+import { grupos, nombreDe, proyectosPorTecnologia } from '../data/tecnologias.js'
 
 // Sección de tecnologías. Las que tienen un proyecto detrás son pulsables y
 // filtran la lista de proyectos; las que todavía no, se pintan como texto y no
@@ -19,12 +19,16 @@ export default function Technologies({ tecnologiaActiva, onElegirTecnologia }) {
             <div className="tech-list">
               {grupo.items.map((tech) => {
                 const respaldada = (proyectosPorTecnologia[tech] ?? 0) > 0
+                // El chip se lee en el idioma activo, pero lo que viaja al
+                // filtro es siempre el nombre canónico: es la clave con la que
+                // se cruzan los proyectos.
+                const nombre = nombreDe(tech, idioma)
 
                 if (!respaldada) {
                   return (
                     <span key={tech} className="tech-chip tech-chip--suelta">
                       <span className="tech-chip__punto" aria-hidden="true" />
-                      {tech}
+                      {nombre}
                     </span>
                   )
                 }
@@ -39,7 +43,7 @@ export default function Technologies({ tecnologiaActiva, onElegirTecnologia }) {
                     onClick={() => onElegirTecnologia(activa ? null : tech)}
                   >
                     <span className="tech-chip__punto" aria-hidden="true" />
-                    {tech}
+                    {nombre}
                   </button>
                 )
               })}

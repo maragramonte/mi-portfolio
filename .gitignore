@@ -17,3 +17,7 @@ dist-ssr
 # Herramientas locales
 .claude/
 .gstack/
+
+# Capturas que la suite de extremo a extremo guarda al fallar una prueba
+tests/e2e/capturas/*
+!tests/e2e/capturas/.gitkeep
