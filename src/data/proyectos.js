@@ -161,6 +161,35 @@ export const proyectos = [
     },
   },
   {
+    // Segunda solución del mismo enunciado, justo detrás de la primera para que
+    // se lean juntas. Pesa más que ella: tiene un fallo de reparto medido,
+    // corregido y vuelto a medir, y eso es lo que cuenta el foco técnico.
+    titulo: { es: "The WC Sequence: turnos por género", en: "The WC Sequence: gender turns" },
+    descripcion: {
+      es: "Segunda solución de The WC Sequence: baños de mujeres y de hombres, con turnos alternos por grupos y las dos ventanas conectadas por red.",
+      en: "Second solution to The WC Sequence: separate women's and men's bathrooms, alternating turns by group, and two windows connected over the network.",
+    },
+    focoTecnico: {
+      es: "El turno cambia al servir a cada grupo, no al vaciarse los baños, para que un género no acapare. Prueba de estrés con 40 hilos y unas 460 entradas.",
+      en: "The turn changes once each group is served, not when the bathrooms empty, so neither gender hogs them. Stress-tested with 40 threads and about 460 entries.",
+    },
+    // Recorte de la captura del servidor que trae el README del repositorio.
+    imagen: `${import.meta.env.BASE_URL}img/wc-sequence-turnos.png`,
+    imagenAlt: {
+      es: "Ventana de la simulación: cuatro baños de mujeres arriba, cuatro de hombres abajo y el panel con el turno actual.",
+      en: "Simulation window: four women's bathrooms on top, four men's below, and the panel showing whose turn it is.",
+    },
+    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence-turnos-genero",
+    // El apartado del README que explica por qué el turno cambia por grupos y
+    // cómo se midió el fallo de la primera versión.
+    decisiones: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence-turnos-genero#cómo-se-reparten-los-turnos",
+    decisionesTexto: { es: "Cómo se reparten los turnos", en: "How turns are shared" },
+    tecnologias: {
+      es: ["Java", "Swing", "Hilos", "Semáforos", "Sincronización", "Sockets", "Serialización"],
+      en: ["Java", "Swing", "Threads", "Semaphores", "Synchronization", "Sockets", "Serialization"],
+    },
+  },
+  {
     titulo: { es: "Cena de los Filósofos", en: "Dining Philosophers" },
     descripcion: {
       es: "Simulación con interfaz Swing del problema clásico de concurrencia: seis filósofos comparten seis palillos.",
