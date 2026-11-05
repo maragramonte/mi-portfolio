@@ -105,8 +105,8 @@ export const proyectos = [
       en: "Multilingual website for a family pharmacy in Barcelona. The catalog is generated from the management software's CSV, and orders are sent over WhatsApp; the site does not take payment.",
     },
     focoTecnico: {
-      es: "Un script de Python genera 179 páginas estáticas en tres idiomas, sin publicar medicamentos ni precios.",
-      en: "A Python script generates 179 static pages in three languages, without publishing medicines or prices.",
+      es: "Un script de Python genera 143 de sus 154 páginas estáticas, en tres idiomas, sin publicar medicamentos ni precios.",
+      en: "A Python script generates 143 of its 154 static pages, in three languages, without publishing medicines or prices.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
