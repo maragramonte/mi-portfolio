@@ -58,7 +58,7 @@ export default function ProjectCard({
         <img
           className="card__img"
           src={imagen}
-          alt={imagenAlt ?? `Captura del proyecto ${titulo}`}
+          alt={imagenAlt ?? `${t.projects.capturaDe} ${titulo}`}
           width="400"
           height="300"
           loading="lazy"

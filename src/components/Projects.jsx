@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard.jsx'
 import { useIdioma } from '../i18n.js'
 
 // El título de un proyecto es una cadena cuando no hay nada que traducir (los
-// nombres propios: "Farmàcia Agramonte" se llama igual en inglés) y { es, en }
+// nombres propios: "Farmacia Agramonte" se llama igual en inglés) y { es, en }
 // cuando sí. El español hace de clave de React, porque existe siempre y no
 // cambia al cambiar de idioma: así el botón de idioma no rehace las tarjetas.
 const tituloDe = (proyecto, idioma) =>
