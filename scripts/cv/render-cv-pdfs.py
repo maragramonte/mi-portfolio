@@ -45,7 +45,7 @@ def links_for(c, idx):
     links = [
         ('Demo Dr. Agramonte' if c['language'] == 'es' else 'Dr. Agramonte demo', 'https://maragramonte.github.io/dr-agramonte/'),
         ('Código' if c['language'] == 'es' else 'Code', 'https://github.com/maragramonte/dr-agramonte'),
-        ('Web Farmàcia Agramonte' if c['language'] == 'es' else 'Farmàcia Agramonte website', 'https://maragramonte.github.io/Farmacia-Agramonte/'),
+        ('Web Farmacia Agramonte' if c['language'] == 'es' else 'Farmacia Agramonte website', 'https://maragramonte.github.io/Farmacia-Agramonte/'),
         ('Código' if c['language'] == 'es' else 'Code', 'https://github.com/maragramonte/Farmacia-Agramonte'),
     ][idx*2:idx*2+2]
     return ' &nbsp;·&nbsp; '.join(f'<link href="{url}" color="#0f766e">{label}</link>' for label, url in links)

@@ -61,6 +61,7 @@ export const traducciones = {
       titulo: 'Proyectos',
       intro: 'Aplicaciones reales, automatización y decisiones técnicas documentadas. Cada proyecto incluye una demo o su código, y explica el reto que resolvió.',
       focoTecnico: 'Reto técnico',
+      capturaDe: 'Captura del proyecto',
       verProyecto: 'Ver proyecto',
       verCodigo: 'Ver código',
       // Nombre por defecto del tercer enlace de la tarjeta. Un proyecto puede
@@ -139,6 +140,7 @@ export const traducciones = {
       titulo: 'Projects',
       intro: 'Real world applications, automation and documented technical decisions. Each project links to a demo or its source code and explains the problem it solves.',
       focoTecnico: 'Technical highlight',
+      capturaDe: 'Screenshot of',
       verProyecto: 'View project',
       verCodigo: 'View code',
       verDecisiones: 'Technical decisions',

@@ -28,7 +28,7 @@
 // con más peso técnico.
 //
 // Los datos de abajo salen de los README de cada repositorio, repasados el
-// 2026-10-21. Cuando cambie el proyecto, la fuente buena es su README.
+// 2026-11-06. Cuando cambie el proyecto, la fuente buena es su README.
 
 export const proyectos = [
   {
@@ -44,12 +44,10 @@ export const proyectos = [
     },
     imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.png`,
     enlaceTexto: { es: "Ver demo", en: "View demo" },
-    // La demo apunta a GitHub Pages, no al dominio propio: www.dragramonte.com
-    // está registrado pero hoy no sirve la aplicación (el alojamiento anterior se
-    // retiró y el despliegue en VPS está preparado, a la espera de levantar la
-    // máquina; lo dice el README del repo, repasado el 2026-10-21). No tiene
-    // sentido mandar a nadie a una página de error: cuando el dominio vuelva,
-    // basta con cambiar esta línea.
+    // La demo apunta a GitHub Pages porque es la única versión pública: el README
+    // del repo (repasado el 2026-11-06) dice que no hay dominio propio y que el
+    // despliegue en VPS está preparado a la espera de levantar la máquina. Cuando
+    // haya dominio, basta con cambiar esta línea.
     enlace: "https://maragramonte.github.io/dr-agramonte/",
     repo: "https://github.com/maragramonte/dr-agramonte",
     // Doce decisiones, cada una con la alternativa que descartaste y sus
@@ -73,13 +71,13 @@ export const proyectos = [
       en: "API that turns a photo into a web-ready color palette: HEX, RGB, share of the image and a copy-ready :root block. Photos are analyzed in memory and never stored.",
     },
     focoTecnico: {
-      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 98 pruebas.",
-      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 98 tests.",
+      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP y por análisis simultáneo, 98 pruebas y un 97 % de cobertura de líneas.",
+      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP and concurrent-analysis limits, 98 tests and 97% line coverage.",
     },
     imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
     imagenAlt: {
-      es: "Portada de Photo Palette: titular y zona para subir una foto sobre fondo azul noche.",
-      en: "Photo Palette home page: headline and photo upload area on a dark blue background.",
+      es: "Portada de Photo Palette: el titular a la izquierda y la caja para subir una foto a la derecha, sobre fondo azul noche.",
+      en: "Photo Palette home page: the headline on the left and the photo upload box on the right, on a dark blue background.",
     },
     enlaceTexto: { es: "Ver demo", en: "View demo" },
     // La API está en el plan gratis de Render y se duerme a los 15 minutos:
@@ -87,43 +85,49 @@ export const proyectos = [
     // depende de la API, así que la demo nunca se ve rota.
     enlace: "https://maragramonte.github.io/photo-palette/",
     repo: "https://github.com/maragramonte/photo-palette",
-    // El README abre con la decisión que define el proyecto: la paleta fiel
-    // no es la paleta útil. Por eso existen los dos modos.
-    decisiones: "https://github.com/maragramonte/photo-palette#el-problema",
+    // La decisión que define el proyecto está en «Por qué lo hice»: la paleta
+    // fiel no es la paleta útil, y por eso existen los dos modos. Antes la
+    // sección se llamaba «El problema» (ancla comprobada el 2026-11-06).
+    decisiones: "https://github.com/maragramonte/photo-palette#por-qué-lo-hice",
     decisionesTexto: { es: "Decisión de producto", en: "Product decision" },
     // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows. Sin Caddy:
     // solo entra con el VPS, y hoy la API corre en Render sin él.
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
-      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
+      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
+      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
     },
   },
   {
-    titulo: "Farmàcia Agramonte",
+    // «Farmacia» en castellano e inglés y «Farmàcia» en catalán, como en la propia
+    // web desde su PR #17. Este portfolio solo tiene castellano e inglés.
+    titulo: "Farmacia Agramonte",
     descripcion: {
-      es: "Web multilingüe para una farmacia familiar de Barcelona. El catálogo se genera desde el CSV del programa de gestión y los encargos se envían por WhatsApp; no se cobra en la web.",
-      en: "Multilingual website for a family pharmacy in Barcelona. The catalog is generated from the management software's CSV, and orders are sent over WhatsApp; the site does not take payment.",
+      es: "Web en tres idiomas para una farmacia de barrio en El Born, Barcelona. Enseña lo que hay en el mostrador, deja apuntar un encargo en una cesta y lo manda por WhatsApp; en la web no se cobra.",
+      en: "Three-language website for a neighborhood pharmacy in El Born, Barcelona. It shows what's on the counter, lets you build an order in a basket and sends it over WhatsApp; the site takes no payment.",
     },
     focoTecnico: {
-      es: "Un script de Python genera 143 de sus 154 páginas estáticas, en tres idiomas, sin publicar medicamentos ni precios.",
-      en: "A Python script generates 143 of its 154 static pages, in three languages, without publishing medicines or prices.",
+      es: "Un script de Python genera 143 de sus 154 páginas estáticas desde el CSV del programa de gestión, sin publicar medicamentos ni precios. Los tests de pytest vigilan el catálogo y los enlaces.",
+      en: "A Python script generates 143 of its 154 static pages from the management software's CSV, without publishing medicines or prices. pytest tests guard the catalog and the links.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
+    imagenAlt: {
+      es: "Portada de Farmacia Agramonte: cabecera con la cesta y el botón de pedir, una silueta de tejados y el lema «Consejo de siempre, de tu barrio» sobre fondo verde.",
+      en: "Farmacia Agramonte home page: header with the basket and order button, a rooftop silhouette and the tagline «Consejo de siempre, de tu barrio» on a green background.",
+    },
     enlaceTexto: { es: "Ver web", en: "View site" },
     enlace: "https://maragramonte.github.io/Farmacia-Agramonte/",
     repo: "https://github.com/maragramonte/Farmacia-Agramonte",
-    // El README del repo razona cada decisión de diseño, y también dice qué
-    // falta: un apartado "Qué falta" propio dice más que una web impecable.
-    // El ancla va con la eñe tal cual, que es como la escribe GitHub en su
-    // propio índice del README (comprobado el 2026-10-21).
-    decisiones: "https://github.com/maragramonte/Farmacia-Agramonte#decisiones-de-diseño",
-    decisionesTexto: { es: "Decisiones de diseño", en: "Design decisions" },
+    // El README del repo razona cada decisión y también dice qué falta, en «El
+    // estado real». La sección se llamaba «Decisiones de diseño» hasta que el
+    // README se reorganizó; el ancla lleva la tilde tal cual, como la escribe
+    // GitHub (comprobado el 2026-11-06).
+    decisiones: "https://github.com/maragramonte/Farmacia-Agramonte#decisiones-técnicas",
     // Sin GitHub Actions a propósito: Pages publica la rama main tal cual
     // (.nojekyll), así que cada push republica sin pasar por un workflow.
     tecnologias: {
-      es: ["HTML", "CSS", "JavaScript", "Python", "Pillow", "JSON-LD", "SEO hreflang", "GitHub Pages"],
-      en: ["HTML", "CSS", "JavaScript", "Python", "Pillow", "JSON-LD", "SEO hreflang", "GitHub Pages"],
+      es: ["HTML", "CSS", "JavaScript", "Python", "pytest", "Pillow", "JSON-LD", "SEO hreflang", "GitHub Pages"],
+      en: ["HTML", "CSS", "JavaScript", "Python", "pytest", "Pillow", "JSON-LD", "SEO hreflang", "GitHub Pages"],
     },
   },
   {
@@ -222,16 +226,16 @@ export const proyectos = [
       en: "This portfolio, built with React and Vite without a UI library. Text for both languages lives in one file, and CSS variables power its day and night themes.",
     },
     focoTecnico: {
-      es: "IntersectionObserver controla la navegación; cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir.",
-      en: "IntersectionObserver drives navigation; each language has its own HTML entry so shared link previews work without JavaScript.",
+      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 55 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
+      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 55 end-to-end tests in a real Chrome decide whether it ships.",
     },
     // Sin enlace de demo: la demo es esta misma página. Y sin captura a
     // propósito, porque una captura de lo que ya se está mirando no añade nada:
     // la tarjeta se queda con la portada de iniciales.
     repo: "https://github.com/maragramonte/mi-portfolio",
     tecnologias: {
-      es: ["React", "Vite", "HTML", "CSS", "JavaScript", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
-      en: ["React", "Vite", "HTML", "CSS", "JavaScript", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
+      es: ["React", "Vite", "HTML", "CSS", "JavaScript", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
+      en: ["React", "Vite", "HTML", "CSS", "JavaScript", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
     },
   },
 ]
