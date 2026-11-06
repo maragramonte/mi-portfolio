@@ -73,8 +73,8 @@ export const proyectos = [
       en: "API that turns a photo into a web-ready color palette: HEX, RGB, share of the image and a copy-ready :root block. Photos are analyzed in memory and never stored.",
     },
     focoTecnico: {
-      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 77 pruebas.",
-      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 77 tests.",
+      es: "K-means escrito a mano con semilla fija y un modo «vivos» que ordena por saturación. Límites por IP, semáforo de análisis y 98 pruebas.",
+      en: "Hand-written k-means with a fixed seed and a «vivos» mode that ranks colors by saturation. Per-IP rate limits, an analysis semaphore and 98 tests.",
     },
     imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
     imagenAlt: {
@@ -91,10 +91,11 @@ export const proyectos = [
     // no es la paleta útil. Por eso existen los dos modos.
     decisiones: "https://github.com/maragramonte/photo-palette#el-problema",
     decisionesTexto: { es: "Decisión de producto", en: "Product decision" },
-    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows.
+    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows. Sin Caddy:
+    // solo entra con el VPS, y hoy la API corre en Render sin él.
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
-      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Caddy", "Render", "GitHub Actions", "GitHub Pages"],
+      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
+      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
     },
   },
   {
@@ -104,8 +105,8 @@ export const proyectos = [
       en: "Multilingual website for a family pharmacy in Barcelona. The catalog is generated from the management software's CSV, and orders are sent over WhatsApp; the site does not take payment.",
     },
     focoTecnico: {
-      es: "Un script de Python genera 179 páginas estáticas en tres idiomas, sin publicar medicamentos ni precios.",
-      en: "A Python script generates 179 static pages in three languages, without publishing medicines or prices.",
+      es: "Un script de Python genera 143 de sus 154 páginas estáticas, en tres idiomas, sin publicar medicamentos ni precios.",
+      en: "A Python script generates 143 of its 154 static pages, in three languages, without publishing medicines or prices.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
