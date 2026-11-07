@@ -49,10 +49,11 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
               enlace={proyecto.enlace}
               enlaceTexto={proyecto.enlaceTexto?.[idioma] ?? t.projects.verProyecto}
               repo={proyecto.repo}
-              repoTexto={t.projects.verCodigo}
+              repoTexto={proyecto.repoTexto?.[idioma] ?? t.projects.verCodigo}
               decisiones={proyecto.decisiones}
               decisionesTexto={proyecto.decisionesTexto?.[idioma] ?? t.projects.verDecisiones}
-              imagen={proyecto.imagen}
+              // Una imagen con texto puede venir en los dos idiomas: { es, en }.
+              imagen={typeof proyecto.imagen === 'object' ? proyecto.imagen[idioma] : proyecto.imagen}
               imagenAlt={proyecto.imagenAlt?.[idioma]}
               estado={proyecto.estado?.[idioma]}
               tecnologias={proyecto.tecnologias[idioma]}
