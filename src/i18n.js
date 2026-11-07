@@ -32,7 +32,7 @@ export const traducciones = {
       noche: 'Noche',
     },
     hero: {
-      rol: 'Desarrolladora backend junior y QA Automation',
+      rol: 'Desarrolladora backend y QA Automation',
       stack: 'Construyo servicios con Java y Spring Boot, y automatizo pruebas con Python.',
       disponibilidad: 'Palma de Mallorca · Remoto, híbrido o reubicación · Incorporación inmediata',
       verProyectos: 'Ver proyectos',
@@ -74,7 +74,7 @@ export const traducciones = {
     },
     contact: {
       titulo: 'Contacto',
-      intro: '¿Tienes un proyecto en mente o quieres saber más sobre mi trabajo? Estaré encantada de hablar contigo.',
+      intro: 'Busco puesto como desarrolladora backend o en QA Automation, en Palma, en remoto o con reubicación. Escríbeme por correo o por LinkedIn y te respondo.',
       etiquetas: {
         Email: 'Email',
         Teléfono: 'Teléfono',
@@ -111,7 +111,7 @@ export const traducciones = {
       noche: 'Night',
     },
     hero: {
-      rol: 'Junior Backend & QA Automation Developer',
+      rol: 'Backend & QA Automation Developer',
       stack: 'I build services with Java and Spring Boot, and automate tests with Python.',
       disponibilidad: 'Palma de Mallorca, Spain · Remote, hybrid or relocation · Available now',
       verProyectos: 'View projects',
@@ -151,7 +151,7 @@ export const traducciones = {
     },
     contact: {
       titulo: 'Contact',
-      intro: 'Do you have a project in mind or want to know more about my work? I would be happy to talk with you.',
+      intro: "I'm looking for a backend or QA Automation role, in Palma, remote or with relocation. Drop me an email or a message on LinkedIn and I'll get back to you.",
       etiquetas: {
         Email: 'Email',
         Teléfono: 'Phone',
