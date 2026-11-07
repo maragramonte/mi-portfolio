@@ -121,9 +121,13 @@ a {
 [data-theme="noche"] .hero {
   background:
     linear-gradient(180deg, rgba(6, 8, 20, 0.25) 0%, rgba(6, 8, 20, 0.55) 100%),
-    url('/img/cielo.jpg') center top / cover no-repeat,
+    url('/img/cielo.jpg') center 40% / cover no-repeat,
     #0a0e1f;
 }
+
+/* Si la cabecera es más ancha que alta (móvil en horizontal, tablet en
+   vertical), de la foto solo se ve una franja: la del 40 % es la que más
+   estrellas tiene. En vertical se ve casi entera y la posición da igual. */
 
 .hero .container {
   position: relative;
