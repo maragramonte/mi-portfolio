@@ -1,6 +1,9 @@
 import { proyectos } from './proyectos.js'
 
 // Lista de tecnologías, agrupadas por bloque. Edita estos arrays para añadir o quitar.
+// Solo las que sé defender en una entrevista: lo que he usado de pasada (Twilio,
+// Caddy, XML, Chart.js...) sigue en las etiquetas de su tarjeta, pero no aquí.
+// MySQL tampoco: dr-agramonte tiene el perfil, pero su CI solo prueba PostgreSQL.
 // El orden de los grupos es deliberado: primero lo que se busca en una oferta
 // de backend, y las herramientas de apoyo al final.
 //
@@ -9,14 +12,14 @@ import { proyectos } from './proyectos.js'
 // detrás. Esa relación es dato, no presentación.
 export const grupos = [
   { titulo: { es: "Lenguajes", en: "Languages" }, items: ["Java", "Kotlin", "Python", "SQL", "JavaScript"] },
-  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "Spring Data JPA", "API REST", "JWT", "Flyway", "Bucket4j", "Twilio", "Telegram Bot API"] },
-  { titulo: { es: "Bases de datos", en: "Databases" }, items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"] },
-  { titulo: { es: "Testing", en: "Testing" }, items: ["JUnit 5", "Testcontainers", "Postman", "E2E"] },
-  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub", "GitHub Actions", "GitHub Pages", "Caddy", "Render", "WSL"] },
-  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "Vite", "XML", "JSON-LD", "SEO hreflang", "Chart.js", "PWA"] },
-  { titulo: { es: "Aplicaciones", en: "Applications" }, items: ["Android", "Swing", "Navigation Component", "Material Design"] },
+  { titulo: { es: "Backend", en: "Backend" }, items: ["Spring Boot", "Spring Security", "Spring Data JPA", "API REST", "JWT", "Flyway"] },
+  { titulo: { es: "Bases de datos", en: "Databases" }, items: ["PostgreSQL", "MongoDB", "SQLite"] },
+  { titulo: { es: "Testing", en: "Testing" }, items: ["JUnit 5", "Mockito", "Testcontainers", "Postman", "E2E"] },
+  { titulo: { es: "DevOps", en: "DevOps" }, items: ["Docker", "Git", "GitHub Actions"] },
+  { titulo: { es: "Web", en: "Web" }, items: ["HTML", "CSS", "React", "PWA"] },
+  { titulo: { es: "Aplicaciones", en: "Applications" }, items: ["Android", "Swing"] },
   { titulo: { es: "Concurrencia y redes", en: "Concurrency & networking" }, items: ["Hilos", "Semáforos", "Sockets", "Serialización", "Sincronización"] },
-  { titulo: { es: "Metodología y herramientas", en: "Methodology & tools" }, items: ["SAFe", "Scrum", "Jira", "Confluence", "DBeaver", "Pillow"] },
+  { titulo: { es: "Metodología y herramientas", en: "Methodology & tools" }, items: ["SAFe", "Scrum", "Jira", "Confluence"] },
 ]
 
 // Las pocas tecnologías cuyo nombre no es un nombre propio y sí se traduce.

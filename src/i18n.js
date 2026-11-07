@@ -11,7 +11,7 @@ export const traducciones = {
     // que index.html trae de serie (el idioma por defecto) porque esos son
     // estáticos: App.jsx los reescribe al cambiar de idioma.
     meta: {
-      titulo: 'Mar Agramonte | Desarrolladora Backend · Java, Python y SQL',
+      titulo: 'Mar Agramonte | Desarrolladora Backend y QA Automation · Java y Python',
       descripcion:
         'Portfolio de Mar Agramonte, desarrolladora Backend graduada en DAM. Java, Python, SQL y Docker. Palma de Mallorca, disponible para incorporación inmediata.',
     },
@@ -45,9 +45,8 @@ export const traducciones = {
       parrafos: [
         'Graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para un internista real en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas en Flyway.',
         'El detalle que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco, resuelto con bloqueo pesimista en base de datos y validado con un test de concurrencia real. Antes de eso, 400 horas de prácticas en Marlink Group haciendo testing de APIs, validaciones E2E y automatización con Python en un entorno SAFe.',
-        'Vengo de administración, turismo y recursos humanos, y de ahí traigo el orden y el trato con la gente. Aquí están los proyectos que he ido haciendo desde que empecé a programar.',
-        'Fuera de la pantalla me quedo embobada mirando la luna y las estrellas, y a veces les hago fotos. La luna de arriba, en el tema de noche, es una de ellas, y otras son el feed de Photo Palette.',
-        'Uso la IA como herramienta de trabajo, no como atajo: me ayuda a aprender más rápido y a desatascarme, y lo que me devuelve lo compruebo contra la documentación y las pruebas antes de darlo por bueno. Las decisiones técnicas de mis proyectos están escritas y razonadas una a una, con sus alternativas y sus límites, y las sé defender en una entrevista: cada tarjeta de abajo enlaza las suyas.',
+        'Vengo de administración, turismo y recursos humanos, y de ahí traigo el orden y el trato con la gente. Fuera de la pantalla me quedo embobada mirando la luna y las estrellas, y a veces les hago fotos: la luna del tema de noche es una de ellas.',
+        'Uso la IA como herramienta, no como atajo: lo que me devuelve lo compruebo contra la documentación y las pruebas. Mis decisiones técnicas están escritas y razonadas, y las sé defender en una entrevista: cada tarjeta de abajo enlaza las suyas.',
       ],
     },
     experience: {
@@ -91,7 +90,7 @@ export const traducciones = {
   },
   en: {
     meta: {
-      titulo: 'Mar Agramonte | Backend Developer · Java, Python & SQL',
+      titulo: 'Mar Agramonte | Backend Developer & QA Automation · Java and Python',
       descripcion:
         'Portfolio of Mar Agramonte, Backend Developer and Software Development graduate (DAM). Java, Python, SQL and Docker. Palma de Mallorca, Spain, available to start immediately.',
     },
@@ -125,9 +124,8 @@ export const traducciones = {
       parrafos: [
         "DAM graduate. My final-year project didn't stay in the classroom: it's an appointment management app for a real internist in Palma, with a backend in Java 21 and Spring Boot 3.5 on PostgreSQL, JWT authentication and versioned Flyway migrations.",
         'The detail that taught me the most was preventing two patients from booking the same slot, solved with pessimistic database locking and validated with a real concurrency test. Before that, 400 hours interning at Marlink Group doing API testing, E2E validation and Python automation in a SAFe environment.',
-        'I come from administration, tourism and HR, which taught me to be organised and to deal with people. These are the projects I have built since I started programming.',
-        'Away from the screen I can stare at the moon and the stars for ages, and sometimes I photograph them. The moon up there, in the night theme, is one of my photos, and others make up the Photo Palette feed.',
-        'I use AI as a working tool, not as a shortcut: it helps me learn faster and get unstuck, and whatever it hands me I check against the documentation and the tests before I trust it. The technical decisions in my projects are written down and reasoned one by one, with their alternatives and their limits, and I can defend them in an interview: every card below links to its own.',
+        'I come from administration, tourism and HR, which taught me to be organised and to deal with people. Away from the screen I can stare at the moon and the stars for ages, and sometimes I photograph them: the moon in the night theme is one of my photos.',
+        'I use AI as a tool, not a shortcut: whatever it hands me I check against the documentation and the tests. My technical decisions are written down and reasoned, and I can defend them in an interview: every card below links to its own.',
       ],
     },
     experience: {

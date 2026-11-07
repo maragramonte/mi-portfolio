@@ -62,6 +62,38 @@ export const proyectos = [
     },
   },
   {
+    // Es la misma aplicación que la tarjeta de arriba, vista como QA: qué se
+    // prueba, cómo y, sobre todo, qué no. Va justo detrás para que se lean
+    // juntas. Los números salen de docs/PRUEBAS-Y-CALIDAD.md del repo.
+    titulo: { es: "Cómo pruebo: Dr. Agramonte", en: "How I test: Dr. Agramonte" },
+    descripcion: {
+      es: "La estrategia de pruebas de la web de citas, documentada con lo que cubre y con lo que todavía no: sin cobertura medida, sin pruebas de navegador y sin pruebas de carga.",
+      en: "The test strategy behind the booking app, documented with what it covers and what it doesn't yet: no measured coverage, no browser tests and no load tests.",
+    },
+    focoTecnico: {
+      es: "115 pruebas en tres niveles. Dos hilos sincronizados atacan el mismo hueco contra un PostgreSQL real y tiene que salir un 201 y un 409. El CI falla si alguna prueba se queda sin ejecutar.",
+      en: "115 tests on three levels. Two synchronized threads hit the same slot against a real PostgreSQL, and the result must be one 201 and one 409. CI fails if any test is skipped.",
+    },
+    // Gráfico con los números de PRUEBAS-Y-CALIDAD.md, uno por idioma porque
+    // lleva texto: no hay una captura que enseñe una estrategia de pruebas.
+    imagen: {
+      es: `${import.meta.env.BASE_URL}img/pruebas-dr-agramonte-es.png`,
+      en: `${import.meta.env.BASE_URL}img/pruebas-dr-agramonte-en.png`,
+    },
+    imagenAlt: {
+      es: "Gráfico de barras: 115 pruebas, 70 unitarias, 27 de capa web con la seguridad real y 18 de integración contra PostgreSQL.",
+      en: "Bar chart: 115 tests, 70 unit, 27 web-layer with real security and 18 integration against PostgreSQL.",
+    },
+    enlace: "https://github.com/maragramonte/dr-agramonte/blob/main/docs/PRUEBAS-Y-CALIDAD.md",
+    enlaceTexto: { es: "Ver la estrategia", en: "Read the strategy" },
+    decisiones: "https://github.com/maragramonte/dr-agramonte/blob/main/docs/PRUEBAS-Y-CALIDAD.md#qué-no-cubre",
+    decisionesTexto: { es: "Qué no cubre", en: "What it doesn't cover" },
+    tecnologias: {
+      es: ["JUnit 5", "Mockito", "Testcontainers", "PostgreSQL", "Postman", "GitHub Actions"],
+      en: ["JUnit 5", "Mockito", "Testcontainers", "PostgreSQL", "Postman", "GitHub Actions"],
+    },
+  },
+  {
     // Segunda a propósito: es el otro proyecto de backend en Java, y el único
     // que se puede probar en vivo contra la API desde la propia demo.
     titulo: "Photo Palette",
@@ -131,89 +163,32 @@ export const proyectos = [
     },
   },
   {
-    titulo: "Task Manager",
+    // Los cuatro proyectos del ciclo en una sola tarjeta: cada uno por separado
+    // ocupaba media rejilla y empujaba hacia abajo a los tres proyectos reales.
+    // El repositorio tiene un README por proyecto; la tarjeta cuenta el mejor y
+    // enlaza el resto. Sus tecnologías siguen aquí para que el filtro por
+    // «Hilos» o «Android» encuentre esta tarjeta.
+    titulo: { es: "Proyectos de clase (DAM)", en: "Coursework projects (DAM)" },
     descripcion: {
-      es: "Aplicación Android para gestionar tareas por usuario, con registro, inicio de sesión y sesión persistente.",
-      en: "Android task management app with per-user tasks, sign-up, login and persistent sessions.",
+      es: "Cuatro proyectos del ciclo: Task Manager, una app Android de tareas con Kotlin y SQLite, y tres simulaciones de concurrencia en Java: The WC Sequence, su segunda versión con turnos por género y la Cena de los Filósofos.",
+      en: "Four projects from the course: Task Manager, an Android task app in Kotlin with SQLite, and three Java concurrency simulations: The WC Sequence, its second version with gender turns, and the Dining Philosophers.",
     },
     focoTecnico: {
-      es: "CRUD privado por usuario sobre SQLite, prioridades y navegación entre pantallas.",
-      en: "Per-user CRUD over SQLite, task priorities and screen navigation.",
+      es: "En la segunda versión de The WC Sequence, el turno cambia al servir a cada grupo y no al vaciarse los baños, para que un género no acapare. Probado con 40 hilos y unas 460 entradas.",
+      en: "In the second version of The WC Sequence, the turn changes once each group is served, not when the bathrooms empty, so neither gender hogs them. Tested with 40 threads and about 460 entries.",
     },
-    // Captura de la lista de tareas; se entiende mejor el CRUD que en Inicio.
-    imagen: `${import.meta.env.BASE_URL}img/task-manager.png`,
-    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/task-manager",
-    tecnologias: {
-      es: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
-      en: ["Kotlin", "Android", "SQLite", "Navigation Component", "Material Design"],
-    },
-  },
-  {
-    titulo: "The WC Sequence",
-    descripcion: {
-      es: "Simulación visual en Java donde personas ejecutadas en hilos usan baños y pueden viajar entre dos ventanas conectadas.",
-      en: "Java visual simulation where people running in threads use public bathrooms and can travel between two connected windows.",
-    },
-    focoTecnico: {
-      es: "Sincronización con semáforos y envío de objetos serializados entre ventanas mediante sockets.",
-      en: "Semaphore-based synchronization and serialized objects sent between windows over sockets.",
-    },
-    imagen: `${import.meta.env.BASE_URL}img/wc-sequence.png`,
-    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence",
-    tecnologias: {
-      es: ["Java", "Swing", "Hilos", "Semáforos", "Sockets", "Serialización"],
-      en: ["Java", "Swing", "Threads", "Semaphores", "Sockets", "Serialization"],
-    },
-  },
-  {
-    // Segunda solución del mismo enunciado, justo detrás de la primera para que
-    // se lean juntas. Pesa más que ella: tiene un fallo de reparto medido,
-    // corregido y vuelto a medir, y eso es lo que cuenta el foco técnico.
-    titulo: { es: "The WC Sequence: turnos por género", en: "The WC Sequence: gender turns" },
-    descripcion: {
-      es: "Segunda solución de The WC Sequence: baños de mujeres y de hombres, con turnos alternos por grupos y las dos ventanas conectadas por red.",
-      en: "Second solution to The WC Sequence: separate women's and men's bathrooms, alternating turns by group, and two windows connected over the network.",
-    },
-    focoTecnico: {
-      es: "El turno cambia al servir a cada grupo, no al vaciarse los baños, para que un género no acapare. Prueba de estrés con 40 hilos y unas 460 entradas.",
-      en: "The turn changes once each group is served, not when the bathrooms empty, so neither gender hogs them. Stress-tested with 40 threads and about 460 entries.",
-    },
-    // Recorte de la captura del servidor que trae el README del repositorio.
     imagen: `${import.meta.env.BASE_URL}img/wc-sequence-turnos.png`,
     imagenAlt: {
-      es: "Ventana de la simulación: cuatro baños de mujeres arriba, cuatro de hombres abajo y el panel con el turno actual.",
-      en: "Simulation window: four women's bathrooms on top, four men's below, and the panel showing whose turn it is.",
+      es: "Ventana de The WC Sequence: cuatro baños de mujeres arriba, cuatro de hombres abajo y el panel con el turno actual.",
+      en: "The WC Sequence window: four women's bathrooms on top, four men's below, and the panel showing whose turn it is.",
     },
-    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence-turnos-genero",
-    // El apartado del README que explica por qué el turno cambia por grupos y
-    // cómo se midió el fallo de la primera versión.
+    repo: "https://github.com/maragramonte/proyectos-dam",
+    repoTexto: { es: "Ver los cuatro", en: "See all four" },
     decisiones: "https://github.com/maragramonte/proyectos-dam/tree/main/wc-sequence-turnos-genero#cómo-se-reparten-los-turnos",
     decisionesTexto: { es: "Cómo se reparten los turnos", en: "How turns are shared" },
     tecnologias: {
-      es: ["Java", "Swing", "Hilos", "Semáforos", "Sincronización", "Sockets", "Serialización"],
-      en: ["Java", "Swing", "Threads", "Semaphores", "Synchronization", "Sockets", "Serialization"],
-    },
-  },
-  {
-    titulo: { es: "Cena de los Filósofos", en: "Dining Philosophers" },
-    descripcion: {
-      es: "Simulación con interfaz Swing del problema clásico de concurrencia: seis filósofos comparten seis palillos.",
-      en: "Swing simulation of the classic concurrency problem: six philosophers share six chopsticks.",
-    },
-    focoTecnico: {
-      es: "La mesa coordina turnos y recursos con wait/notifyAll y un semáforo para evitar interbloqueos.",
-      en: "The table coordinates turns and resources with wait/notifyAll and a semaphore to prevent deadlocks.",
-    },
-    repo: "https://github.com/maragramonte/proyectos-dam/tree/main/cena-filosofos",
-    // Ilustración conceptual: el repositorio no incluye una captura de la app.
-    imagen: `${import.meta.env.BASE_URL}img/dining-philosophers.svg`,
-    imagenAlt: {
-      es: "Ilustración de seis filósofos compartiendo seis palillos alrededor de una mesa.",
-      en: "Illustration of six philosophers sharing six chopsticks around a table.",
-    },
-    tecnologias: {
-      es: ["Java", "Swing", "Hilos", "Semáforos", "Sincronización"],
-      en: ["Java", "Swing", "Threads", "Semaphores", "Synchronization"],
+      es: ["Java", "Kotlin", "Android", "SQLite", "Swing", "Hilos", "Semáforos", "Sincronización", "Sockets", "Serialización"],
+      en: ["Java", "Kotlin", "Android", "SQLite", "Swing", "Threads", "Semaphores", "Synchronization", "Sockets", "Serialization"],
     },
   },
   {
@@ -234,8 +209,8 @@ export const proyectos = [
     // la tarjeta se queda con la portada de iniciales.
     repo: "https://github.com/maragramonte/mi-portfolio",
     tecnologias: {
-      es: ["React", "Vite", "HTML", "CSS", "JavaScript", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
-      en: ["React", "Vite", "HTML", "CSS", "JavaScript", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
+      es: ["React", "Vite", "HTML", "CSS", "JavaScript", "E2E", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
+      en: ["React", "Vite", "HTML", "CSS", "JavaScript", "E2E", "agent-browser", "Python", "Pillow", "SEO hreflang", "GitHub Actions", "GitHub Pages"],
     },
   },
 ]
