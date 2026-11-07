@@ -43,10 +43,10 @@ export const traducciones = {
     about: {
       titulo: 'Sobre mí',
       parrafos: [
-        'Graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para un internista real en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas en Flyway.',
-        'El detalle que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco, resuelto con bloqueo pesimista en base de datos y validado con un test de concurrencia real. Antes de eso, 400 horas de prácticas en Marlink Group haciendo testing de APIs, validaciones E2E y automatización con Python en un entorno SAFe.',
-        'Vengo de administración, turismo y recursos humanos, y de ahí traigo el orden y el trato con la gente. Fuera de la pantalla me quedo embobada mirando la luna y las estrellas, y a veces les hago fotos: la luna del tema de noche es una de ellas.',
-        'Uso la IA como herramienta, no como atajo: lo que me devuelve lo compruebo contra la documentación y las pruebas. Mis decisiones técnicas están escritas y razonadas, y las sé defender en una entrevista: cada tarjeta de abajo enlaza las suyas.',
+        'Soy graduada en DAM. Mi proyecto de fin de ciclo no se quedó en el aula: es una aplicación de gestión de citas para la consulta de un internista en Palma, con backend en Java 21 y Spring Boot 3.5 sobre PostgreSQL, autenticación JWT y migraciones versionadas con Flyway.',
+        'Lo que más me enseñó fue impedir que dos pacientes reservaran el mismo hueco. Lo resolví con un bloqueo pesimista en la base de datos y lo comprobé con un test de concurrencia real. Antes hice 400 horas de prácticas en Marlink Group, donde probé APIs, hice validaciones E2E y automaticé pruebas con Python en un entorno SAFe.',
+        'Vengo de la administración, el turismo y los recursos humanos, y de esa etapa traigo el orden y el trato con las personas. En mi tiempo libre fotografío el cielo de noche, y la luna y las estrellas del tema de noche de esta web son fotos mías.',
+        'Utilizo la IA como una herramienta más y contrasto lo que me propone con la documentación y las pruebas antes de darlo por bueno. Dejo mis decisiones técnicas por escrito y razonadas, y cada proyecto enlaza las suyas para que se puedan revisar.',
       ],
     },
     experience: {
@@ -122,10 +122,10 @@ export const traducciones = {
     about: {
       titulo: 'About me',
       parrafos: [
-        "DAM graduate. My final-year project didn't stay in the classroom: it's an appointment management app for a real internist in Palma, with a backend in Java 21 and Spring Boot 3.5 on PostgreSQL, JWT authentication and versioned Flyway migrations.",
-        'The detail that taught me the most was preventing two patients from booking the same slot, solved with pessimistic database locking and validated with a real concurrency test. Before that, 400 hours interning at Marlink Group doing API testing, E2E validation and Python automation in a SAFe environment.',
-        'I come from administration, tourism and HR, which taught me to be organised and to deal with people. Away from the screen I can stare at the moon and the stars for ages, and sometimes I photograph them: the moon in the night theme is one of my photos.',
-        'I use AI as a tool, not a shortcut: whatever it hands me I check against the documentation and the tests. My technical decisions are written down and reasoned, and I can defend them in an interview: every card below links to its own.',
+        "I'm a DAM graduate. My final-year project didn't stay in the classroom: it's an appointment management app for an internist's practice in Palma, with a backend in Java 21 and Spring Boot 3.5 on PostgreSQL, JWT authentication and versioned Flyway migrations.",
+        'What taught me the most was preventing two patients from booking the same slot. I solved it with pessimistic locking in the database and verified it with a real concurrency test. Before that, I completed a 400-hour internship at Marlink Group, testing APIs, running E2E validations and automating tests with Python in a SAFe environment.',
+        'I come from administration, tourism and human resources, and from that stage I bring organisation and a good way with people. In my free time I photograph the night sky, and the moon and the stars in this site\'s night theme are my own photos.',
+        'I use AI as one more tool, and I check what it suggests against the documentation and the tests before relying on it. I write down and justify my technical decisions, and each project links to its own so they can be reviewed.',
       ],
     },
     experience: {

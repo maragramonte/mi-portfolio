@@ -392,15 +392,12 @@
     box-shadow: 0 0 44px 10px rgba(230, 220, 200, 0.25);
   }
 
-  /* 🌙 Y las estrellas del cielo nocturno */
+  /* 🌙 Y el cielo de la foto, que es vertical y encaja con la columna */
   [data-theme="noche"] .rail {
     background:
-      radial-gradient(1.5px 1.5px at 22% 14%, rgba(255, 255, 255, 0.9), transparent),
-      radial-gradient(1px 1px at 62% 9%, rgba(255, 255, 255, 0.7), transparent),
-      radial-gradient(1.5px 1.5px at 78% 26%, rgba(255, 255, 255, 0.8), transparent),
-      radial-gradient(1px 1px at 14% 38%, rgba(255, 255, 255, 0.65), transparent),
-      radial-gradient(1.5px 1.5px at 48% 33%, rgba(255, 255, 255, 0.55), transparent),
-      var(--sunset);
+      linear-gradient(180deg, rgba(6, 8, 20, 0.2) 0%, rgba(6, 8, 20, 0.5) 100%),
+      url('/img/cielo.jpg') center / cover no-repeat,
+      #0a0e1f;
   }
 
   .rail > * {
