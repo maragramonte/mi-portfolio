@@ -107,12 +107,12 @@ a {
   left: auto;
   right: 2rem;
   transform: none;
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 38% 38%, #fdfcf4 0%, #d7def0 55%, #aab6d8 100%);
-  box-shadow: 0 0 50px 12px rgba(210, 225, 255, 0.45);
+  /* La luna llena de mis fotos, no una dibujada. */
+  background: url('/img/luna.png') center / cover no-repeat;
+  box-shadow: 0 0 60px 14px rgba(230, 220, 200, 0.28);
 }
 
 /* 🌙 Estrellas dispersas en el cielo nocturno */
