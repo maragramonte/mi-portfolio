@@ -115,17 +115,14 @@ a {
   box-shadow: 0 0 60px 14px rgba(230, 220, 200, 0.28);
 }
 
-/* 🌙 Estrellas dispersas en el cielo nocturno */
+/* 🌙 El cielo de noche es una foto mía, como la luna. El velo oscuro de encima
+   asegura el contraste del texto aunque la foto tenga zonas más claras (el
+   resplandor anaranjado de abajo es contaminación lumínica real). */
 [data-theme="noche"] .hero {
   background:
-    radial-gradient(1.5px 1.5px at 15% 22%, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(1.5px 1.5px at 32% 12%, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1px 1px at 55% 28%, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1.5px 1.5px at 78% 15%, rgba(255, 255, 255, 0.85), transparent),
-    radial-gradient(1px 1px at 88% 35%, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 8% 45%, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1.5px 1.5px at 45% 48%, rgba(255, 255, 255, 0.55), transparent),
-    var(--sunset);
+    linear-gradient(180deg, rgba(6, 8, 20, 0.25) 0%, rgba(6, 8, 20, 0.55) 100%),
+    url('/img/cielo.jpg') center top / cover no-repeat,
+    #0a0e1f;
 }
 
 .hero .container {
