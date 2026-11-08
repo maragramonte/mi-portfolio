@@ -28,20 +28,20 @@
 // con más peso técnico.
 //
 // Los datos de abajo salen de los README de cada repositorio, repasados el
-// 2026-11-06. Cuando cambie el proyecto, la fuente buena es su README.
+// 2026-11-08. Cuando cambie el proyecto, la fuente buena es su README.
 
 export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
-    // Sin «En desarrollo»: es el TFC entregado, con 115 pruebas y CI. La
+    // Sin «En desarrollo»: es el TFC entregado, con 128 pruebas y CI. La
     // etiqueta queda para los proyectos que de verdad están a medias.
     descripcion: {
       es: "Aplicación de citas para un internista en Palma, con agendas por centro, reservas sin registro y avisos por correo, Telegram y SMS. La demo usa datos ficticios.",
       en: "Appointment app for an internist in Palma, with schedules by clinic, booking without an account, and email, Telegram and SMS notifications. The demo uses fictional data.",
     },
     focoTecnico: {
-      es: "Reservas simultáneas resueltas con bloqueo pesimista en PostgreSQL y un test de concurrencia real. Backend cubierto por 115 pruebas.",
-      en: "Concurrent bookings handled with pessimistic locking in PostgreSQL and a real concurrency test. Backend covered by 115 tests.",
+      es: "Reservas simultáneas resueltas con bloqueo pesimista en PostgreSQL y un test de concurrencia real. Backend cubierto por 128 pruebas.",
+      en: "Concurrent bookings handled with pessimistic locking in PostgreSQL and a real concurrency test. Backend covered by 128 tests.",
     },
     imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.png`,
     enlaceTexto: { es: "Ver demo", en: "View demo" },
@@ -68,12 +68,12 @@ export const proyectos = [
     // juntas. Los números salen de docs/PRUEBAS-Y-CALIDAD.md del repo.
     titulo: { es: "Cómo pruebo: Dr. Agramonte", en: "How I test: Dr. Agramonte" },
     descripcion: {
-      es: "La estrategia de pruebas de la web de citas, documentada con lo que cubre y con lo que todavía no: sin cobertura medida, sin pruebas de navegador y sin pruebas de carga.",
-      en: "The test strategy behind the booking app, documented with what it covers and what it doesn't yet: no measured coverage, no browser tests and no load tests.",
+      es: "La estrategia de pruebas de la web de citas, documentada con lo que cubre y con lo que todavía no: sin cobertura medida, sin pruebas de carga y con E2E de navegador solo en la reserva sin cuenta.",
+      en: "The test strategy behind the booking app, documented with what it covers and what it doesn't yet: no measured coverage, no load tests, and browser E2E tests only for guest booking.",
     },
     focoTecnico: {
-      es: "115 pruebas en tres niveles. Dos hilos sincronizados atacan el mismo hueco contra un PostgreSQL real y tiene que salir un 201 y un 409. El CI falla si alguna prueba se queda sin ejecutar.",
-      en: "115 tests on three levels. Two synchronized threads hit the same slot against a real PostgreSQL, and the result must be one 201 and one 409. CI fails if any test is skipped.",
+      es: "128 pruebas en tres niveles. Dos hilos sincronizados atacan el mismo hueco contra un PostgreSQL real y tiene que salir un 201 y un 409. El CI falla si alguna prueba se queda sin ejecutar.",
+      en: "128 tests on three levels. Two synchronized threads hit the same slot against a real PostgreSQL, and the result must be one 201 and one 409. CI fails if any test is skipped.",
     },
     // Gráfico con los números de PRUEBAS-Y-CALIDAD.md, uno por idioma porque
     // lleva texto: no hay una captura que enseñe una estrategia de pruebas.
@@ -82,16 +82,16 @@ export const proyectos = [
       en: `${import.meta.env.BASE_URL}img/pruebas-dr-agramonte-en.png`,
     },
     imagenAlt: {
-      es: "Gráfico de barras: 115 pruebas, 70 unitarias, 27 de capa web con la seguridad real y 18 de integración contra PostgreSQL.",
-      en: "Bar chart: 115 tests, 70 unit, 27 web-layer with real security and 18 integration against PostgreSQL.",
+      es: "Gráfico de barras: 128 pruebas, 75 unitarias, 31 de capa web con la seguridad real y 22 de integración contra PostgreSQL.",
+      en: "Bar chart: 128 tests, 75 unit, 31 web-layer with real security and 22 integration against PostgreSQL.",
     },
     enlace: "https://github.com/maragramonte/dr-agramonte/blob/main/docs/PRUEBAS-Y-CALIDAD.md",
     enlaceTexto: { es: "Ver la estrategia", en: "Read the strategy" },
     decisiones: "https://github.com/maragramonte/dr-agramonte/blob/main/docs/PRUEBAS-Y-CALIDAD.md#qué-no-cubre",
     decisionesTexto: { es: "Qué no cubre", en: "What it doesn't cover" },
     tecnologias: {
-      es: ["JUnit 5", "Mockito", "Testcontainers", "PostgreSQL", "Postman", "GitHub Actions"],
-      en: ["JUnit 5", "Mockito", "Testcontainers", "PostgreSQL", "Postman", "GitHub Actions"],
+      es: ["JUnit 5", "Mockito", "Testcontainers", "Playwright", "PostgreSQL", "Postman", "GitHub Actions"],
+      en: ["JUnit 5", "Mockito", "Testcontainers", "Playwright", "PostgreSQL", "Postman", "GitHub Actions"],
     },
   },
   {
@@ -139,8 +139,8 @@ export const proyectos = [
       en: "Three-language website for a neighborhood pharmacy in El Born, Barcelona. It shows what's on the counter, lets you build an order in a basket and sends it over WhatsApp; the site takes no payment.",
     },
     focoTecnico: {
-      es: "Un script de Python genera 143 de sus 154 páginas estáticas desde el CSV del programa de gestión, sin publicar medicamentos ni precios. Los tests de pytest vigilan el catálogo y los enlaces.",
-      en: "A Python script generates 143 of its 154 static pages from the management software's CSV, without publishing medicines or prices. pytest tests guard the catalog and the links.",
+      es: "Un script de Python genera 143 de sus 154 páginas a partir de dos JSON, y el catálogo se importa desde el CSV del programa de gestión. Sin medicamentos ni precios. 218 tests de pytest vigilan el catálogo, los enlaces y el importador.",
+      en: "A Python script generates 143 of its 154 pages from two JSON files, and the catalog is imported from the management software's CSV. No medicines or prices. 218 pytest tests guard the catalog, the links and the importer.",
     },
     estado: { es: "En desarrollo", en: "Work in progress" },
     imagen: `${import.meta.env.BASE_URL}img/farmacia-agramonte.png`,
