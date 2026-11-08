@@ -63,7 +63,7 @@ export default {
       const r = estado()
       esIgual(r.tema, 'dia', 'el <html> pasa al tema día')
       esIgual(r.guardado, 'dia', 'el tema queda guardado para la próxima visita')
-      esIgual(r.colorBarra, '#fafafa', 'el color de la barra del navegador acompaña al tema')
+      esIgual(r.colorBarra, '#f3f7fa', 'el color de la barra del navegador acompaña al tema')
       esIgual(r.desplegado, 'false', 'elegir cierra el desplegable')
       esCierto(r.focoEnBoton, 'tras elegir, el foco vuelve al botón que abrió el selector')
     },
@@ -75,7 +75,7 @@ export default {
 
       const r = estado()
       esIgual(r.tema, 'dia', 'la página vuelve con el tema guardado')
-      esIgual(r.colorBarra, '#fafafa', 'y con su color de barra')
+      esIgual(r.colorBarra, '#f3f7fa', 'y con su color de barra')
     },
 
     'el tema se aplica en el <html> antes de cargar la aplicación'({ url }) {

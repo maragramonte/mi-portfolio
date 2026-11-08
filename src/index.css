@@ -1,6 +1,6 @@
 :root {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --accent-strong: #a8380c;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --accent-strong: #a04a09;
   --on-accent: #ffffff;
   /* Sombra del título del hero (se ajusta por tema) */
   --hero-title: #fff;
@@ -8,22 +8,25 @@
   --hero-subtitle: #fdeede;
 }
 
-/* ☀️ DÍA CLARO: fondo blanco cálido + degradado coral→ámbar */
+/* ☀️ DÍA: la paleta sale de mi foto de margaritas naranjas al atardecer.
+   Cielo de fondo, hoja para el texto y caléndula de acento. La caléndula tal
+   cual da 4,7:1 con blanco, pero sobre el cielo se queda en 3,9:1: por eso el
+   texto pequeño y los botones usan su versión oscura (--accent-strong). */
 [data-theme="dia"] {
-  --accent-strong: #a8380c;   /* acento con contraste AA para texto pequeño */
+  --accent-strong: #a04a09;   /* caléndula oscura: 5,6:1 sobre el fondo */
   --on-accent: #ffffff;
-  --bg: #fafafa;
+  --bg: #f3f7fa;              /* cielo claro */
   --bg-card: #ffffff;
-  --text: #2c2c2c;
-  --text-dim: #5d5d5d;
-  --accent: #ff7043;
-  --accent-2: #ffa726;
-  --border: #f0f0f0;
-  --navbar-bg: rgba(255, 255, 255, 0.85);
-  --sunset: linear-gradient(135deg, #fff3e0, #ffeaa7);
-  --hero-title: transparent;            /* el título usa degradado en texto */
+  --text: #282a14;            /* hoja */
+  --text-dim: #5b5e44;
+  --accent: #bc570a;          /* caléndula */
+  --accent-2: #db8c0d;        /* ámbar */
+  --border: #dce4ec;
+  --navbar-bg: rgba(243, 247, 250, 0.85);
+  --sunset: #dfeaf3;          /* cielo, color plano */
+  --hero-title: #282a14;
   --hero-title-shadow: none;
-  --hero-subtitle: #5d5d5d;
+  --hero-subtitle: #5b5e44;
 }
 
 /* 🌙 NOCHE: cielo nocturno profundo + acentos azul luna/lavanda */
@@ -92,7 +95,7 @@ a {
   transform: translateX(-50%);
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle, rgba(255, 232, 180, 0.55) 0%, rgba(255, 232, 180, 0) 70%);
+  background: radial-gradient(circle, rgba(242, 200, 13, 0.2) 0%, rgba(242, 200, 13, 0) 70%);
   pointer-events: none;
 }
 
@@ -141,14 +144,6 @@ a {
   text-shadow: var(--hero-title-shadow);
 }
 
-/* En el tema claro, el nombre se pinta con degradado coral→ámbar */
-[data-theme="dia"] .hero h1 {
-  background: linear-gradient(135deg, #ff6b6b, #ffa726, #ffcc02);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .hero p {
   color: var(--hero-subtitle);
   font-size: 1.2rem;
@@ -165,11 +160,6 @@ a {
   color: var(--hero-title);
   text-shadow: var(--hero-title-shadow);
   margin-bottom: 0.4rem;
-}
-
-/* En el tema claro el degradado del título no aplica aquí: color sólido legible */
-[data-theme="dia"] .hero .hero__rol {
-  color: #3d3d3d;
 }
 
 .hero .hero__stack {
