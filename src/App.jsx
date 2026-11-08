@@ -62,7 +62,7 @@ export default function App() {
     }
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content',
-      tema === 'dia' ? '#fafafa' : '#0a0e1f',
+      tema === 'dia' ? '#f3f7fa' : '#0a0e1f',
     )
   }, [tema])
 
