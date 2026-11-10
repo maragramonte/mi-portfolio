@@ -58,8 +58,8 @@ export const proyectos = [
     // Los seis primeros son los que se ven sin desplegar la tarjeta, así que
     // van los que más pesan en una oferta de backend.
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "API REST", "Spring Data JPA", "Flyway", "SQL", "MySQL", "JUnit 5", "Testcontainers", "Postman", "Docker", "Caddy", "GitHub Actions", "Twilio", "Telegram Bot API", "Chart.js", "PWA"],
-      en: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "API REST", "Spring Data JPA", "Flyway", "SQL", "MySQL", "JUnit 5", "Testcontainers", "Postman", "Docker", "Caddy", "GitHub Actions", "Twilio", "Telegram Bot API", "Chart.js", "PWA"],
+      es: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "API REST", "Spring Data JPA", "Flyway", "SQL", "MySQL", "JUnit 5", "Testcontainers", "Postman", "Docker", "Caddy", "GitHub Actions", "Twilio", "Telegram Bot API", "Chart.js", "PWA", "Python", "Claude API"],
+      en: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "API REST", "Spring Data JPA", "Flyway", "SQL", "MySQL", "JUnit 5", "Testcontainers", "Postman", "Docker", "Caddy", "GitHub Actions", "Twilio", "Telegram Bot API", "Chart.js", "PWA", "Python", "Claude API"],
     },
   },
   {
