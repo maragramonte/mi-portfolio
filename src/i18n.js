@@ -34,7 +34,7 @@ export const traducciones = {
     hero: {
       rol: 'Desarrolladora backend y QA Automation',
       stack: 'Construyo servicios con Java y Spring Boot, y automatizo pruebas con Python.',
-      disponibilidad: 'Palma de Mallorca · Remoto, híbrido o reubicación · Incorporación inmediata',
+      disponibilidad: 'Palma de Mallorca · Presencial o híbrido, remoto o reubicación · Incorporación inmediata',
       verProyectos: 'Ver proyectos',
       contactar: 'Contactar',
       descargarCV: 'Descargar CV',
@@ -74,7 +74,7 @@ export const traducciones = {
     },
     contact: {
       titulo: 'Contacto',
-      intro: 'Busco puesto como desarrolladora backend o en QA Automation, en Palma, en remoto o con reubicación. Escríbeme por correo o por LinkedIn y te respondo.',
+      intro: 'Busco puesto como desarrolladora backend o en QA Automation, en Palma (presencial o híbrido), en remoto o con reubicación. Escríbeme por correo o por LinkedIn y te respondo.',
       etiquetas: {
         Email: 'Email',
         Teléfono: 'Teléfono',
@@ -113,7 +113,7 @@ export const traducciones = {
     hero: {
       rol: 'Backend & QA Automation Developer',
       stack: 'I build services with Java and Spring Boot, and automate tests with Python.',
-      disponibilidad: 'Palma de Mallorca, Spain · Remote, hybrid or relocation · Available now',
+      disponibilidad: 'Palma de Mallorca, Spain · On-site or hybrid, remote or relocation · Available now',
       verProyectos: 'View projects',
       contactar: 'Get in touch',
       descargarCV: 'Download CV',
@@ -151,7 +151,7 @@ export const traducciones = {
     },
     contact: {
       titulo: 'Contact',
-      intro: "I'm looking for a backend or QA Automation role, in Palma, remote or with relocation. Drop me an email or a message on LinkedIn and I'll get back to you.",
+      intro: "I'm looking for a backend or QA Automation role, in Palma (on-site or hybrid), remote or with relocation. Drop me an email or a message on LinkedIn and I'll get back to you.",
       etiquetas: {
         Email: 'Email',
         Teléfono: 'Phone',
