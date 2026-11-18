@@ -18,7 +18,6 @@ const estado = () =>
     rol: document.querySelector('.rail__rol').innerText.trim(),
     textoBoton: document.querySelector('${BOTON_IDIOMA}').textContent.trim(),
     enlacesNav: Array.from(document.querySelectorAll('.rail__nav .nav-enlace')).map((a) => a.innerText.trim()),
-    descargarCV: document.querySelector('.rail__pie .btn--primario')?.innerText.trim(),
   }))()`)
 
 export default {
@@ -45,7 +44,6 @@ export default {
       esIgual(despues.lang, 'en', 'el documento declara inglés')
       esIgual(despues.textoBoton, 'ES', 'el botón ahora ofrece volver al español')
       contiene(despues.rol, 'QA Automation Developer', 'el rol se traduce')
-      contiene(despues.descargarCV, 'Download CV', 'el botón de CV se traduce')
       noEsIgual(despues.enlacesNav.join('|'), antes.enlacesNav.join('|'), 'el menú cambia de idioma')
       estaVacia(
         despues.enlacesNav.filter((t) => !t),

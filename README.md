@@ -25,7 +25,7 @@ npm run test:e2e            # 55 pruebas de extremo a extremo sobre la build
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
 cambio de idioma, el tema, la navegación, el filtro por tecnología, las
-descargas del CV, el menú del móvil y la accesibilidad (WCAG 2 A y AA con
+el menú del móvil y la accesibilidad (WCAG 2 A y AA con
 axe-core). En GitHub Actions se ejecutan en cada pull request y antes de cada
 despliegue: si fallan, no se publica nada.
 
@@ -43,7 +43,7 @@ Los detalles están en [tests/e2e/README.md](tests/e2e/README.md).
 public/                     # favicon, icono de la web y og.png (previsualización al compartir)
 src/
 ├── App.jsx                 # estructura general + lógica de temas
-├── config.js               # rutas a los CV en PDF (uno por idioma)
+├── config.js               # rutas de descarga del CV (vacías: el CV no se publica)
 ├── i18n.js                 # todos los textos, en español e inglés
 ├── index.css               # estilos y paletas de color (temas)
 ├── layout.css              # armazón: columna lateral, barra y menú de móvil
@@ -57,10 +57,9 @@ tests/e2e/                  # pruebas de extremo a extremo con agent-browser
 
 ## Cómo actualizar el contenido
 
-**Añadir el CV:** guarda los PDF en `public/` como `cv-mar-agramonte-es.pdf` y
-`cv-mar-agramonte-en.pdf`. El botón de descarga ofrece el del idioma activo; si un
-idioma no tiene CV, pon su entrada a `''` en `src/config.js` y ahí no se muestra.
-El botón aparece en el hero y en la sección de Contacto.
+**El CV:** no está publicado. Se envía por correo o LinkedIn cuando alguien lo pide.
+Si algún día se vuelve a publicar, guarda los PDF en `public/` y rellena las rutas
+de `src/config.js`; los botones aparecen solos.
 
 **Añadir un proyecto:** copia un bloque de `src/data/proyectos.js`. Los campos
 `enlace` (demo), `repo` (código), `decisiones` e `imagen` son opcionales; si no
