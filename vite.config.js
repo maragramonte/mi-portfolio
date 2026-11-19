@@ -31,6 +31,8 @@ export default defineConfig({
       input: {
         es: raiz('index.html'),
         en: raiz('en/index.html'),
+        casoEs: raiz('casos/dr-agramonte/index.html'),
+        casoEn: raiz('en/casos/dr-agramonte/index.html'),
       },
     },
   },

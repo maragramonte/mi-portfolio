@@ -1,0 +1,262 @@
+/*
+ * Página de caso. Una sola columna de lectura con los colores y la tipografía
+ * del portfolio. Lo único que se sale de la prosa es la carrera entre los dos
+ * pacientes, que es la idea que tiene que quedar.
+ */
+
+.caso__barra,
+.caso__contenido {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+}
+
+.caso__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.caso__volver,
+.caso__idioma,
+.caso__enlaces a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.caso__ajustes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.caso__idioma {
+  font-size: 0.875rem;
+}
+
+.caso__contenido {
+  padding-block: 2rem 5rem;
+}
+
+/* --- Cabecera ----------------------------------------------------------- */
+
+.caso__cabecera h1 {
+  max-width: 14ch;
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.caso__entradilla {
+  max-width: 52ch;
+  margin: 0 0 2rem;
+  color: var(--text-dim);
+  font-size: 1.2rem;
+}
+
+.caso__ficha {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--border);
+}
+
+.caso__ficha div,
+.caso__descartadas div {
+  display: grid;
+  gap: 0.25rem 1rem;
+}
+
+.caso__ficha dt,
+.caso__descartadas dt {
+  font-weight: 600;
+}
+
+.caso__ficha dd,
+.caso__descartadas dd {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+/* --- Secciones ---------------------------------------------------------- */
+
+.caso__seccion {
+  margin-top: 3.5rem;
+}
+
+.caso__seccion h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.caso__seccion h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.caso__seccion > p,
+.caso__limites li {
+  max-width: 68ch;
+  margin: 0 0 1rem;
+  color: var(--text-dim);
+}
+
+.caso__descartadas {
+  display: grid;
+  margin: 0;
+}
+
+.caso__descartadas div {
+  padding-block: 0.875rem;
+  border-top: 1px solid var(--border);
+}
+
+.caso__limites {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.caso__enlaces {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.caso__enlaces li {
+  border-top: 1px solid var(--border);
+}
+
+.caso__enlaces a {
+  display: block;
+  padding-block: 0.75rem;
+}
+
+/* --- Código ------------------------------------------------------------- */
+
+.caso__codigo {
+  margin: 1.5rem 0;
+}
+
+.caso__codigo pre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.caso__codigo figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* --- La carrera --------------------------------------------------------- */
+
+.carrera {
+  margin-top: 1.5rem;
+}
+
+/* En el móvil los dos pacientes van uno debajo del otro y cada evento dice de
+   quién es. Las columnas con su nombre arriba solo aparecen en escritorio. */
+.carrera__carriles {
+  display: none;
+}
+
+.carrera__pasos {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carrera__paso {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.carrera__evento {
+  position: relative;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.carrera__quien {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.carrera__evento--gana,
+.carrera__evento--pierde {
+  font-weight: 600;
+}
+
+.carrera__evento--gana {
+  background: color-mix(in srgb, var(--accent) 14%, var(--bg-card));
+  border-color: var(--accent);
+}
+
+.carrera__evento--pierde {
+  border-style: dashed;
+  color: var(--text-dim);
+}
+
+@media (min-width: 640px) {
+  .caso__ficha div,
+  .caso__descartadas div {
+    grid-template-columns: 9rem 1fr;
+  }
+
+  .carrera__carriles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .carrera__paso {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* El nombre ya está en la cabecera de la columna: se oculta a la vista,
+     pero un lector de pantalla lo sigue leyendo en cada evento. */
+  .carrera__quien {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Un hilo entre los eventos de cada paciente, para leer cada columna
+     como una línea de tiempo. */
+  .carrera__paso:not(:last-child) .carrera__evento::after {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    bottom: calc(-1rem - 1px);
+    width: 2px;
+    height: 1rem;
+    background: var(--border);
+  }
+}

@@ -10,6 +10,10 @@ import { useIdioma } from '../i18n.js'
 const tituloDe = (proyecto, idioma) =>
   typeof proyecto.titulo === 'string' ? proyecto.titulo : proyecto.titulo[idioma]
 
+// Las páginas de caso tienen una versión por idioma, y la inglesa cuelga de en/.
+const rutaDelCaso = (caso, idioma) =>
+  `${import.meta.env.BASE_URL}${idioma === 'en' ? 'en/' : ''}${caso}`
+
 // Sección de proyectos: recorre la lista y crea una tarjeta por cada uno.
 // Si hay una tecnología elegida en la sección de arriba, solo muestra los
 // proyectos que la usan y lo dice en un aviso, para que nadie piense que han
@@ -52,6 +56,7 @@ export default function Projects({ tecnologiaActiva, onQuitarFiltro }) {
               repoTexto={proyecto.repoTexto?.[idioma] ?? t.projects.verCodigo}
               decisiones={proyecto.decisiones}
               decisionesTexto={proyecto.decisionesTexto?.[idioma] ?? t.projects.verDecisiones}
+              caso={proyecto.caso && rutaDelCaso(proyecto.caso, idioma)}
               // Una imagen con texto puede venir en los dos idiomas: { es, en }.
               imagen={typeof proyecto.imagen === 'object' ? proyecto.imagen[idioma] : proyecto.imagen}
               imagenAlt={proyecto.imagenAlt?.[idioma]}

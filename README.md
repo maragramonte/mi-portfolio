@@ -20,7 +20,7 @@ npm run preview  # previsualizar la build de producción
 
 ```bash
 npm run test:e2e:preparar   # una sola vez: descarga el Chrome de pruebas
-npm run test:e2e            # 51 pruebas de extremo a extremo sobre la build
+npm run test:e2e            # 58 pruebas de extremo a extremo sobre la build
 ```
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
@@ -40,18 +40,25 @@ Los detalles están en [tests/e2e/README.md](tests/e2e/README.md).
 ## Estructura
 
 ```
+index.html, en/index.html   # el portfolio, una entrada por idioma
+casos/dr-agramonte/         # página de caso de Dr. Agramonte (y en/casos/... en inglés)
 public/                     # favicon, icono de la web y og.png (previsualización al compartir)
 src/
-├── App.jsx                 # estructura general + lógica de temas
+├── App.jsx                 # estructura general del portfolio
+├── caso.jsx                # entrada de las páginas de caso
+├── tema-inicial.js         # elige el tema antes de pintar; vite.config.js lo pone en cada HTML
 ├── config.js               # rutas de descarga del CV (vacías: el CV no se publica)
 ├── i18n.js                 # todos los textos, en español e inglés
 ├── index.css               # estilos y paletas de color (temas)
 ├── layout.css              # armazón: columna lateral, barra y menú de móvil
+├── caso.css                # estilos de las páginas de caso
 ├── hooks/useNavegacion.js  # sección activa del menú y progreso de lectura
+├── hooks/useTema.js        # tema activo, compartido por todas las páginas
 ├── data/proyectos.js       # datos de los proyectos
+├── data/casos/             # textos de cada página de caso, en los dos idiomas
 ├── data/experiencia.js     # puestos de la sección Experiencia
 ├── data/contacto.js        # canales de contacto (columna lateral + sección)
-└── components/             # Sidebar, About, Experience, Technologies, Projects, Contact...
+└── components/             # Sidebar, About, Projects, CasoDrAgramonte...
 tests/e2e/                  # pruebas de extremo a extremo con agent-browser
 ```
 
