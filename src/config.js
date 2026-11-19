@@ -8,6 +8,12 @@ export const CV_URLS = {
   en: { visual: '', ats: '' },
 }
 
+// Formulario para pedir el CV. Pega aquí la URL de tu formulario de Formspree
+// (formspree.io/f/xxxxxxxx). Con la cadena vacía no se muestra el botón.
+// La dirección de correo que recibe las solicitudes se configura en el panel de
+// Formspree, así que no aparece en este código público.
+export const PEDIR_CV_URL = ''
+
 // Devuelve las versiones disponibles del idioma pedido.
 export function cvUrls(idioma) {
   return CV_URLS[idioma] ?? { visual: '', ats: '' }

@@ -1,6 +1,7 @@
 import { useIdioma } from '../i18n.js'
 import { cvUrls } from '../config.js'
 import { contactos } from '../data/contacto.js'
+import PedirCV from './PedirCV.jsx'
 
 // Sección de contacto. Los canales salen de src/data/contacto.js, que es la
 // misma lista que usa la columna lateral: así no hay dos sitios que tocar.
@@ -42,6 +43,7 @@ export default function Contact() {
             )
           })}
         </ul>
+        <PedirCV />
       </div>
     </section>
   )
