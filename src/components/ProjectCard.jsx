@@ -60,8 +60,10 @@ export default function ProjectCard({
           className="card__img"
           src={imagen}
           alt={imagenAlt ?? `${t.projects.capturaDe} ${titulo}`}
-          width="400"
-          height="300"
+          // El tamaño real de las capturas (16:10): reserva el hueco antes de
+          // que cargue la imagen, para que la tarjeta no salte.
+          width="960"
+          height="600"
           loading="lazy"
           decoding="async"
         />
