@@ -5,7 +5,7 @@
 import { esperarCondicion, evaluar, irALimpio, media, pulsar } from '../lib/agente.mjs'
 import { esCierto, esIgual, estaEntre, estaVacia } from '../lib/comprobar.mjs'
 
-const SECCIONES = ['sobre-mi', 'experiencia', 'tecnologias', 'proyectos', 'contacto']
+const SECCIONES = ['proyectos', 'experiencia', 'tecnologias', 'sobre-mi', 'contacto']
 
 export default {
   titulo: 'Navegación',

@@ -9,10 +9,10 @@ import SelectorTema from './SelectorTema.jsx'
 // Secciones del menú, en el mismo orden en que aparecen en la página.
 // `clave` es el nombre del texto dentro de t.nav (ver i18n.js).
 const SECCIONES = [
-  { id: 'sobre-mi', clave: 'sobreMi' },
+  { id: 'proyectos', clave: 'proyectos' },
   { id: 'experiencia', clave: 'experiencia' },
   { id: 'tecnologias', clave: 'tecnologias' },
-  { id: 'proyectos', clave: 'proyectos' },
+  { id: 'sobre-mi', clave: 'sobreMi' },
   { id: 'contacto', clave: 'contacto' },
 ]
 
