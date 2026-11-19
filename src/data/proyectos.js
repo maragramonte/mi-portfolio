@@ -113,8 +113,8 @@ export const proyectos = [
     },
     imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
     imagenAlt: {
-      es: "Portada de Photo Palette: el titular a la izquierda y la caja para subir una foto a la derecha, sobre fondo azul noche.",
-      en: "Photo Palette home page: the headline on the left and the photo upload box on the right, on a dark blue background.",
+      es: "Portada de Photo Palette: el titular y la caja para subir una foto a la izquierda; a la derecha, un eclipse con una regla de color que mide lo que ocupa cada tono.",
+      en: "Photo Palette home page: the headline and the photo upload box on the left; on the right, an eclipse with a color ruler showing how much of the photo each shade takes up.",
     },
     enlaceTexto: { es: "Ver demo", en: "View demo" },
     // La API está en el plan gratis de Render y se duerme a los 15 minutos:
