@@ -64,7 +64,7 @@ export default {
 
       contiene(antes.title, 'Desarrolladora Backend', 'el título arranca en español')
       contiene(despues.title, 'Backend Developer', 'el título pasa a inglés')
-      contiene(despues.descripcion, 'Portfolio of Mar Agramonte', 'la meta descripción pasa a inglés')
+      contiene(despues.descripcion, 'backend and QA Automation developer', 'la meta descripción pasa a inglés')
     },
 
     'el idioma elegido sobrevive a una recarga'({ url }) {
