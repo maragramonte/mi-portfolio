@@ -2,7 +2,7 @@
 
 Conducen un Chrome de verdad sobre el portfolio ya compilado y comprueban lo
 que ve quien entra: que el idioma cambia entero, que el tema sobrevive a una
-recarga, que los PDF del CV se descargan, que el menú del móvil se cierra con
+recarga, que el menú del móvil se cierra con
 Escape y que no hay incumplimientos de accesibilidad.
 
 Van sobre [agent-browser](https://github.com/vercel-labs/agent-browser), un CLI

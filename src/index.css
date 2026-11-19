@@ -549,6 +549,82 @@ a {
   word-break: break-word;
 }
 
+/* ---------- Pedir el CV ---------- */
+.pedir-cv {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pedir-cv__texto {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 560px;
+}
+
+.pedir-cv__form {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.pedir-cv__form[hidden] {
+  display: none;
+}
+
+.pedir-cv__form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.pedir-cv__form input {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text);
+  /* 16px: por debajo, iOS amplía la página al enfocar el campo. */
+  font: inherit;
+  font-size: 1rem;
+}
+
+.pedir-cv__form .btn {
+  justify-self: start;
+}
+
+.pedir-cv__form .btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+  transform: none;
+  box-shadow: none;
+}
+
+.pedir-cv__trampa {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pedir-cv__privacidad {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.pedir-cv__estado {
+  margin: 0;
+  min-height: 1.4em;
+  font-weight: 600;
+  color: var(--text);
+}
+
 footer {
   text-align: center;
   color: var(--text-dim);
