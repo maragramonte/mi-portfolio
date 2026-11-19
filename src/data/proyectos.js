@@ -183,8 +183,8 @@ export const proyectos = [
       en: "This portfolio, built with React and Vite without a UI library. Text for both languages lives in one file, and CSS variables power its day and night themes.",
     },
     focoTecnico: {
-      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 58 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
-      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 58 end-to-end tests in a real Chrome decide whether it ships.",
+      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 59 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
+      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 59 end-to-end tests in a real Chrome decide whether it ships.",
     },
     // Sin enlace de demo: la demo es esta misma página. La captura es del tema
     // de noche, con la luna de la columna izquierda: quien la mira casi siempre

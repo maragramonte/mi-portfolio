@@ -78,6 +78,20 @@ export default {
       )
     },
 
+    // El perfil de GitHub manda aquí a quien quiere el CV: si el botón
+    // desaparece, ese enlace lleva a una sección sin forma de pedirlo.
+    'el botón «Pedir mi CV» abre el formulario de Google en otra pestaña'() {
+      const boton = evaluar(`(() => {
+        const a = document.querySelector('#contacto .pedir-cv a')
+        return a && { texto: a.textContent.trim(), href: a.href, target: a.target, rel: a.rel }
+      })()`)
+
+      esIgual(boton?.texto, 'Pedir mi CV', 'la sección de contacto tiene el botón')
+      contiene(boton?.href ?? '', 'forms.gle/', 'el botón lleva al formulario de Google')
+      esIgual(boton?.target, '_blank', 'el formulario se abre en otra pestaña')
+      contiene(boton?.rel ?? '', 'noreferrer', 'la pestaña nueva no recibe la página de origen')
+    },
+
     'la carga no deja errores de consola ni excepciones sin recoger'() {
       const graves = mensajesDeConsola().filter((m) => m.type === 'error')
 
