@@ -67,6 +67,7 @@ export const traducciones = {
       // Nombre por defecto del tercer enlace de la tarjeta. Un proyecto puede
       // cambiarlo con decisionesTexto si su documento se llama de otra forma.
       verDecisiones: 'Decisiones técnicas',
+      leerCaso: 'Leer el caso',
       filtradoPor: 'Proyectos con',
       quitarFiltro: 'Ver todos',
       masEtiquetas: 'Ver {n} más',
@@ -156,6 +157,7 @@ export const traducciones = {
       verProyecto: 'View project',
       verCodigo: 'View code',
       verDecisiones: 'Technical decisions',
+      leerCaso: 'Read the case study',
       filtradoPor: 'Projects using',
       quitarFiltro: 'Show all',
       masEtiquetas: 'Show {n} more',

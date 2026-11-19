@@ -29,6 +29,7 @@ export default function ProjectCard({
   repoTexto,
   decisiones,
   decisionesTexto,
+  caso,
   imagen,
   imagenAlt,
   estado,
@@ -114,8 +115,15 @@ export default function ProjectCard({
           </div>
         )}
 
-        {(enlace || repo || decisiones) && (
+        {(caso || enlace || repo || decisiones) && (
           <div className="card__links">
+            {/* El caso va primero y en la misma pestaña: es una página del
+                propio portfolio y la que mejor cuenta el proyecto. */}
+            {caso && (
+              <a className="card__link card__link--caso" href={caso}>
+                {t.projects.leerCaso}
+              </a>
+            )}
             {enlace && (
               <a className="card__link" href={enlace} target="_blank" rel="noreferrer">
                 {enlaceTexto}

@@ -16,6 +16,9 @@
 //                 alternativas y sus límites, y que las sabes defender.
 //   decisionesTexto  opcional, { es, en }. El nombre de ese enlace, cuando el
 //                 genérico ("Decisiones técnicas") no es el del documento.
+//   caso          opcional, ruta de su página de caso dentro del portfolio
+//                 ("casos/nombre/"). Cada idioma enlaza la suya: la versión
+//                 inglesa añade "en/" delante.
 //   imagen        opcional, captura real del proyecto. Guárdala en public/img/
 //                 y referénciala como `${import.meta.env.BASE_URL}img/nombre.png`.
 //                 Si falta, la tarjeta muestra una portada con las iniciales.
@@ -51,6 +54,7 @@ export const proyectos = [
     // haya dominio, basta con cambiar esta línea.
     enlace: "https://maragramonte.github.io/dr-agramonte/",
     repo: "https://github.com/maragramonte/dr-agramonte",
+    caso: "casos/dr-agramonte/",
     // Doce decisiones, cada una con la alternativa que descartaste y sus
     // límites. Es lo que distingue un proyecto que has pensado de uno copiado.
     decisiones: "https://github.com/maragramonte/dr-agramonte/blob/main/docs/DECISIONES-TECNICAS.md",
@@ -202,8 +206,8 @@ export const proyectos = [
       en: "This portfolio, built with React and Vite without a UI library. Text for both languages lives in one file, and CSS variables power its day and night themes.",
     },
     focoTecnico: {
-      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 51 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
-      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 51 end-to-end tests in a real Chrome decide whether it ships.",
+      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 58 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
+      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 58 end-to-end tests in a real Chrome decide whether it ships.",
     },
     // Sin enlace de demo: la demo es esta misma página. Y sin captura a
     // propósito, porque una captura de lo que ya se está mirando no añade nada:

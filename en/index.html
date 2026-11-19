@@ -62,32 +62,8 @@
       rel="stylesheet"
     />
 
-    <!--
-      Aplica el tema guardado ANTES de pintar la página.
-      Sin esto, quien tenga elegido el tema "noche" ve un fogonazo blanco en cada visita.
-      Aquí no se toca el idioma: esta página lo fija en inglés.
-    -->
-    <script>
-      (function () {
-        /* Esta lista debe ir a la par con TEMAS en src/App.jsx. */
-        var TEMAS = ['dia', 'noche']
-        var tema = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
-          ? 'dia'
-          : 'noche'
-        document.documentElement.dataset.theme = tema
-        try {
-          var guardado = localStorage.getItem('tema')
-          if (TEMAS.indexOf(guardado) !== -1) tema = guardado
-          document.documentElement.dataset.theme = tema
-        } catch (e) {
-          /* localStorage bloqueado (modo incógnito): se queda el tema por defecto */
-        }
-        document.querySelector('meta[name="theme-color"]')?.setAttribute(
-          'content',
-          tema === 'dia' ? '#f3f7fa' : '#0a0e1f'
-        )
-      })()
-    </script>
+    <!-- Tema e idioma antes de pintar: vite.config.js pone aquí src/tema-inicial.js -->
+    <!-- tema-inicial -->
   </head>
   <body>
     <div id="root"></div>

@@ -8,23 +8,10 @@ import Contact from './components/Contact.jsx'
 import { IDIOMAS, IdiomaContext, traducciones } from './i18n.js'
 import { cvUrls } from './config.js'
 import { useProgresoLectura } from './hooks/useNavegacion.js'
-
-// El tema claro u oscuro se ofrece según la preferencia del sistema.
-const TEMAS = ['dia', 'noche']
+import { TEMAS, useTema } from './hooks/useTema.js'
 
 export default function App() {
-  const [tema, setTema] = useState(() => {
-    try {
-      const guardado = localStorage.getItem('tema')
-      if (TEMAS.includes(guardado)) return guardado
-    } catch {
-      // Si el navegador bloquea localStorage, usamos el tema elegido en el HTML.
-    }
-
-    // El HTML ya elige el tema del sistema antes de pintar la página.
-    const inicial = document.documentElement.dataset.theme
-    return TEMAS.includes(inicial) ? inicial : 'noche'
-  })
+  const [tema, setTema] = useTema()
 
   // Tecnología elegida en la sección de arriba; filtra la de proyectos.
   // Vive aquí porque es lo único que comparten las dos secciones.
@@ -50,20 +37,6 @@ export default function App() {
 
   // Textos del idioma activo, disponibles para toda la app vía contexto.
   const t = traducciones[idioma]
-
-  // Aplica el tema al <html> y lo guarda para la próxima visita.
-  useEffect(() => {
-    document.documentElement.dataset.theme = tema
-    try {
-      localStorage.setItem('tema', tema)
-    } catch {
-      // El tema sigue activo aunque el navegador no permita guardarlo.
-    }
-    document.querySelector('meta[name="theme-color"]')?.setAttribute(
-      'content',
-      tema === 'dia' ? '#f3f7fa' : '#0a0e1f',
-    )
-  }, [tema])
 
   // Guarda el idioma y actualiza el atributo lang del documento.
   // El <title> y la descripción viven en index.html, fuera de React, así que
