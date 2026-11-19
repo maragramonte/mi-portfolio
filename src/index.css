@@ -391,11 +391,17 @@ a {
   border-color: var(--accent);
 }
 
+/* Las capturas se guardan ya en 16:10 y recortadas a lo importante: con una
+   altura fija, el navegador las cortaba por el centro y no se leía nada. */
 .card__img {
+  display: block;
   width: 100%;
-  height: 150px;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  background: #222;
+  object-position: top;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .card__body {
@@ -691,7 +697,7 @@ footer {
 .card__cover {
   display: grid;
   place-items: center;
-  height: 150px;
+  aspect-ratio: 16 / 10;
   background: var(--sunset);
   border-bottom: 1px solid var(--border);
 }
@@ -718,6 +724,24 @@ footer {
 
 .card__link:hover {
   text-decoration: underline;
+}
+
+/* La página de caso es el enlace que más cuenta del proyecto: va primero y
+   con forma de botón, para que no se pierda entre los demás. */
+.card__link--caso {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: var(--on-accent);
+}
+
+.card__link--caso:hover {
+  text-decoration: none;
+  filter: brightness(1.08);
+}
+
+.card__link--caso::after {
+  content: none;
 }
 
 /* ---------- Accesibilidad ---------- */
