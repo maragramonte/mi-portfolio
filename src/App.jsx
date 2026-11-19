@@ -41,9 +41,8 @@ export default function App() {
     return IDIOMAS.includes(guardado) ? guardado : 'es'
   })
 
-  // Al elegir una tecnología se baja a los proyectos: la lista de chips es
-  // larga y, desde los primeros grupos, la rejilla queda fuera de pantalla.
-  // Sin esto el filtro se aplicaría donde no se ve.
+  // Al elegir una tecnología se sube a los proyectos, que van antes que la
+  // lista de chips: sin esto el filtro se aplicaría donde no se ve.
   function elegirTecnologia(tech) {
     setTecnologiaActiva(tech)
     if (tech) document.getElementById('proyectos')?.scrollIntoView({ block: 'start' })
@@ -139,17 +138,20 @@ export default function App() {
             </div>
           </header>
 
+          {/* Los proyectos van primero: son lo que más dice de mí y lo primero que
+              busca quien llega desde una oferta. Antes, la primera pantalla era el
+              texto de «Sobre mí» y las capturas quedaban tres secciones más abajo. */}
           <main>
-            <About />
+            <Projects
+              tecnologiaActiva={tecnologiaActiva}
+              onQuitarFiltro={() => setTecnologiaActiva(null)}
+            />
             <Experience />
             <Technologies
               tecnologiaActiva={tecnologiaActiva}
               onElegirTecnologia={elegirTecnologia}
             />
-            <Projects
-              tecnologiaActiva={tecnologiaActiva}
-              onQuitarFiltro={() => setTecnologiaActiva(null)}
-            />
+            <About />
             <Contact />
           </main>
 

@@ -20,7 +20,7 @@ npm run preview  # previsualizar la build de producción
 
 ```bash
 npm run test:e2e:preparar   # una sola vez: descarga el Chrome de pruebas
-npm run test:e2e            # 55 pruebas de extremo a extremo sobre la build
+npm run test:e2e            # 51 pruebas de extremo a extremo sobre la build
 ```
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el

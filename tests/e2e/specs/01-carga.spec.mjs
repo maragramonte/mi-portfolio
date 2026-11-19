@@ -47,7 +47,7 @@ export default {
 
     'las cinco secciones del menú existen en la página'() {
       const faltan = evaluar(`(() => {
-        const ids = ['sobre-mi', 'experiencia', 'tecnologias', 'proyectos', 'contacto']
+        const ids = ['proyectos', 'experiencia', 'tecnologias', 'sobre-mi', 'contacto']
         return ids.filter((id) => !document.getElementById(id))
       })()`)
 

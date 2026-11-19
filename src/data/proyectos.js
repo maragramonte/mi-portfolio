@@ -202,8 +202,8 @@ export const proyectos = [
       en: "This portfolio, built with React and Vite without a UI library. Text for both languages lives in one file, and CSS variables power its day and night themes.",
     },
     focoTecnico: {
-      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 55 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
-      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 55 end-to-end tests in a real Chrome decide whether it ships.",
+      es: "Cada idioma tiene su propio HTML para que funcionen las previsualizaciones al compartir. 51 pruebas de extremo a extremo en un Chrome real deciden si se publica.",
+      en: "Each language has its own HTML entry so shared link previews work without JavaScript. 51 end-to-end tests in a real Chrome decide whether it ships.",
     },
     // Sin enlace de demo: la demo es esta misma página. Y sin captura a
     // propósito, porque una captura de lo que ya se está mirando no añade nada:
