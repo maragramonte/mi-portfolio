@@ -20,7 +20,7 @@ npm run preview  # previsualizar la build de producción
 
 ```bash
 npm run test:e2e:preparar   # una sola vez: descarga el Chrome de pruebas
-npm run test:e2e            # 58 pruebas de extremo a extremo sobre la build
+npm run test:e2e            # 59 pruebas de extremo a extremo sobre la build
 ```
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
@@ -47,7 +47,7 @@ src/
 ├── App.jsx                 # estructura general del portfolio
 ├── caso.jsx                # entrada de las páginas de caso
 ├── tema-inicial.js         # elige el tema antes de pintar; vite.config.js lo pone en cada HTML
-├── config.js               # rutas de descarga del CV (vacías: el CV no se publica)
+├── config.js               # enlace al formulario para pedir el CV (el CV no se publica)
 ├── i18n.js                 # todos los textos, en español e inglés
 ├── index.css               # estilos y paletas de color (temas)
 ├── layout.css              # armazón: columna lateral, barra y menú de móvil
@@ -64,7 +64,7 @@ tests/e2e/                  # pruebas de extremo a extremo con agent-browser
 
 ## Cómo actualizar el contenido
 
-**El CV:** no está publicado. Se envía por correo o LinkedIn cuando alguien lo pide.
+**El CV:** no está publicado. Quien lo quiere lo pide con el botón de Contacto, que abre un formulario de Google, y se lo mando por correo.
 Si algún día se vuelve a publicar, guarda los PDF en `public/` y rellena las rutas
 de `src/config.js`; los botones aparecen solos.
 
