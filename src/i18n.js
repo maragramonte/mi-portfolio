@@ -13,7 +13,7 @@ export const traducciones = {
     meta: {
       titulo: 'Mar Agramonte | Desarrolladora Backend y QA Automation · Java y Python',
       descripcion:
-        'Portfolio de Mar Agramonte, desarrolladora Backend graduada en DAM. Java, Python, SQL y Docker. Palma de Mallorca, disponible para incorporación inmediata.',
+        'Mar Agramonte, desarrolladora backend y QA Automation titulada en DAM. Java, Spring Boot, PostgreSQL y pruebas con JUnit y Python. Palma, incorporación inmediata.',
     },
     nav: {
       principal: 'Navegación principal',
@@ -104,7 +104,7 @@ export const traducciones = {
     meta: {
       titulo: 'Mar Agramonte | Backend Developer & QA Automation · Java and Python',
       descripcion:
-        'Portfolio of Mar Agramonte, Backend Developer and Software Development graduate (DAM). Java, Python, SQL and Docker. Palma de Mallorca, Spain, available to start immediately.',
+        'Mar Agramonte, backend and QA Automation developer with a DAM degree. Java, Spring Boot, PostgreSQL, and testing with JUnit and Python. Palma, Spain, available now.',
     },
     nav: {
       principal: 'Main navigation',
