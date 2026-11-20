@@ -24,10 +24,10 @@ npm run test:e2e            # 59 pruebas de extremo a extremo sobre la build
 ```
 
 Conducen un Chrome de verdad sobre el resultado de `vite build` y comprueban el
-cambio de idioma, el tema, la navegación, el filtro por tecnología, las
-el menú del móvil y la accesibilidad (WCAG 2 A y AA con
-axe-core). En GitHub Actions se ejecutan en cada pull request y antes de cada
-despliegue: si fallan, no se publica nada.
+cambio de idioma, el tema, la navegación, el filtro por tecnología, el menú
+del móvil y la accesibilidad (WCAG 2 A y AA con axe-core). En GitHub Actions
+se ejecutan en cada pull request y antes de cada despliegue: si fallan, no se
+publica nada.
 
 Con `--base` sirven de comprobación del sitio ya publicado:
 

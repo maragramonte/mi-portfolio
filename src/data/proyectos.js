@@ -38,7 +38,7 @@
 export const proyectos = [
   {
     titulo: "Web Dr. Agramonte",
-    // Sin «En desarrollo»: es el TFC entregado, con 128 pruebas y CI. La
+    // Sin «En desarrollo»: es el TFC entregado, con 138 pruebas y CI. La
     // etiqueta queda para los proyectos que de verdad están a medias.
     descripcion: {
       es: "Aplicación de citas para un internista en Palma, con agendas por centro, reservas sin registro y avisos por correo, Telegram y SMS. La demo usa datos ficticios.",
@@ -48,8 +48,8 @@ export const proyectos = [
     // pruebas. Desde que existe la página de caso, que lo cuenta entero, el
     // reto técnico junta las dos cosas y la tarjeta se queda en una.
     focoTecnico: {
-      es: "Dos pacientes no pueden llevarse la misma hora: bloqueo pesimista en PostgreSQL y una prueba con dos hilos que exige un 201 y un 409. 128 pruebas en el backend y 47 E2E.",
-      en: "Two patients can't get the same time slot: pessimistic locking in PostgreSQL and a two-thread test that expects one 201 and one 409. 128 backend tests and 47 E2E tests.",
+      es: "Dos pacientes no pueden llevarse la misma hora: bloqueo pesimista en PostgreSQL y una prueba con dos hilos que exige un 201 y un 409. 138 pruebas en el backend y 47 E2E.",
+      en: "Two patients can't get the same time slot: pessimistic locking in PostgreSQL and a two-thread test that expects one 201 and one 409. 138 backend tests and 47 E2E tests.",
     },
     imagen: `${import.meta.env.BASE_URL}img/dr-agramonte.jpg`,
     imagenAlt: {
