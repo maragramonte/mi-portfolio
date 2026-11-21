@@ -61,7 +61,7 @@ export const proyectos = [
     // del repo (repasado el 2026-11-06) dice que no hay dominio propio y que el
     // despliegue en VPS está preparado a la espera de levantar la máquina. Cuando
     // haya dominio, basta con cambiar esta línea.
-    enlace: "https://maragramonte.github.io/dr-agramonte/",
+    enlace: "https://demo-dragramonte.maragramonte.com/",
     repo: "https://github.com/maragramonte/dr-agramonte",
     // Sin enlace a las decisiones técnicas: la página de caso las enlaza, junto
     // con la estrategia de pruebas, y tres enlaces caben en una fila.
@@ -94,21 +94,21 @@ export const proyectos = [
       en: "Photo Palette home page: the headline and the photo upload box on the left; on the right, an eclipse with a color ruler showing how much of the photo each shade takes up.",
     },
     enlaceTexto: { es: "Ver demo", en: "View demo" },
-    // La API está en el plan gratis de Render y se duerme a los 15 minutos:
-    // la primera subida tarda unos 30 s. La web lo avisa sola y el feed no
-    // depende de la API, así que la demo nunca se ve rota.
-    enlace: "https://maragramonte.github.io/photo-palette/",
+    // La API no está publicada mientras se muda al VPS (salió de Render en
+    // noviembre de 2026). La web lo avisa sola y el feed no depende de la API,
+    // así que la demo nunca se ve rota.
+    enlace: "https://paleta.maragramonte.com/",
     repo: "https://github.com/maragramonte/photo-palette",
     // La decisión que define el proyecto está en «Por qué lo hice»: la paleta
     // fiel no es la paleta útil, y por eso existen los dos modos. Antes la
     // sección se llamaba «El problema» (ancla comprobada el 2026-11-06).
     decisiones: "https://github.com/maragramonte/photo-palette#por-qué-lo-hice",
     decisionesTexto: { es: "Decisión de producto", en: "Product decision" },
-    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows. Sin Caddy:
-    // solo entra con el VPS, y hoy la API corre en Render sin él.
+    // Nombres tal y como aparecen en el pom.xml, el Dockerfile y los workflows. Sin Caddy
+    // ni el VPS hasta que la API esté publicada allí.
     tecnologias: {
-      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
-      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "Render", "GitHub Actions", "GitHub Pages"],
+      es: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "GitHub Actions", "GitHub Pages"],
+      en: ["Java 21", "Spring Boot", "API REST", "Bucket4j", "JUnit 5", "JaCoCo", "Docker", "JavaScript", "HTML", "CSS", "GitHub Actions", "GitHub Pages"],
     },
   },
   {
@@ -130,7 +130,7 @@ export const proyectos = [
       en: "Farmacia Agramonte home page: the tagline «Consejo de siempre, de tu barrio» on a green background, the button to send an order over WhatsApp and an illustrated counter shelf.",
     },
     enlaceTexto: { es: "Ver web", en: "View site" },
-    enlace: "https://maragramonte.github.io/Farmacia-Agramonte/",
+    enlace: "https://farmacia.maragramonte.com/",
     repo: "https://github.com/maragramonte/Farmacia-Agramonte",
     // El README del repo razona cada decisión y también dice qué falta, en «El
     // estado real». La sección se llamaba «Decisiones de diseño» hasta que el
