@@ -32,7 +32,7 @@ npm run test:e2e -- --traza             # imprime cada orden que va al navegador
 npm run test:e2e -- --puerto 5000       # otro puerto para el preview
 
 # Contra el sitio ya publicado, sin compilar ni levantar nada:
-npm run test:e2e -- --base https://maragramonte.github.io/mi-portfolio/
+npm run test:e2e -- --base https://maragramonte.com/
 ```
 
 Cuando una prueba falla, el ejecutor guarda una captura de la pantalla en ese
@@ -73,8 +73,8 @@ export default {
 ## Tres decisiones que conviene conocer antes de tocar nada
 
 **Se prueba el resultado de `vite build`, no el modo desarrollo.** Lo que se
-publica en GitHub Pages es `dist/`, y ahí es donde se rompen la base
-`/mi-portfolio/`, el segundo HTML de `en/` y los PDF de `public/`.
+publica en GitHub Pages es `dist/`, y ahí es donde se rompen las rutas
+de los recursos, el segundo HTML de `en/` y los PDF de `public/`.
 
 **Las pruebas van en serie y comparten un navegador.** El estado que más se
 rompe en esta web —tema e idioma guardados, filtro puesto, menú abierto— vive

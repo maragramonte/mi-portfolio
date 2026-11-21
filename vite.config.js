@@ -19,8 +19,10 @@ function temaInicialEnLinea() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Necesario para GitHub Pages: la web se sirve en /mi-portfolio/
-  base: '/mi-portfolio/',
+  // La web se sirve en la raíz de maragramonte.com. Si algún día vuelve a una
+  // subcarpeta (como /mi-portfolio/ en github.io), hay que cambiarlo aquí y en
+  // BASE_DEL_SITIO de tests/e2e/run.mjs.
+  base: '/',
   plugins: [react(), temaInicialEnLinea()],
   build: {
     rollupOptions: {
