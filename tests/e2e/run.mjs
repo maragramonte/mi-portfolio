@@ -4,7 +4,7 @@
 //   npm run test:e2e                      compila, levanta preview y prueba
 //   npm run test:e2e -- --filtro idioma   solo las pruebas que casen
 //   npm run test:e2e -- --headed          con el navegador a la vista
-//   npm run test:e2e -- --base https://maragramonte.github.io/mi-portfolio/
+//   npm run test:e2e -- --base https://maragramonte.com/
 //                                         contra el sitio publicado
 import { mkdir, readdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
@@ -14,7 +14,7 @@ import { arrancarPreview, construir } from './lib/servidor.mjs'
 import { colores as c, ejecutarBloques } from './lib/runner.mjs'
 
 const aqui = dirname(fileURLToPath(import.meta.url))
-const BASE_DEL_SITIO = '/mi-portfolio/'
+const BASE_DEL_SITIO = '/'
 
 const opciones = leerArgumentos(process.argv.slice(2))
 
@@ -62,8 +62,8 @@ try {
 
   const contexto = {
     base,
-    // La web se sirve bajo /mi-portfolio/, así que las rutas de las pruebas
-    // son relativas a esa base y no absolutas.
+    // Las rutas de las pruebas son relativas a la base y no absolutas, para
+    // que la misma suite valga en local y contra cualquier --base.
     url: (ruta = '') => new URL(ruta, base).href,
     agente,
   }

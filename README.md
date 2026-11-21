@@ -1,6 +1,6 @@
 # Portfolio · Mar Agramonte
 
-**Web en vivo → [maragramonte.github.io/mi-portfolio](https://maragramonte.github.io/mi-portfolio/)**
+**Web en vivo → [maragramonte.com](https://maragramonte.com/)**
 
 Portfolio personal desarrollado con **React + Vite**.
 
@@ -32,7 +32,7 @@ publica nada.
 Con `--base` sirven de comprobación del sitio ya publicado:
 
 ```bash
-npm run test:e2e -- --base https://maragramonte.github.io/mi-portfolio/
+npm run test:e2e -- --base https://maragramonte.com/
 ```
 
 Los detalles están en [tests/e2e/README.md](tests/e2e/README.md).

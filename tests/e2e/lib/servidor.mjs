@@ -2,8 +2,8 @@
 //
 // Se prueba contra `vite preview` y no contra `vite dev` a propósito: lo que se
 // publica en GitHub Pages es el resultado de `vite build`, y es ahí donde
-// aparecen los fallos que el modo desarrollo esconde (rutas con la base
-// /mi-portfolio/, los dos HTML de entrada, los PDF de public/).
+// aparecen los fallos que el modo desarrollo esconde (rutas de los
+// recursos, los dos HTML de entrada, los PDF de public/).
 import { spawn } from 'node:child_process'
 import { rutaDelBin } from './binarios.mjs'
 
