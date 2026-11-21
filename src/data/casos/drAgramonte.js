@@ -25,7 +25,7 @@ assertThat(List.of(reservaA.get(30, SECONDS), reservaB.get(30, SECONDS)))
         .containsExactlyInAnyOrder(201, 409);`
 
 const ENLACES = {
-  demo: 'https://maragramonte.github.io/dr-agramonte/',
+  demo: 'https://demo-dragramonte.maragramonte.com/',
   bloqueo: `${REPO}/blob/main/backend/src/main/java/com/saludybienestar/agramonte/repository/HorarioRepository.java`,
   prueba: `${REPO}/blob/main/backend/src/test/java/com/saludybienestar/agramonte/integration/ReservaPublicaIntegrationTest.java`,
   decision: `${REPO}/blob/main/docs/DECISIONES-TECNICAS.md#1-bloqueo-pesimista-contra-la-doble-reserva`,
