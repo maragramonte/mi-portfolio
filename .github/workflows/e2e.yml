@@ -40,7 +40,7 @@ jobs:
       # Cuando algo falla, la captura del momento explica más que el registro.
       - name: Upload failure screenshots
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: capturas-e2e
           path: tests/e2e/capturas/
