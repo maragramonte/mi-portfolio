@@ -6,8 +6,15 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
-    # Las actualizaciones menores de desarrollo van juntas en un solo PR.
+    # Las mayores (React 19, Vite 8) cambian la API y rompen las E2E: se hacen a mano.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
+      # React y React DOM tienen que ir siempre a la misma versión.
+      react:
+        patterns: ["react", "react-dom"]
+      # Las menores de desarrollo van juntas en un solo PR.
       desarrollo:
         dependency-type: development
         update-types: ["minor", "patch"]
