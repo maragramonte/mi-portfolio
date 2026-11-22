@@ -90,8 +90,8 @@ export const proyectos = [
     },
     imagen: `${import.meta.env.BASE_URL}img/photo-palette.jpg`,
     imagenAlt: {
-      es: "Portada de Photo Palette: el titular y la caja para subir una foto a la izquierda; a la derecha, un eclipse con una regla de color que mide lo que ocupa cada tono.",
-      en: "Photo Palette home page: the headline and the photo upload box on the left; on the right, an eclipse with a color ruler showing how much of the photo each shade takes up.",
+      es: "Portada de Photo Palette: el titular y la caja para subir una foto a la izquierda; a la derecha, unos tulipanes con una regla de color que mide lo que ocupa cada tono y sus colores vivos debajo.",
+      en: "Photo Palette home page: the headline and the photo upload box on the left; on the right, a bed of tulips with a color ruler showing how much of the photo each shade takes up, and its vivid colors below.",
     },
     enlaceTexto: { es: "Ver demo", en: "View demo" },
     // La API no está publicada mientras se muda al VPS (salió de Render en
