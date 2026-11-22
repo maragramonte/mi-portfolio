@@ -147,10 +147,20 @@ export function limpiarAlmacenamiento() {
   evaluar(`(() => { try { localStorage.clear(); sessionStorage.clear() } catch {} ; return 'ok' })()`)
 }
 
+// Convierte un valor en un literal de JavaScript que se puede pegar dentro de
+// código. JSON.stringify ya escapa comillas y barras, pero deja tal cual < y >
+// y los separadores de línea U+2028 y U+2029, que en algunos contextos cortan
+// el código. Se pasan a su forma \uXXXX.
+const literalJs = (valor) =>
+  JSON.stringify(valor).replace(
+    /[<>\u2028\u2029]/g,
+    (caracter) => '\\u' + caracter.charCodeAt(0).toString(16).padStart(4, '0'),
+  )
+
 // Deja un valor en localStorage antes de abrir la página, para probar qué hace
 // la web con una visita anterior guardada.
 export function guardarEnAlmacenamiento(clave, valor) {
-  evaluar(`(() => { localStorage.setItem(${JSON.stringify(clave)}, ${JSON.stringify(valor)}); return 'ok' })()`)
+  evaluar(`(() => { localStorage.setItem(${literalJs(clave)}, ${literalJs(valor)}); return 'ok' })()`)
 }
 
 // Abre la página sin rastro de la prueba anterior.

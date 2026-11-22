@@ -7,6 +7,10 @@ on:
   workflow_dispatch:
   workflow_call:
 
+# Las pruebas solo leen el repositorio.
+permissions:
+  contents: read
+
 # Si llegan dos pushes seguidos, basta con probar el último.
 concurrency:
   group: e2e-${{ github.ref }}
